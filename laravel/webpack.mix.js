@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const glob = require('glob');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,5 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+// sassディレクトリ直下のscssファイルを全てコンパイル
+mix.webpackConfig({
+    module: {
+        rules: [{
+            test: /\.scss/,
+            enforce: "pre",
+            loader: 'import-glob-loader'
+        }]
+    }
+})
+    .js('resources/js/app.js', 'public/js').version()
+    .js('resources/js/main.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css').sourceMaps();

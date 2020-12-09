@@ -1,0 +1,55 @@
+/* 余白 */
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 20px;
+$space_xl: 30px;
+$space_xxl: 40px;
+$space_xxxl: 50px;
+$space_80: 80px;
+
+/* フォント・サイズ */
+$font-size_s: 10px;
+$font-size_m: 12px;
+$font-size_14: 14px;
+$font-size_default: 16px;
+$font-size_20: 20px;
+$font-size_l: 22px;
+$font-size_xl: 26px;
+$font-size_xxl: 30px;
+$font-size_xxxl: 34px;
+$font-size_4l: 38px;
+
+/* カラー */
+$font-color_default: hsl(0, 0%, 0%);
+$font-color_title: #711F1F;
+$font-color_sub01: #ffffff;
+$font-color_sub02: #121ba3;
+$font-color_sub03: rgb(253, 237, 237);
+
+$background-color_main: #d8d6d6bb;
+$background-color_header: #ffee02;
+$background-color_detail: whitesmoke;
+$background-color_tag: rgba(246, 245, 243, 0.924);
+$background-color_button01: rgb(202, 183, 183);
+$background-color_button02: #d3bfbf;
+$background-color_preview: rgb(218, 216, 216);
+$background-color_category: #b4da37c7;
+$background-color_follow_before: #f6de07;
+$background-color_follow_after: rgba(255, 145, 0, 0.822);
+$background-color_google: rgb(243, 77, 77);
+/* font-family */
+$font-family_title: 'Alegreya Sans SC', sans-serif;
+
+$font-family_main_title: 'Roboto Condensed',
+sans-serif;
+$font-family_sub01: 'Lato',
+'Noto Sans JP',
+'ヒラギノ角ゴ ProN',
+'Hiragino Kaku Gothic ProN',
+'メイリオ',
+Meiryo,
+'ＭＳ Ｐゴシック',
+'MS PGothic',
+sans-serif;
+$font-family_sub02: 'Oswald',
+sans-serif;
