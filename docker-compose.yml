@@ -23,14 +23,15 @@ services:
       - .:/var/www/html
   #データベースのコンテナ
   db:
+    container_name: db
     image: mysql:5.7
     ports:
       - '4036:3306'
     environment:
       MYSQL_DATABASE: guild_branch
-      MYSQL_USER: db_name
-      MYSQL_PASSWORD: db_password
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
       TZ: 'Asia/Tokyo'
     volumes:
       - docker-volume:/var/lib/mysql
