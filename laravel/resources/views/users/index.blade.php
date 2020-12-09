@@ -35,6 +35,13 @@
             </div>
           </div>
         </div>
+        <div class="l-container--wrapper u-pt_0 l-container--between">
+          <div class="p-panel--box">
+            <div class="p-panel-image">
+              <img src="./img/sample01.png" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
