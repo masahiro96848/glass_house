@@ -1,0 +1,18 @@
+body {
+  color: $font-color_default;
+  background-color: $background-color_main;
+  // margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  font-family: $font-family_title;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}

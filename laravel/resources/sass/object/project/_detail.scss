@@ -1,0 +1,166 @@
+.p-detail {
+  &--imageBox {
+    width: 600px;
+    height: 500px;
+    margin-right: 5%;
+
+    @include mq(lg) {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    @include mq(md) {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    @include mq(sm) {
+      width: 350px;
+      height: 300px;
+      margin-right: 0;
+    }
+  }
+
+  &--imageBox img {
+    width: 600px;
+    height: 500px;
+    object-fit: contain;
+
+    @include mq(lg) {
+      width: 100%;
+    }
+
+    @include mq(md) {
+      width: 100%;
+    }
+
+    @include mq(sm) {
+      width: 100%;
+      height: 300px;
+    }
+  }
+
+  &--body {
+    width: 40%;
+    height: auto;
+    background-color: $background-color_detail;
+    padding: $space_s;
+
+    @include mq(lg) {
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    @include mq(md) {
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    @include mq(sm) {
+      width: 100%;
+      margin-top: $space_xxxl;
+    }
+
+  }
+
+  &--title {
+    margin-left: $space_s;
+    margin-top: $space_l;
+    margin-bottom: $space_l;
+  }
+
+  &--sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  &--review {
+    padding: $space_m;
+    margin-top: $space_m;
+    & p {
+      word-break:break-all;
+    }
+  }
+
+  &--tag {
+    margin: $space_m;
+  }
+
+  &--tagList {
+    padding-right: $space_m;
+    background-color: $background-color_tag;
+    padding: $space_s $space_m;
+    border-radius: 20px;
+    border: 1px solid brown;
+    margin-right: $space_m;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  &--heart {
+    margin: $space_m;
+  }
+
+  &--price {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: $space_l;
+    font-size: $font-size_xl;
+
+    @include mq(sm) {
+      padding-right: $space_m;
+    }
+  }
+
+  &--purchase {
+    display: flex;
+    justify-content: flex-end;
+
+    @include mq(sm) {
+      display: block;
+      text-align: center;
+      padding-right: $space_s;
+    }
+  }
+
+  &--button {
+    display: inline-flex;
+    justify-content: flex-end;
+    padding: $space_m $space_l;
+    margin-right: $space_m;
+    font-size: $font-size_l;
+    background-color: $background-color_button01;
+
+    @include mq(sm) {
+      display: block;
+      margin-right: 0;
+    }
+
+    &--none {
+      display: none;
+    }
+  }
+
+  &--followContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: $space_m;
+    margin-top: $space_m;
+    font-size: $font-size_m;
+  }
+
+  &--followArea {
+    display: flex;
+  }
+
+  &--follow {
+    margin-right: $space_m;
+  }
+
+
+}

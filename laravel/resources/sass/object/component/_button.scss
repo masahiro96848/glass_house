@@ -1,0 +1,121 @@
+.c-button {
+  border: none;
+  padding: 15px $space_l;
+  &:focus {
+    outline: 0;
+  }
+
+  & a {
+    display: block;
+  }
+
+  &--submit {
+    display: block;
+    background-color: $background-color_button01;
+    margin: 0 auto;
+    font-size: $font-size_l;
+    margin-top: $space_xxl;
+    width: 50%;
+    border-radius: 50px;
+    outline: none;
+
+    &--search {
+      margin-left: $space_l;
+      display: inline-block;
+      width: 100px;
+    }
+
+    @include mq(sm) {
+      width: 80%;
+    }
+  }
+
+  &--profileEdit {
+    text-align: center;
+    border-radius: 50px;
+    background-color: $background-color_button02;
+    font-size: $font-size_xl;
+    border: none;
+    outline: none;
+    margin-top: $space_xl;
+
+    @include mq(sm) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  &--heart {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &--follow {
+    padding: $space_m $space_xl;
+    width: 150px;
+    margin-right: $space_m;
+    border-radius: 5px;
+    outline: none;
+
+    &--before {
+      background-color: $background-color_follow_before;
+      color: black;
+    }
+
+    &--after {
+      background-color: $background-color_follow_after;
+      color: white;
+    }
+
+    @include mq(sm) {
+      padding: 15px $space_xl;
+    }
+  }
+
+  &--review {
+    background-color: $background-color_button01;
+    width: 200px;
+    margin-top: $space_l;
+    border-radius: 5px;
+
+    @include mq(sm) {
+      display: block;
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 24px;
+    }
+  }
+
+  &--google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color_google;
+    color: white;
+    margin: 0 auto;
+    margin-top: $space_xxl;
+    width: 30%;
+    padding: $space_m $space_m;
+    border-radius: 50px;
+    outline: none;
+
+    & a {
+      color: white;
+    }
+
+    @include mq(md) {
+      width: 45%;
+    }
+
+    @include mq(sm) {
+      width: 70%;
+    }
+  }
+
+}
