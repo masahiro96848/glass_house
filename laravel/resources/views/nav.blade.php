@@ -22,7 +22,7 @@
       </li>
       @else
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('login')}}">ログイン</a></li>
-      <li class="p-menu--item "><a class="p-menu--link" href="">新規登録</a></li>    
+      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('register')}}">新規登録</a></li>    
       @endif
     </ul>
   </nav>
