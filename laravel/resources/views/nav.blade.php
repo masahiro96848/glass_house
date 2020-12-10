@@ -9,7 +9,7 @@
   </div>
   <nav class="p-menu--wrap">
     <ul class="p-menu--list u-pl_0 u-mt_l u-mb_l">
-      <li class="p-menu--item "><a class="p-menu--link" href="">仲間を探す</a></li>
+    <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.index')}}">仲間を探す</a></li>
       <li class="p-menu--item "><a class="p-menu--link" href="">仲間を募集</a></li>
       @if (Auth::check())
       <li class="p-menu--item "><a class="p-menu--link" href="">募集する</a></li>
@@ -21,7 +21,7 @@
         </form>
       </li>
       @else
-      <li class="p-menu--item "><a class="p-menu--link" href="">ログイン</a></li>
+      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('login')}}">ログイン</a></li>
       <li class="p-menu--item "><a class="p-menu--link" href="">新規登録</a></li>    
       @endif
     </ul>
