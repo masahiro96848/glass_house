@@ -66,9 +66,13 @@
 
   &--title {
     padding-top: 150px;
+    margin-left: 50px;
     // padding-left: 100px;
     // padding-right: 100px;
     margin-bottom: 20px;
+    @include mq(sm) {
+      margin-left: 20px;
+    }
     
     
 

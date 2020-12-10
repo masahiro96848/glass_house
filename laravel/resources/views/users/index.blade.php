@@ -5,7 +5,7 @@
 @section('content')
   @include('nav')
   <div class="l-container">
-    <div class="l-container--title u-ml_xxxl">
+    <div class="l-container--title">
       <h2 class="l-container--title--tag">仲間を探す</h2>
     </div>
     <div class="l-container--wrapper">
