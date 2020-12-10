@@ -5,8 +5,8 @@
 
   &--wrapper {
     padding-top: 80px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 80px;
 
     @include mq(md) {
@@ -66,9 +66,13 @@
 
   &--title {
     padding-top: 150px;
+    margin-left: 50px;
     // padding-left: 100px;
     // padding-right: 100px;
     margin-bottom: 20px;
+    @include mq(sm) {
+      margin-left: 20px;
+    }
     
     
 
