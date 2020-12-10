@@ -19,6 +19,13 @@
     border-radius: 50px;
     outline: none;
 
+    &:hover {
+      color: #fff;
+      background-color: rgb(236, 201, 86);
+      transition: 0.5s;
+      opacity: 0.8;
+    }
+
     &--search {
       margin-left: $space_l;
       display: inline-block;

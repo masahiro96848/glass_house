@@ -16,4 +16,8 @@ Route::get('/', function () {
 });
 
 
+// ユーザー情報
 Route::get('/users', 'UserController@index')->name('users.index');
+
+// ログイン関連
+Auth::routes();
