@@ -1,0 +1,59 @@
+.p-card {
+  margin-top: $space_l;
+  margin-bottom: $space_l;
+
+
+  &--area {
+    border: none;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 50px 20px;
+    box-shadow: 2px 2px  rgb(202, 202, 202);
+    margin-bottom: $space_xxl;
+  }
+
+  &--content {
+    display: flex;
+    width: 95%;
+  }
+
+  &--body {
+    margin-left: $space_xxl;
+    margin-right: $space_xxl;
+  }
+
+  &--title {
+    margin-bottom: $space_xl;
+  }
+
+  &--paragragh {
+    border-bottom: 2px solid rgb(158, 158, 158);
+    padding-bottom: $space_xxl;
+  }
+
+  &--userName {
+    font-weight: bold;
+  }
+
+  &--right {
+    width: 200px;
+    text-align: center;
+  }
+
+  &--apply {
+    border: none;
+    background-color: $background-color_button02;
+    color: #fff;
+    padding: $space_m $space_l;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background-color: rgb(194, 178, 173);
+      transition: 0.5s;
+      opacity: 0.8;
+    }
+  }
+
+}

@@ -18,9 +18,9 @@
     width: 50%;
     border-radius: 50px;
     outline: none;
-
+    cursor: pointer;
     &:hover {
-      color: #fff;
+      color: black;
       background-color: rgb(236, 201, 86);
       transition: 0.5s;
       opacity: 0.8;

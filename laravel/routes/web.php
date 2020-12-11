@@ -17,10 +17,14 @@ Route::get('/', function () {
 
 
 // ユーザー情報
-Route::get('/users', 'UserController@index')->name('users.index');
+Route::prefix('users')->name('users.')->group(function() {
+    Route::get('/', 'UserController@index')->name('index');
+    Route::get('/show', 'UserController@show')->name('show');
+});
 
 // ミーティング関連
-Route::prefix('meeting')->name('metting.')->group(function() {
+Route::prefix('meeting')->name('meeting.')->group(function() {
+    Route::get('/list', 'MeetingController@index')->name('index');
     Route::get('/new', 'MeetingController@new')->name('new');
 });
 
