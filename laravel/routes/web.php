@@ -19,5 +19,10 @@ Route::get('/', function () {
 // ユーザー情報
 Route::get('/users', 'UserController@index')->name('users.index');
 
+// ミーティング関連
+Route::prefix('meeting')->name('metting.')->group(function() {
+    Route::get('/new', 'MeetingController@new')->name('new');
+});
+
 // ログイン関連
 Auth::routes();
