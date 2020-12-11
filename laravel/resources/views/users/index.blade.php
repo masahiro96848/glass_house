@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container">
     <div class="l-container--title">
-      <h2 class="l-container--title--tag">仲間を探す</h2>
+      <h2 class="l-container--title--tag l-container--title_pl">仲間を探す</h2>
     </div>
     <div class="l-container--wrapper">
       <div class="l-container--searchArea">
