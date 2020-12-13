@@ -117,12 +117,17 @@
   &--reviewContainer {
     display: flex;
     flex-flow: wrap;
+    justify-content: space-between;
   }
 
   &--card {
     margin-bottom: $space_xxxl;
     margin-right: $space_xl;
-    width: 47%;
+    margin-left: $space_xl;
+    width: 44%;
+    background-color: beige;
+    border-radius: 10px;
+    padding: $space_l;
   }
 
   &--member {
