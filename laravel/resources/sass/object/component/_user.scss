@@ -14,7 +14,12 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      ;
+    }
+
+    &--md {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
     }
 
     &--lg {
@@ -26,9 +31,18 @@
     }
   }
 
-  &--name {
-    padding-left: $space_m;
+  &--box {
+    // text-align: center;
+  }
 
+  &--photo {
+    text-align: center;
+    margin-top: $space_m;
+  }
+
+  &--name {
+    font-weight: bold;
+    text-align: center;
     @include mq(sm) {
       font-size: $font-size_default;
       padding-left: $space_s;
@@ -41,6 +55,98 @@
       margin-bottom: $space_l;
     }
   }
+
+  &--review {
+    text-align: center;
+    margin-top: $space_m;
+  }
+
+  &--intro {
+    padding: $space_xxl $space_xxl;
+    border-bottom: 2px solid rgb(148, 146, 146);
+    margin-left: $space_xxl;
+    margin-right: $space_xxl;
+  }
+
+  &--like {
+    text-align: center;
+    margin-top: $space_m;
+  }
+
+  &--apply {
+    text-align: center;
+    
+  }
+
+  &--feature {
+    padding: $space_xxl $space_xxl;
+    border-bottom: 2px solid rgb(148, 146, 146);
+    margin-left: $space_xxl;
+    margin-right: $space_xxl;
+  }
+
+  &--Container {
+    display: flex;
+    margin-bottom: $space_l;
+  }
+
+  &--featureTitle {
+    font-weight: bold;
+    width: 200px;
+  }
+
+  &--featureArea {
+    display: flex;
+    flex-flow: wrap;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &--categoryName {
+    border: 1px solid black;
+    padding: $space_s $space_m;
+    margin-right: $space_l;
+    border-radius: 10px;
+  }
+
+
+  &--reviewArea {
+    padding: $space_xxl $space_xxl;
+  }
+
+  &--reviewContainer {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  &--card {
+    margin-bottom: $space_xxxl;
+    margin-right: $space_xl;
+    width: 47%;
+  }
+
+  &--member {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &--myName {
+    font-weight: bold;
+  }
+
+  &--reviewContainer {
+    padding: $space_l $space_xxl;
+
+  }
+
+  &--title {
+    font-weight: bold;
+    margin-top: $space_l;
+  }
+
+
+
 
   &--avator {
     text-align: center;

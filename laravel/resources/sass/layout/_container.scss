@@ -105,12 +105,19 @@
   &--layout {
       width: 60%;
       margin: 0 auto;
-    }
 
-    &--border {
-      border: 4px box solid;
-    }
+      &--lg {
+        width: 70%;
+        margin: 0 auto;     
+      }
+  }
 
+  &--border {
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: $space_xxl $space_xxxl;
+  }
   &--between {
     display: flex;
     flex-direction: row;
