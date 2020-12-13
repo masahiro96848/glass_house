@@ -11,6 +11,11 @@ class MeetingController extends Controller
         return view('meeting.index');
     }
 
+    public function show()
+    {
+        return view('meeting.show');
+    }
+
     public function new()
     {
         return view('meeting.new');
