@@ -19,12 +19,6 @@
               <div class="c-user--review">
                 <p>🌟🌟🌟🌟🌟　レビュー５件</p>
               </div>
-              <div class="c-user--like">
-                <p>気になるメンバーに登録</p>
-              </div>
-              <div class="c-user--apply">
-                <p class="p-card--apply">申請する</p>
-              </div>
               <p class="c-user--intro">仕事の話でも、そうでなくても、なんでもゆるっと気軽に話しませんか。 本日15時くらいまでの間でお時間合う方、よろしくお願いします。</p>
             </div>
             <div class="c-user--feature">

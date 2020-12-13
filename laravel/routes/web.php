@@ -28,5 +28,8 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::get('/new', 'MeetingController@new')->name('new');
 });
 
+// プロフィール
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+
 // ログイン関連
 Auth::routes();
