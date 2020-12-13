@@ -42,6 +42,7 @@
   }
 
   &--apply {
+    display: inline-block;
     border: none;
     background-color: $background-color_button02;
     color: #fff;
