@@ -16,19 +16,19 @@
               @csrf
               <label for="nickname">名前</label>
               <div class="c-form">
-                <input type="text" class="c-form--control" name="name" required value="{{ old('name')}}">
+                <input type="text" class="c-form--control" name="name"  value="{{ old('name')}}">
               </div>
               <label for="email">メールアドレス</label>
               <div class="c-form">
-                <input type="text" class="c-form--control" name="email" required value="{{ old('email')}}">
+                <input type="text" class="c-form--control" name="email"  value="{{ old('email')}}">
               </div>
               <label for="email">パスワード</label>
               <div class="c-form">
-                <input type="password" class="c-form--control" name="password" required>
+                <input type="password" class="c-form--control" name="password">
               </div>
               <label for="email">パスワード再確認</label>
               <div class="c-form">
-                <input type="password" class="c-form--control" name="password_confirmation" required>
+                <input type="password" class="c-form--control" name="password_confirmation">
               </div>
                 <button class="c-button c-button--submit " type="submit">ユーザー登録</button>
                 <p class="c-form--link">ログインは<a href="{{ route('login')}}">こちら</a></p>

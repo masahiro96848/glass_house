@@ -16,11 +16,11 @@
               @csrf
               <label for="email">メールアドレス</label>
               <div class="c-form">
-                <input type="text" class="c-form--control" name="email" required value="{{ old('email')}}">
+                <input type="text" class="c-form--control" name="email"  value="{{ old('email')}}">
               </div>
               <label for="email">パスワード</label>
               <div class="c-form">
-                <input type="password" class="c-form--control" name="password" required>
+                <input type="password" class="c-form--control" name="password" >
               </div>
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="remember-me" id="rememberCheck">
