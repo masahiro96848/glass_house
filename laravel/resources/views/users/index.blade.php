@@ -10,7 +10,7 @@
     </div>
     <div class="l-container--wrapper">
       <div class="l-container--searchArea">
-        <div class="p-searchSelect">
+        <div class="p-search--select">
           <span class="p-search--title">評価順</span>
             <select name="" id="" class="c-form--control c-form--control--select">
               <option value="">選択してください</option>
