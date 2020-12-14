@@ -1,0 +1,55 @@
+.p-confirm {
+
+  &--opponent {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: $space_xxxl;
+  }
+
+  &--image {
+    text-align: center;
+    color: black;
+  }
+
+  &--intro {
+    margin-top: $space_xxl;
+    color: black;
+    line-height: 2.4;
+    margin-left: $space_xxxl;
+    margin-right: $space_xxxl;
+  }
+
+  &--mb {
+    margin-bottom: 80px;
+  }
+
+  &--name {
+    margin-left: $space_m;
+  }
+
+  &--preserve {
+    text-align: center;
+    margin-top: $space_xxxl;
+  }
+
+  &--apply {
+    display: inline-block;
+    border: none;
+    background-color: $background-color_button02;
+    color: #fff;
+    padding: $space_m $space_l;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background-color: rgb(194, 178, 173);
+      transition: 0.5s;
+      opacity: 0.8;
+    }
+  }
+
+  &--cancel {
+    margin-top: $space_xxxl;
+  }
+}
