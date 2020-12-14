@@ -32,5 +32,11 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
 // プロフィール
 Route::get('/profile', 'ProfileController@index')->name('profile.index');
 
+// マイページ
+Route::prefix('mypage')->name('mypage.')->group(function() {
+    Route::get('/index', 'MypageController@index')->name('index');
+    Route::get('/matching', 'MypageController@matching')->name('matching');
+});
+
 // ログイン関連
 Auth::routes();
