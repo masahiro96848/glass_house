@@ -27,6 +27,7 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::get('/list', 'MeetingController@index')->name('index');
     Route::get('/show', 'MeetingController@show')->name('show');
     Route::get('/new', 'MeetingController@new')->name('new');
+    Route::get('/confirm', 'MeetingController@confirm')->name('confirm');
 });
 
 // プロフィール
