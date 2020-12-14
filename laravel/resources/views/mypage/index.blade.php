@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout">
+      <div class="l-container--layout--lg">
         <div class="p-card--tabArea">
           <div class="p-card--tab">
             <h5 class="p-card--button">気になるリスト</h5>
