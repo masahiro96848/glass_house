@@ -15,4 +15,9 @@ class UserController extends Controller
     {
         return view('users.show');
     }
+
+    public function new()
+    {
+        return view('users.new');
+    }
 }

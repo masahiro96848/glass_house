@@ -83,7 +83,7 @@
 
   &--Container {
     display: flex;
-    margin-bottom: $space_l;
+    margin-bottom: $space_xxl;
   }
 
   &--featureTitle {
@@ -145,7 +145,23 @@
     font-weight: bold;
     margin-top: $space_l;
   }
+  
+  &--input {
+    background-color: #f9fafb;
+    width: 100%;
+    border: 1px solid #f9fafb;
+    padding: $space_m;
+    border-radius: 5px;
+  }
 
+  &--text {
+    background-color: #f9fafb;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #f9fafb;
+    padding: $space_m;
+    border-radius: 5px;
+  }
 
 
 
