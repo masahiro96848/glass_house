@@ -125,4 +125,21 @@
     }
   }
 
+  &--message {
+    display: block;
+    border: none;
+    background-color: $background-color_button02;
+    color: #fff;
+    padding: $space_m $space_l;
+    border-radius: 20px;
+    margin: 0 auto;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background-color: rgb(194, 178, 173);
+      transition: 0.5s;
+      opacity: 0.8;
+    }
+  }
+
 }

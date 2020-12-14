@@ -25,4 +25,9 @@ class MeetingController extends Controller
     {
         return view('meeting.confirm');
     }
+
+    public function message()
+    {
+        return view('meeting.message');
+    }
 }
