@@ -17,11 +17,27 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function edit($name)
+    public function edit()
     {
-        $user = User::where('name', $name)->first();
+        $user = Auth::user();
         return view('profile.edit', [
             'user' => $user
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'intro' => $request->intro,
+            'talk_theme' => $request->talk_theme,
+            'speaking' => $request->speaking
+        ]);
+
+        return redirect()->route('profile.home', [
+            'name' => $request->name,
         ]);
     }
 }

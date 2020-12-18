@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '●◎のプロフィール')
+@section('title', $user->name. 'のプロフィール')
 
 @section('content')
   @include('nav')
@@ -19,7 +19,7 @@
               <div class="c-user--review">
                 <p>🌟🌟🌟🌟🌟　レビュー５件</p>
               </div>
-              <p class="c-user--intro">仕事の話でも、そうでなくても、なんでもゆるっと気軽に話しませんか。 本日15時くらいまでの間でお時間合う方、よろしくお願いします。</p>
+              <p class="c-user--intro">{{ $user->intro}}</p>
             </div>
             <div class="c-user--feature">
               <div class="c-user--Container">
