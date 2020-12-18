@@ -42,10 +42,14 @@
                 <div class="p-panel-image">
                   <img src="./img/wed.jpeg" alt="" class="c-user--image">
                 </div>
-                <p class="p-panel--name">{{ $user->name }}</p>
+                <p class="p-panel--name">
+                  {{ $user->name }}
+                </p>
               </div>
               <div class="c-user--detail">
-                はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
+                <p class="c-user--body">
+                  {{ $user->intro }}
+                </p>
               </div>
               <div class="p-panel--body">
                 <div class="c-review--star">
