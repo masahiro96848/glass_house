@@ -36,7 +36,7 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
 Route::prefix('profile')->name('profile.')->group(function() {
     Route::get('/home', 'ProfileController@home')->name('home');
     Route::get('/edit', 'ProfileController@edit')->name('edit');
-    Route::post('/update', 'ProfileController@edit');
+    Route::put('/update', 'ProfileController@update')->name('update');
 });
 
 // マイページ

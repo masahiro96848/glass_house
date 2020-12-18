@@ -11,11 +11,16 @@
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form method="post" action="{{ route('profile.update')}}" enctype="">
           @csrf
+          @method('PUT')
           <label for="title">名前</label>
           <div class="c-post">
             <input type="text" class="c-form--control" placeholder="20文字以内"  name="name"   value="{{ $user->name ?? old('name')}}">
+          </div>
+          <label for="title">メールアドレス</label>
+          <div class="c-post">
+            <input type="text" class="c-form--control" placeholder="guild1234@○○.com"  name="email"   value="{{ $user->email ?? old('email')}}">
           </div>
           <label for="review">自己紹介</label>
           <div class="c-post">

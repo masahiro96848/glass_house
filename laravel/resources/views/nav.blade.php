@@ -13,7 +13,7 @@
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('meeting.new')}}">仲間を募集</a></li>
       @if (Auth::check())
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('meeting.new')}}">募集する</a></li>
-      <li class="p-menu--item "><a class="p-menu--link" href="">マイページ</a></li>
+      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('profile.home')}}">マイページ</a></li>
       <li class="p-menu--item ">
         <form id="logout-form" method="POST" action="{{ route('logout') }}" class="p-menu--logout">
           @csrf
