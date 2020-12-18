@@ -130,6 +130,13 @@
     flex-wrap: wrap;
   }
 
+  &--flexstart {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
   &--between::after {
     content: '';
     width: 30%;

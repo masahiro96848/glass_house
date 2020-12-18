@@ -14,7 +14,7 @@
             </div>
             <div class="c-user--body">
               <div class="c-user--detail">
-                <h3 class="c-user--name">masahiro</h3>
+                <h3 class="c-user--name">{{ $user->name }}</h3>
               </div>
               <div class="c-user--review">
                 <p>🌟🌟🌟🌟🌟　レビュー５件</p>
