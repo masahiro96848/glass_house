@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function home($name)
+    public function home()
     {
-        $user = User::where('name', $name)->first();
-        return view('profile.index', [
+        // $user = User::where('name', $name)->first();
+        $user = Auth::user();
+        return view('profile.home', [
             'user' => $user
         ]);
     }
