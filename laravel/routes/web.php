@@ -33,7 +33,11 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
 });
 
 // プロフィール
-Route::get('/profile', 'ProfileController@index')->name('profile.index');
+Route::prefix('profile')->name('profile.')->group(function() {
+    Route::get('/home', 'ProfileController@home')->name('home');
+    Route::get('/edit', 'ProfileController@edit')->name('edit');
+    Route::post('/update', 'ProfileController@edit');
+});
 
 // マイページ
 Route::prefix('mypage')->name('mypage.')->group(function() {

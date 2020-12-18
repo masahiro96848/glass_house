@@ -35,117 +35,31 @@
             </div>
           </div>
         </div>
-        <div class="l-container--wrapper u-pt_0 l-container--between">
-          <div class="p-panel--box c-shadow--image">
-            <div class="p-panel--area">
-              <div class="p-panel-image">
-                <img src="./img/wed.jpeg" alt="" class="c-user--image">
+        <div class="l-container--wrapper u-pt_0 l-container--flexstart">
+          @foreach($users as $user)
+            <div class="p-panel--box c-shadow--image">
+              <div class="p-panel--area">
+                <div class="p-panel-image">
+                  <img src="./img/wed.jpeg" alt="" class="c-user--image">
+                </div>
+                <p class="p-panel--name">{{ $user->name }}</p>
               </div>
-              <p class="p-panel--name">masahiro</p>
-            </div>
-            <div class="c-user--detail">
-              はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
-            </div>
-            <div class="p-panel--body">
-              <div class="c-review--star">
-                🌟🌟🌟🌟🌟　レビュー４件
+              <div class="c-user--detail">
+                はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
               </div>
-              <div class="c-user--likes">
-                気になるリストに登録
-              </div>
-              <div class="c-user--count">
-                5人が気になるリストに登録済み
-              </div>
-            </div>
-          </div>
-                    <div class="p-panel--box c-shadow--image">
-            <div class="p-panel--area">
-              <div class="p-panel-image">
-                <img src="./img/wed.jpeg" alt="" class="c-user--image">
-              </div>
-              <p class="p-panel--name">masahiro</p>
-            </div>
-            <div class="c-user--detail">
-              はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
-            </div>
-            <div class="p-panel--body">
-              <div class="c-review--star">
-                🌟🌟🌟🌟🌟　レビュー４件
-              </div>
-              <div class="c-user--likes">
-                気になるリストに登録
-              </div>
-              <div class="c-user--count">
-                5人が気になるリストに登録済み
+              <div class="p-panel--body">
+                <div class="c-review--star">
+                  🌟🌟🌟🌟🌟　レビュー４件
+                </div>
+                <div class="c-user--likes">
+                  気になるリストに登録
+                </div>
+                <div class="c-user--count">
+                  5人が気になるリストに登録済み
+                </div>
               </div>
             </div>
-          </div>
-                    <div class="p-panel--box c-shadow--image">
-            <div class="p-panel--area">
-              <div class="p-panel-image">
-                <img src="./img/wed.jpeg" alt="" class="c-user--image">
-              </div>
-              <p class="p-panel--name">masahiro</p>
-            </div>
-            <div class="c-user--detail">
-              はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
-            </div>
-            <div class="p-panel--body">
-              <div class="c-review--star">
-                🌟🌟🌟🌟🌟　レビュー４件
-              </div>
-              <div class="c-user--likes">
-                気になるリストに登録
-              </div>
-              <div class="c-user--count">
-                5人が気になるリストに登録済み
-              </div>
-            </div>
-          </div>
-                    <div class="p-panel--box c-shadow--image">
-            <div class="p-panel--area">
-              <div class="p-panel-image">
-                <img src="./img/wed.jpeg" alt="" class="c-user--image">
-              </div>
-              <p class="p-panel--name">masahiro</p>
-            </div>
-            <div class="c-user--detail">
-              はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
-            </div>
-            <div class="p-panel--body">
-              <div class="c-review--star">
-                🌟🌟🌟🌟🌟　レビュー４件
-              </div>
-              <div class="c-user--likes">
-                気になるリストに登録
-              </div>
-              <div class="c-user--count">
-                5人が気になるリストに登録済み
-              </div>
-            </div>
-          </div>
-                    <div class="p-panel--box c-shadow--image">
-            <div class="p-panel--area">
-              <div class="p-panel-image">
-                <img src="./img/wed.jpeg" alt="" class="c-user--image">
-              </div>
-              <p class="p-panel--name">masahiro</p>
-            </div>
-            <div class="c-user--detail">
-              はじめまして　社会人4年目です。 Sierにて営業職しています！ 投資も歴で言ったら結構長くやっています。
-            </div>
-            <div class="p-panel--body">
-              <div class="c-review--star">
-                🌟🌟🌟🌟🌟　レビュー４件
-              </div>
-              <div class="c-user--likes">
-                気になるリストに登録
-              </div>
-              <div class="c-user--count">
-                5人が気になるリストに登録済み
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
