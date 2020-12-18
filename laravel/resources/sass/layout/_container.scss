@@ -137,6 +137,12 @@
     flex-wrap: wrap;
   }
 
+  &--flexstart::after {
+    content: '';
+    width: 25%;
+    display: block;
+  }
+
   &--between::after {
     content: '';
     width: 30%;

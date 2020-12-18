@@ -64,6 +64,13 @@
     margin-right: $space_xxl;
   }
 
+  &--body {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
   &--like {
     text-align: center;
     margin-top: $space_m;
