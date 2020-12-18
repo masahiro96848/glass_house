@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('intro', 200)->nullable();
             $table->string('profile_image')->nullable();
-            $table->string('talk_theme')->nullanle();
+            $table->string('talk_theme')->nullable();
             $table->string('speaking')->nullable();
             $table->rememberToken();
             $table->timestamps();

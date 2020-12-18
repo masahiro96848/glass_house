@@ -9,7 +9,7 @@
         <div class="l-container--form">
           <div class="c-form--container">
             @include('error')
-            <h3 class="c-form--title">Register</h3>
+            <h3 class="c-form--title">新規登録</h3>
           </div>
           <div class="c-form--body">
             <form method="post" action="{{ route('register')}}">
@@ -30,7 +30,7 @@
               <div class="c-form">
                 <input type="password" class="c-form--control" name="password_confirmation">
               </div>
-                <button class="c-button c-button--submit " type="submit">ユーザー登録</button>
+                <button class="c-button c-button--submit" type="submit">ユーザー登録</button>
                 <p class="c-form--link">ログインは<a href="{{ route('login')}}">こちら</a></p>
             </form>
           </div>
