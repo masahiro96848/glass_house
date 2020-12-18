@@ -17,7 +17,7 @@
       <li class="p-menu--item ">
         <form id="logout-form" method="POST" action="{{ route('logout') }}" class="p-menu--logout">
           @csrf
-            <button id="logout" type="submit" class="p-menu--link" onfocus="this.blur();">Logout</button> 
+            <button id="logout" type="submit" class="p-menu--link u-bg--none" onfocus="this.blur();">ログアウト</button> 
         </form>
       </li>
       @else
