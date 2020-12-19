@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'メンバー募集を追加する')
+@section('title', 'メンバー募集を作る')
 
 @section('content')
   @include('nav')
@@ -11,7 +11,7 @@
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('meeting.create')}}" enctype="">
           @csrf
             @include('meeting.form')
           <button class="c-button c-button--submit " type="submit">公開する</button>
