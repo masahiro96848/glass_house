@@ -60,9 +60,13 @@
   &--intro {
     padding: $space_xxl $space_xxl;
     border-bottom: 2px solid rgb(148, 146, 146);
-    line-height: 2.5;
+    line-height: 1.7;
     margin-left: $space_xxl;
     margin-right: $space_xxl;
+  }
+
+  &--body {
+    line-height: 1.8;
   }
 
   &--clamp {
@@ -87,6 +91,10 @@
     border-bottom: 2px solid rgb(148, 146, 146);
     margin-left: $space_xxl;
     margin-right: $space_xxl;
+  }
+
+  &--featureBody {
+    line-height: 1.7;
   }
 
   &--Container {
