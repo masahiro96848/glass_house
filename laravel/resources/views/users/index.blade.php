@@ -35,34 +35,37 @@
             </div>
           </div>
         </div>
+
         <div class="l-container--wrapper u-pt_0 l-container--flexstart">
           @foreach($users as $user)
-            <div class="p-panel--box c-shadow--image">
-              <div class="p-panel--area">
-                <div class="p-panel-image">
-                  <img src="./img/wed.jpeg" alt="" class="c-user--image">
+            <a href="{{ route('users.show', [$user->name])}}">
+              <div class="p-panel--box c-shadow--image">
+                <div class="p-panel--area">
+                  <div class="p-panel-image">
+                    <img src="./img/wed.jpeg" alt="" class="c-user--image">
+                  </div>
+                  <p class="p-panel--name">
+                    {{ $user->name }}
+                  </p>
                 </div>
-                <p class="p-panel--name">
-                  {{ $user->name }}
-                </p>
+                <div class="c-user--detail">
+                  <p class="c-user--clamp">
+                    {{ $user->intro }}
+                  </p>
+                </div>
+                <div class="p-panel--body">
+                  <div class="c-review--star">
+                    🌟🌟🌟🌟🌟　レビュー４件
+                  </div>
+                  <div class="c-user--likes">
+                    気になるリストに登録
+                  </div>
+                  <div class="c-user--count">
+                    5人が気になるリストに登録済み
+                  </div>
+                </div>
               </div>
-              <div class="c-user--detail">
-                <p class="c-user--body">
-                  {{ $user->intro }}
-                </p>
-              </div>
-              <div class="p-panel--body">
-                <div class="c-review--star">
-                  🌟🌟🌟🌟🌟　レビュー４件
-                </div>
-                <div class="c-user--likes">
-                  気になるリストに登録
-                </div>
-                <div class="c-user--count">
-                  5人が気になるリストに登録済み
-                </div>
-              </div>
-            </div>
+            </a>
           @endforeach
         </div>
       </div>

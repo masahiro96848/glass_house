@@ -19,7 +19,7 @@ Route::get('/', function () {
 // ユーザー情報
 Route::prefix('users')->name('users.')->group(function() {
     Route::get('/', 'UserController@index')->name('index');
-    Route::get('/show', 'UserController@show')->name('show');
+    Route::get('/show/{name}', 'UserController@show')->name('show');
     Route::get('/review/new', 'UserController@new')->name('new');
 });
 

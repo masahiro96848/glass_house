@@ -60,11 +60,12 @@
   &--intro {
     padding: $space_xxl $space_xxl;
     border-bottom: 2px solid rgb(148, 146, 146);
+    line-height: 2.5;
     margin-left: $space_xxl;
     margin-right: $space_xxl;
   }
 
-  &--body {
+  &--clamp {
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;

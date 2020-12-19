@@ -15,9 +15,12 @@ class UserController extends Controller
         ]);
     }
 
-    public function show() 
+    public function show($name) 
     {
-        return view('users.show');
+        $user = User::where('name', $name)->first();
+        return view('users.show', [
+            'user' => $user
+        ]);
     }
 
     public function new()
