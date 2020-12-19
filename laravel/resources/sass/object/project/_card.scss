@@ -15,7 +15,7 @@
 
   &--content {
     display: flex;
-    width: 95%;
+    width: 100%;
   }
 
   &--body {
@@ -23,13 +23,24 @@
     margin-right: $space_xxl;
   }
 
+  &--box {
+    margin-left: $space_xxl;
+    margin-right: $space_xxl;
+    width: 75%;
+  }
+
   &--title {
     margin-bottom: $space_xl;
+    font-weight: bold;
   }
 
   &--paragragh {
     border-bottom: 2px solid rgb(158, 158, 158);
-    padding-bottom: $space_xxl;
+    line-height: 2.0;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   &--userName {
