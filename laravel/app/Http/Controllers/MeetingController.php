@@ -15,9 +15,12 @@ class MeetingController extends Controller
         ]);
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('meeting.show');
+        $job = Job::where('id', $id)->first();
+        return view('meeting.show', [
+            'job' => $job
+        ]);
     }
 
     public function new()
