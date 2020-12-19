@@ -33,6 +33,7 @@
         </div>
         <div class="p-card">
           @foreach($jobs as $job)
+          <a href="{{ route('meeting.show', [$job->id])}}">
             <div class="p-card--area">
               <div class="p-card--content">
                 <div class="p-card--photo">
@@ -55,6 +56,7 @@
                 </div>
               </div>
             </div>
+          </a>
           @endforeach
         </div>
       </div>
