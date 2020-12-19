@@ -9,7 +9,10 @@ class MeetingController extends Controller
 {
     public function index()
     {
-        return view('meeting.index');
+        $jobs = Job::all();
+        return view('meeting.index', [
+            'jobs' => $jobs
+        ]);
     }
 
     public function show()

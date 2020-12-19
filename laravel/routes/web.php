@@ -26,7 +26,7 @@ Route::prefix('users')->name('users.')->group(function() {
 // ミーティング関連
 Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::get('/list', 'MeetingController@index')->name('index');
-    Route::get('/show', 'MeetingController@show')->name('show');
+    Route::get('/show/{id}', 'MeetingController@show')->name('show');
     Route::get('/new', 'MeetingController@new')->name('new');
     Route::post('/create', 'MeetingController@create')->name('create');
     Route::get('/confirm', 'MeetingController@confirm')->name('confirm');
