@@ -38,6 +38,11 @@ class MeetingController extends Controller
         return redirect()->route('meeting.index');
     }
 
+    public function offer()
+    {
+        return view('meeting.offer');
+    }
+
     public function confirm()
     {
         return view('meeting.confirm');

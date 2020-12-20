@@ -29,6 +29,8 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::get('/show/{id}', 'MeetingController@show')->name('show');
     Route::get('/new', 'MeetingController@new')->name('new');
     Route::post('/create', 'MeetingController@create')->name('create');
+    Route::get('/offer', 'MeetingController@offer')->name('offer');
+    Route::post('offer', 'MeetingController@store')->name('store');
     Route::get('/confirm', 'MeetingController@confirm')->name('confirm');
     Route::get('/message', 'MeetingController@message')->name('message');
 });

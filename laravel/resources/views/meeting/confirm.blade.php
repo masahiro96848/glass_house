@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="p-member--layout p-member--pt">
+      <div class="p-member--layout">
         <h3 class="p-member--other">testさんにzoom申請</h3>
         <div class="p-member--border">
           <div class="p-confirm--opponent">
