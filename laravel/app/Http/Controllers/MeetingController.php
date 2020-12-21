@@ -48,6 +48,22 @@ class MeetingController extends Controller
         return view('meeting.confirm');
     }
 
+    public function store(Requerst $request, $id, $name) 
+    {
+        $user = User::where('name', $name)->first();
+
+        if($user->id === $request->user()->id) {
+            return abort('404', 'Cannot offer yourself');
+        }
+
+        $request->user()->offers()->detach($name);
+        $request->user()->offers()->attach($name);
+
+        return redirect()->route('meeting.offer', [
+            'id' => $id,
+        ]);
+    }
+
     public function message()
     {
         return view('meeting.message');

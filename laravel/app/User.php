@@ -36,4 +36,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function offers()
+    {
+        return $this->belongsToMany('App\User', 'offers', 'offer_id', 'offered_id')->withTimestamps();
+    }
+
+    public function offered()
+    {
+        return $this->belongsToMany('App\User', 'offers', 'offered_id', 'offer_id')->withTimestamps();
+    }
+
+    public function isOfferedBy(?User $user):bool
+    {
+        return $user
+            ?(bool)$this->offers->where('id', $user->id)->count()
+            : false;
+    }
 }
