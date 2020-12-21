@@ -23,7 +23,7 @@
                 <p>気になるメンバーに登録</p>
               </div>
               <div class="c-user--apply">
-                <p class="p-card--apply">申請する</p>
+                <a href="{{route('meeting.confirm', ['id' => $user->id])}}"><p class="p-card--apply">申請する</p></a> 
               </div>
               <p class="c-user--intro">{{ $user->intro}}</p>
             </div>
