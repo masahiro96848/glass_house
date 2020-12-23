@@ -38,15 +38,26 @@ class User extends Authenticatable
     ];
 
 
-    public function offers()
+    public function messages()
     {
-        return $this->belongsToMany('App\User', 'offers', 'offer_id', 'offered_id')->withTimestamps();
+        return $this->hasMany(Message::class);
     }
 
-    public function offered()
+    public function offers()
     {
-        return $this->belongsToMany('App\User', 'offers', 'offered_id', 'offer_id')->withTimestamps();
+        return $this->belongsToMany(Offer::class, 'offers', 'apply_id', 'approve_id');
     }
+
+    public function applies()
+    {
+        return $this->belongsToMany(User::class, 'offers', 'apply_id', 'approve_id');
+    }
+
+    public function approves()
+    {
+        return $this->belongsToMany(User::class, 'offers', 'approve_id','apply_id');
+    }
+
 
     public function isOfferedBy(?User $user):bool
     {

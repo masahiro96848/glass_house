@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Job;
+use App\Offer;
+use App\Message;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class MeetingController extends Controller
@@ -40,27 +44,33 @@ class MeetingController extends Controller
 
     public function offer()
     {
-        return view('meeting.offer');
+        // $offer_id = Offer::where('id', $id)->first();
+        return view('meeting.offer' );
     }
 
-    public function confirm()
+    public function confirm($id)
     {
-        return view('meeting.confirm');
+        $user = User::where('id', $id)->first();
+        $currnet_user = Auth::user();
+        return view('meeting.confirm', [
+            'user' => $user,
+            'current_user' => $currnet_user,
+        ]);
     }
 
-    public function store(Requerst $request, $id, $name) 
+    public function apply(Request $request, $id) 
     {
-        $user = User::where('name', $name)->first();
-
-        if($user->id === $request->user()->id) {
-            return abort('404', 'Cannot offer yourself');
-        }
-
-        $request->user()->offers()->detach($name);
-        $request->user()->offers()->attach($name);
+        $current_user = Auth::user();
+        $user = User::where('id', $id)->first();
+        $offer = Offer::create([
+            'apply_id' => $request->user()->id,
+            'approve_id' => $user->id,
+            'status' => $request->status,
+        ]);
+        
 
         return redirect()->route('meeting.offer', [
-            'id' => $id,
+            'id' => $offer->id,
         ]);
     }
 
