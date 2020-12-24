@@ -55,7 +55,7 @@ class User extends Authenticatable
 
     public function approves()
     {
-        return $this->belongsToMany(User::class, 'offers', 'approve_id','apply_id');
+        return $this->belongsToMany(Offer::class, 'users', 'approve_id', 'id');
     }
 
 
