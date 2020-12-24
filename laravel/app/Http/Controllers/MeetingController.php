@@ -42,10 +42,14 @@ class MeetingController extends Controller
         return redirect()->route('meeting.index');
     }
 
-    public function offer()
+    public function offer($id)
     {
-        // $offer_id = Offer::where('id', $id)->first();
-        return view('meeting.offer' );
+        $offer = Offer::find($id);
+        // dd($offer->approve);
+        return view('meeting.offer', [
+            'offer' => $offer,
+            // 'approve' => $approve,
+        ]);
     }
 
     public function confirm($id)

@@ -7,7 +7,7 @@
   <div class="l-container--content">
     <div class="l-container--wrapper">
       <div class="p-member--layout">
-        <h3 class="p-member--other">testさんにzoom申請</h3>
+        <h3 class="p-member--other">{{ $offer->approve->name }}zoom申請</h3>
         <div class="p-member--border">
           <div class="p-confirm--opponent">
             <p>申請したユーザー</p>
@@ -65,3 +65,5 @@
   </div>
   @include('footer')
 @endsection
+
+{{-- {{dd($offer->approve->name)}} --}}

@@ -10,9 +10,9 @@ class Offer extends Model
         'apply_id', 'approve_id', 'status'
     ];
 
-    public function user()
+    public function approve()
     {
-        return $this->belongsToMany(User::class, 'users' );
+        return $this->belongsToMany(User::class, 'offers', 'id','approve_id');
     }
 
     public function messages()
