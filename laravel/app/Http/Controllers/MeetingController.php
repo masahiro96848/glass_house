@@ -67,10 +67,9 @@ class MeetingController extends Controller
         $current_user = Auth::user();
         $user = User::where('id', $id)->first();
         $offer = Offer::create([
-            'apply_id' => $request->user()->id,
-            'approve_id' => $user->id,
             'status' => $request->status,
         ]);
+        $request->user()->applies()->attach($user);
         
 
         return redirect()->route('meeting.offer', [

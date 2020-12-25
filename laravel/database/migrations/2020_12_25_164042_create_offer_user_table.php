@@ -15,11 +15,9 @@ class CreateOfferUserTable extends Migration
     {
         Schema::create('offer_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('apply_id')->unsigned();
-            $table->integer('approve_id')->unsigned();
+            $table->integer('matching_id')->unsigned();
             $table->integer('offer_id')->unsigned();
-            $table->foreign('apply_id')->references('id')->on('users')->OnDelete('cascade');
-            $table->foreign('approve_id')->references('id')->on('users')->OnDelete('cascade');
+            $table->foreign('matching_id')->references('id')->on('matchings')->OnDelete('cascade');
             $table->foreign('offer_id')->references('id')->on('offers')->OnDelete('cascade');
             $table->timestamps();
         });
