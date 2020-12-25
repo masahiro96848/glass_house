@@ -15,11 +15,7 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('apply_id')->unsigned();
-            $table->integer('approve_id')->unsigned();
             $table->enum('status', ['承認待ち', '承認済み', '取消済み'])->nullable();
-            $table->foreign('apply_id')->references('id')->on('users')->OnDelete('cascade');
-            $table->foreign('approve_id')->references('id')->on('users')->OnDelete('cascade');
             $table->timestamps();
         });
     }
