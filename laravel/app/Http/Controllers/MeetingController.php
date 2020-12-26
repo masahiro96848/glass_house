@@ -52,6 +52,7 @@ class MeetingController extends Controller
         ]);
     }
 
+    // 申請確認画面
     public function confirm($id)
     {
         $user = User::where('id', $id)->first();
@@ -69,11 +70,11 @@ class MeetingController extends Controller
         $offer = Offer::create([
             'status' => $request->status,
         ]);
-        $request->user()->applies()->attach($user);
-        
+        $request->user()->matching()->attach($user);
 
         return redirect()->route('meeting.offer', [
             'id' => $offer->id,
+            ''
         ]);
     }
 
