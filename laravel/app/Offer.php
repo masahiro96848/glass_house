@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     protected $fillable = [
-        'apply_id', 'approve_id', 'status'
+        'status'
     ];
 
     public function user()
     {
-        return $this->belongsToMany(Offer::class, 'offer_user', 'offer_id', 'id');
+        return $this->belongsToMany(User::class, 'offers');
     }
 
     public function messages()

@@ -43,14 +43,14 @@ class User extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
-    public function offers()
+    public function offer()
     {
-        return $this->belongToMany(Offer::class);
+        return $this->belongsToMany(Offer::class, 'offer_user', 'matching_id', 'offer_id');
     }
 
-    public function applies()
+    public function matching()
     {
-        return $this->belongsToMany(User::class, 'offer_user', 'apply_id', 'approve_id');
+        return $this->belongsToMany(User::class, 'matchings', 'apply_id', 'approve_id');
     }
 
     public function approves()
