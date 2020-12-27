@@ -23,20 +23,23 @@ class MeetingController extends Controller
     {
         $job = Job::where('id', $id)->first();
         return view('meeting.show', [
-            'job' => $job
+            'job' => $job,
         ]);
     }
 
     public function new()
     {
+        
         return view('meeting.new');
     }
     
     public function create(Request $request)
     {
+        $user = Auth::user();
         $job = Job::create([
             'title' => $request->title,
             'summary' => $request->summary,
+            'user_id' => $request->user()->id
         ]);
 
         return redirect()->route('meeting.index');
