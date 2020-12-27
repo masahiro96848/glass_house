@@ -35,6 +35,12 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::get('/message', 'MeetingController@message')->name('message');
 });
 
+// メッセージやりとり
+Route::prefix('message.')->name('message.')->group(function() {
+    Route::get('/{id}', 'MessageController@message')->name('index');
+    Route::get('/{id}', 'MessageController@store')->name('store');
+});
+
 // プロフィール
 Route::prefix('profile')->name('profile.')->group(function() {
     Route::get('/home', 'ProfileController@home')->name('home');

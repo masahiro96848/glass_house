@@ -94,8 +94,4 @@ class MeetingController extends Controller
         ]);
     }
 
-    public function message()
-    {
-        return view('meeting.message');
-    }
 }
