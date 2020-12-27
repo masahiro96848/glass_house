@@ -15,6 +15,11 @@ class Offer extends Model
         return $this->belongsToMany(User::class, 'offers');
     }
 
+    public function matchings()
+    {
+        return $this->belongsToMany(Matching::Class, 'offer_matching', 'offer_id', 'matching_id');
+    }
+
     public function messages()
     {
         return $this->hasMany(Message::class);

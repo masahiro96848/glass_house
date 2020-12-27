@@ -7,14 +7,14 @@
   <div class="l-container--content">
     <div class="l-container--wrapper">
       <div class="p-member--layout">
-        <h3 class="p-member--other">zoom申請</h3>
+        <h3 class="p-member--other">{{ $matching->approve->name}}さんへのzoom申請</h3>
         <div class="p-member--border">
           <div class="p-confirm--opponent">
             <p>申請したユーザー</p>
           </div>
           <div class="p-confirm--image">
             <img src="../img/wed.jpeg" alt=""class="c-user--image" >
-            <h4 class="p-member--name">masahiro</h4>
+            <h4 class="p-member--name">{{ $matching->apply->name}}</h4>
           </div>
           <div class="p-confirm--intro">
             <p>
@@ -29,7 +29,7 @@
                 <div class="c-user--featureArea">
                   <div class="p-confirm--photo">
                     <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
-                    <span class="p-confirm--name">Masahiro</span>
+                    <span class="p-confirm--name">{{ $matching->approve->name}}</span>
                   </div>
                 </div>
               </div>
@@ -38,20 +38,8 @@
                 <div class="c-user--featureArea">
                   <div class="p-confirm--photo">
                     <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
-                    <span class="p-confirm--name">Testman</span>
+                    <span class="p-confirm--name">{{ $matching->apply->name}}</span>
                   </div>
-                </div>
-              </div>
-              <div class="c-user--Container">
-                <p class="c-user--featureTitle p-confirm--mb">メッセージ</p>
-                <div class="c-user--featureArea">
-                  <p class="c-user--featureBody">
-                    オンライン、オフラインでコミュニティの運営に関わっている方
-                    語学を勉強している方
-                    副業を持っている方
-                    子どもや親に関わる仕事をしている方
-                    子育て中の方
-                  </p>
                 </div>
               </div>
             </div>
@@ -65,5 +53,3 @@
   </div>
   @include('footer')
 @endsection
-
-{{-- {{dd($offer->approve->name)}} --}}

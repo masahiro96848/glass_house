@@ -6,6 +6,7 @@ use App\User;
 use App\Job;
 use App\Offer;
 use App\Message;
+use App\Matching;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -45,13 +46,15 @@ class MeetingController extends Controller
         return redirect()->route('meeting.index');
     }
 
+    //オファー画面
     public function offer($id)
     {
         $offer = Offer::find($id);
-        // dd($offer->approve);
+        $matching = $offer->matchings()->first();
+        // dd($matching);
         return view('meeting.offer', [
             'offer' => $offer,
-            // 'approve' => $approve,
+            'matching' => $matching
         ]);
     }
 
@@ -66,18 +69,28 @@ class MeetingController extends Controller
         ]);
     }
 
+    //申請画面
     public function apply(Request $request, $id) 
     {
         $current_user = Auth::user();
         $user = User::where('id', $id)->first();
+        //offer作成
         $offer = Offer::create([
             'status' => $request->status,
         ]);
-        $request->user()->matching()->attach($user);
+
+        // matchingを作成
+        $matching = Matching::create([
+            'apply_id' => $current_user->id,
+            'approve_id' => $user->id
+        ]);
+
+        // offer_matching作成
+        $offer->matchings()->attach($matching);
 
         return redirect()->route('meeting.offer', [
             'id' => $offer->id,
-            ''
+            'matching' => $matching
         ]);
     }
 
