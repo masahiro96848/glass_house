@@ -45,7 +45,7 @@
                   </div>
                   <p class="p-card--paragragh">{{ $job->summary}}</p>
                   <div class="p-card--name">
-                    <h5 class="p-card--userName">masahiro</h5>
+                    <h5 class="p-card--userName">{{ $job->user->name}}</h5>
                   </div>
                 </div>
                 <div class="p-card--right">
