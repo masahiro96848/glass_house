@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOfferUserTable extends Migration
+class CreateMatchingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateOfferUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('offer_user', function (Blueprint $table) {
+        Schema::create('matchings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('matching_id')->unsigned();
+            $table->integer('apply_id')->unsigned();
+            $table->integer('approve_id')->unsigned();
             $table->integer('offer_id')->unsigned();
-            $table->foreign('matching_id')->references('id')->on('matchings')->OnDelete('cascade');
+            $table->foreign('apply_id')->references('id')->on('users')->OnDelete('cascade');
+            $table->foreign('approve_id')->references('id')->on('users')->OnDelete('cascade');
             $table->foreign('offer_id')->references('id')->on('offers')->OnDelete('cascade');
             $table->timestamps();
         });
