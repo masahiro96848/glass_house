@@ -13,7 +13,7 @@ class RenameOfferUserToOfferMatchingTable extends Migration
      */
     public function up()
     {
-        Schema::rename('offer_user', 'offer_matching');
+        // Schema::rename('offer_user', 'offer_matching');
     }
 
     /**
@@ -23,8 +23,8 @@ class RenameOfferUserToOfferMatchingTable extends Migration
      */
     public function down()
     {
-        Schema::table('offer_user', function (Blueprint $table) {
-            //
-        });
+        // Schema::table('offer_user', function (Blueprint $table) {
+        //     //
+        // });
     }
 }
