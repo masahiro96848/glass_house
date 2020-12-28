@@ -67,7 +67,7 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        <a href=""><p class="p-matching--message p-matching--width">メッセージ</p></a>
+                        <a href="{{ route('message.index', ['id' => $offer->id])}}"><p class="p-matching--message p-matching--width">メッセージ</p></a>
                       </div>
                       <div>
                         <p class="p-matching--zoom p-matching--width">zoom</p>

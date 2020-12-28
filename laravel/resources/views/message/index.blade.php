@@ -34,8 +34,9 @@
             </div>
           </div>
           <div class="p-comment--form">
-            <form action="">
-              <textarea name="" id="" cols="30" rows="10" placeholder="メッセージを入力してください" class="p-comment--text"></textarea>
+            <form method="POST" action="{{ route('message.store', ['id' => $offer->id])}}">
+              @csrf
+              <textarea name="comment" id="" cols="30" rows="10" placeholder="メッセージを入力してください" class="p-comment--text"></textarea>
               <div class="p-comment--button">
                 <button class="c-button--message">メッセージを送信する</button>
               </div>

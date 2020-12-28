@@ -36,9 +36,9 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
 });
 
 // メッセージやりとり
-Route::prefix('message.')->name('message.')->group(function() {
+Route::prefix('message')->name('message.')->group(function() {
     Route::get('/{id}', 'MessageController@message')->name('index');
-    Route::get('/{id}', 'MessageController@store')->name('store');
+    Route::post('/{id}', 'MessageController@store')->name('store');
 });
 
 // プロフィール
