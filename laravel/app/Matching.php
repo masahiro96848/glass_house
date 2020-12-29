@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Matching extends Model
 {
-    protected $fillable = ['apply_id', 'approve_id'];
+    protected $fillable = ['apply_id', 'approve_id','offer_id'];
 
     public function apply()
     {
