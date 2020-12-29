@@ -16,20 +16,22 @@ class MessageController extends Controller
     public function message($id)
     {
         $offer = Offer::find($id);
+        $messages  = $offer->messages()->get();
         return view('message.index', [
             'id' => $offer->id,
-            'offer' => $offer
+            'offer' => $offer,
+            'messages' => $messages
         ]);
     }
 
     public function store(Request $request, $id)
     {
-        
         $offer = Offer::find($id);
+        $matching = $offer->matchings()->first();
         $offer->messages()->create([
             'comment' => $request->comment,
-            'to_user' => $request->approves()->id,
-            'from_user' => $request->apply()->id,
+            'to_user' => $matching->apply_id,
+            'from_user' => $matching->approve_id,
         ]);
 
         return redirect()->route('message.index',['id' => $offer->id]);
