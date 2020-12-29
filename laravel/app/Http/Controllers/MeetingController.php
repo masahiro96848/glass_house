@@ -51,7 +51,6 @@ class MeetingController extends Controller
     {
         $offer = Offer::find($id);
         $matching = $offer->matchings()->first();
-        // dd($matching);
         return view('meeting.offer', [
             'offer' => $offer,
             'matching' => $matching
@@ -82,11 +81,10 @@ class MeetingController extends Controller
         // matchingを作成
         $matching = Matching::create([
             'apply_id' => $current_user->id,
-            'approve_id' => $user->id
+            'approve_id' => $user->id,
+            'offer_id' => $offer->id
         ]);
 
-        // offer_matching作成
-        $offer->matchings()->attach($matching);
 
         return redirect()->route('meeting.offer', [
             'id' => $offer->id,

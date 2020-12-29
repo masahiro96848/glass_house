@@ -53,10 +53,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Offer::class, 'offer_user', 'matching_id', 'offer_id');
     }
 
-    public function matching()
-    {
-        return $this->belongsToMany(User::class, 'matchings', 'apply_id', 'approve_id');
-    }
+    // public function matching()
+    // {
+    //     return $this->belongsToMany(User::class, 'matchings', 'apply_id', 'approve_id');
+    // }
 
     public function approves()
     {

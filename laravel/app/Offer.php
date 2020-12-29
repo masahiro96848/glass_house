@@ -17,7 +17,7 @@ class Offer extends Model
 
     public function matchings()
     {
-        return $this->belongsToMany(Matching::Class, 'offer_matching', 'offer_id', 'matching_id');
+        return $this->hasMany(Matching::class, 'offer_id');
     }
 
     public function messages()
