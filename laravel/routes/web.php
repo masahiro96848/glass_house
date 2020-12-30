@@ -16,9 +16,12 @@ Route::get('/', function () {
 });
 
 
-// ユーザー情報
+// ユーザー一覧
 Route::prefix('users')->name('users.')->group(function() {
     Route::get('/', 'UserController@index')->name('index');
+});
+
+Route::prefix('user')->name('users.')->group(function() {
     Route::get('/show/{name}', 'UserController@show')->name('show');
     Route::get('/review/new', 'UserController@new')->name('new');
 });
