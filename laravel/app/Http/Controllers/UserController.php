@@ -27,4 +27,9 @@ class UserController extends Controller
     {
         return view('users.new');
     }
+
+    public function store()
+    {
+        
+    }
 }
