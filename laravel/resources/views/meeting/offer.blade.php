@@ -45,7 +45,7 @@
             </div>
           <div class="p-confirm--preserve">
             <p class="p-confirm--apply">承認する</p>
-            <p class="p-confirm--cancel">キャンセル</p>
+            <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">キャンセル</p></a>
           </div>
         </div>  
       </div>

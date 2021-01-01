@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'マイページ')
+@section('title', 'マッチングリスト')
 
 @section('content')
   @include('nav')
@@ -31,8 +31,10 @@
                 <th class="p-matching--scope">ツール</th>
               </tr>
             </thead>
+            
             @foreach($offers as $offer)
-              @foreach($offer->matchings as $matching )
+              @foreach($offer->matchings as $matching)
+                @if(Auth::id() === $matching->apply->id || Auth::id() === $matching->approve->id )
                 <tbody class="p-matching--body">
                   <tr>
                     <td class="p-matching--line">
@@ -62,7 +64,8 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        承認待ち　or 承認済み
+                        承認待ち　or 承認済み　<br>
+                        <a href="{{route('meeting.offer', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
                       </div>
                     </td>
                     <td class="p-matching--line">
@@ -78,6 +81,7 @@
                     </td>
                   </tr>
                 </tbody>
+                @endif
                 @endforeach
               @endforeach 
             </table>
@@ -88,3 +92,5 @@
   </div>
   @include('footer')
 @endsection
+
+{{-- {{dd($offer->id)}} --}}

@@ -28,6 +28,20 @@
     padding: $space_l;
   }
 
+  &--offer {
+    background-color: rgb(233, 199, 10);
+    border-radius: 20px;
+    margin-top: $space_l;
+    padding: $space_s $space_xl;
+    display: inline-block;
+    &:hover {
+      transition: 0.5s;
+      color: rgb(238, 236, 234);
+      background-color: rgb(230, 88, 6);
+      border: none;
+    }
+  }
+
   &--line {
     padding: $space_l;
   }
