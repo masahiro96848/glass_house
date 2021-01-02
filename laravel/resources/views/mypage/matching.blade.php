@@ -65,6 +65,7 @@
                     <td class="p-matching--line">
                       <div>
                         承認待ち　or 承認済み　<br>
+                        
                         <a href="{{route('meeting.offer', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
                       </div>
                     </td>

@@ -6,6 +6,7 @@ use App\User;
 use App\Offer;
 use App\Matching;
 use Illuminate\Support\Facades\Auth;
+use App\Enums\OfferType;
 use Illuminate\Http\Request;
 
 class MypageController extends Controller
@@ -17,7 +18,8 @@ class MypageController extends Controller
 
     public function matching()
     {
-        $offers = Offer::all();                
+        $offers = Offer::all();         
+        
         return view('mypage.matching', [
             'offers' => $offers,
         ]);

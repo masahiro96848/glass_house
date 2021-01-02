@@ -8,6 +8,7 @@ use App\Offer;
 use App\Message;
 use App\Matching;
 use Illuminate\Support\Facades\Auth;
+use App\Enums\OfferType;
 use Illuminate\Http\Request;
 
 class MeetingController extends Controller
@@ -46,17 +47,6 @@ class MeetingController extends Controller
         return redirect()->route('meeting.index');
     }
 
-    //オファー画面
-    public function offer($id)
-    {
-        $offer = Offer::find($id);
-        $matching = $offer->matchings()->first();
-        return view('meeting.offer', [
-            'offer' => $offer,
-            'matching' => $matching
-        ]);
-    }
-
     // 申請確認画面
     public function confirm($id)
     {
@@ -68,7 +58,7 @@ class MeetingController extends Controller
         ]);
     }
 
-    //申請画面
+    //申請送信画面
     public function apply(Request $request, $id) 
     {
         $current_user = Auth::user();
@@ -92,4 +82,19 @@ class MeetingController extends Controller
         ]);
     }
 
+    //オファー画面
+    public function offer($id)
+    {
+        $offer = Offer::find($id);
+        $matching = $offer->matchings()->first();
+        return view('meeting.offer', [
+            'offer' => $offer,
+            'matching' => $matching
+        ]);
+    }
+
+    public function approve()
+    {
+        
+    }
 }
