@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Enums\OfferType;
 
 class CreateOffersTable extends Migration
 {
@@ -15,7 +16,8 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('status', ['承認待ち', '承認済み', '取消済み'])->nullable();
+            $table->enum('status', OfferType::getValues())
+                    ->default(OfferType::OFFERONE);
             $table->timestamps();
         });
     }
