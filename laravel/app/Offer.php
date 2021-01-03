@@ -2,12 +2,22 @@
 
 namespace App;
 
+use App\Enums\OfferType;
 use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
     protected $fillable = [
         'status'
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at'
+    ];
+
+    protected $enumCasts = [
+        'status' => OfferType::class,
     ];
 
     public function user()

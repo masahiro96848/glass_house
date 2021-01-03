@@ -65,7 +65,7 @@ class MeetingController extends Controller
         $user = User::where('id', $id)->first();
         //offer作成
         $offer = Offer::create([
-            'status' => $request->status,
+            'status' => OfferType::OFFERONE(),
         ]);
 
         // matchingを作成
@@ -74,7 +74,6 @@ class MeetingController extends Controller
             'approve_id' => $user->id,
             'offer_id' => $offer->id
         ]);
-
 
         return redirect()->route('meeting.offer', [
             'id' => $offer->id,
@@ -93,8 +92,15 @@ class MeetingController extends Controller
         ]);
     }
 
-    public function approve()
+    public function approve(Request $request, $id)
     {
-        
+        $offer = Offer::where('id', $id)->first();
+        $offer->update([
+            'status' => OfferType::OFFERTWO(),
+        ]);
+
+        return redirect()->route('mypage.matching', [
+            'id' => $offer->id
+        ]);
     }
 }

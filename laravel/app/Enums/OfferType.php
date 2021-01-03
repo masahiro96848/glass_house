@@ -2,6 +2,7 @@
 
 namespace App\Enums;
 
+use BenSampo\Enum\Enum\Contracts\LocalizedEnum;
 use BenSampo\Enum\Enum;
 
 /**
@@ -11,21 +12,21 @@ use BenSampo\Enum\Enum;
  */
 final class OfferType extends Enum
 {
-    const OfferOne =   0;
-    const OfferTwo =   1;
-    const OfferThree = 2;
+    const OFFERONE = 'approve_wait';
+    const OFFERTWO = 'approved';
+    const OFFERTHREE = 'cancel';
 
 
     public static function getOffer($value)
     {
         switch($value) {
-            case self::OfferOne:
+            case self::OFFERONE:
                 return '承認待ち';
                 break;
-            case self::OfferTwo;
+            case self::OFFERTWO;
                 return '承認済';
                 break;
-            case self::OfferThree;
+            case self::OFFERTHREE;
                 return '取消済み';
                 break;
             default:
