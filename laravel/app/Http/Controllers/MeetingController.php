@@ -64,9 +64,11 @@ class MeetingController extends Controller
         $current_user = Auth::user();
         $user = User::where('id', $id)->first();
         //offer作成
-        $offer = Offer::create([
-            'status' => OfferType::OFFERONE(),
-        ]);
+        // $offer = Offer::create([
+        //     'status' => OfferType::OFFERONE(),
+        // ]);
+        $offer = Offer::first();
+        $offer->status = OfferType::OFFERONE();
 
         // matchingを作成
         $matching = Matching::create([

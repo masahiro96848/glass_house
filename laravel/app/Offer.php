@@ -3,10 +3,14 @@
 namespace App;
 
 use App\Enums\OfferType;
+use BenSampo\Enum\Traits\CastsEnums;
+use BenSampo\Enum\Tests\Enums\UserType;
 use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
+    use CastsEnums;
+
     protected $fillable = [
         'status'
     ];
@@ -18,6 +22,10 @@ class Offer extends Model
 
     protected $enumCasts = [
         'status' => OfferType::class,
+    ];
+
+    protected $casts = [
+        'status' => 'string',
     ];
 
     public function user()

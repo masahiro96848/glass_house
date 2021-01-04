@@ -64,8 +64,8 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        {{-- <p>{{ $offer->status->offer}}</p> --}}
-                        <p>{{ \App\Enums\OfferType::getOffer($offer->status)}}</p>
+                        <p>{{ $offer->status->description}}</p>
+                        {{-- <p>{{ \App\Enums\OfferType::getOffer($offer->status)}}</p> --}}
                         <a href="{{route('meeting.offer', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
                       </div>
                     </td>
