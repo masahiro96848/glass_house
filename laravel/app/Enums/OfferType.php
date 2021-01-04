@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-use BenSampo\Enum\Enum\Contracts\LocalizedEnum;
+use BenSampo\Enum\Contracts\LocalizedEnum;
 use BenSampo\Enum\Enum;
 
 /**
@@ -10,7 +10,7 @@ use BenSampo\Enum\Enum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class OfferType extends Enum
+final class OfferType extends Enum implements LocalizedEnum
 {
     const OFFERONE = 'approve_wait';
     const OFFERTWO = 'approved';
