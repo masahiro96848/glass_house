@@ -77,7 +77,7 @@
                           <p class="p-matching--zoom p-matching--width">zoom</p>
                         </div>
                         <div>
-                          <p class="p-matching--review p-matching--width">レビュー投稿</p>
+                          <a href="{{ route('users.new')}}"><p class="p-matching--review p-matching--width">レビュー投稿</p></a>
                         </div>
                       @endif
                     </td>

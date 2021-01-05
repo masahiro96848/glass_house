@@ -2,12 +2,25 @@ import $ from 'jquery';
 
 window.$ = window.jQuery = require('jquery');
 
+Vue.config.devtools = true;
 // require('./bootstrap');
 require('./main');
 import './bootstrap'
 import './main'
 
+window.Vue  = require('vue');
 window.$ = require('jquery');
+
+
+import Vue from 'vue'
+import CommentStar from './components/CommentStar'
+
+const app  = new Vue({
+  el: '#app',
+  components: {
+    CommentStar,
+  }
+});
 
 $('.p-menu--button').on('click', function() {
   if( $(this).hasClass('active')){
