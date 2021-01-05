@@ -64,11 +64,9 @@ class MeetingController extends Controller
         $current_user = Auth::user();
         $user = User::where('id', $id)->first();
         //offer作成
-        // $offer = Offer::create([
-        //     'status' => OfferType::OFFERONE(),
-        // ]);
-        $offer = Offer::first();
-        $offer->status = OfferType::OFFERONE();
+        $offer = Offer::create([
+            'status' => Offer::STATUS[2],
+        ]);
 
         // matchingを作成
         $matching = Matching::create([
@@ -98,7 +96,7 @@ class MeetingController extends Controller
     {
         $offer = Offer::where('id', $id)->first();
         $offer->update([
-            'status' => OfferType::OFFERTWO(),
+            'status' => Offer::STATUS[3],
         ]);
 
         return redirect()->route('mypage.matching', [

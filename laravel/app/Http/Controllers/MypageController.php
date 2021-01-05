@@ -19,9 +19,13 @@ class MypageController extends Controller
     public function matching()
     {
         $offers = Offer::all();         
-        
+        $offer_status = OfferType::getValue('Approved');
+        $status = Offer::STATUS[3];
+
         return view('mypage.matching', [
             'offers' => $offers,
+            'offer_status' => $offer_status,
+            'status' => $status,
         ]);
     }
 }

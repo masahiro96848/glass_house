@@ -4,8 +4,9 @@ use App\Enums\OfferType;
 
 return [
   OfferType::class => [
-    OfferType::OFFERONE => '承認待ち',
-    OfferType::OFFERTWO => '承認済み',
-    OfferType::OFFERTHREE => '取消済み',
+    OfferType::Nullable => 'null',
+    OfferType::ApproveWait => '承認待ち',
+    OfferType::Approved => '承認済み',
+    OfferType::Cancel => '取消済み',
   ],
 ];

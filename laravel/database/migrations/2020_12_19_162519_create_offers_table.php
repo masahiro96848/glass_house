@@ -16,8 +16,7 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('status', OfferType::getValues())
-                    ->default(OfferType::OFFERONE);
+            $table->string('status')->default('');
             $table->timestamps();
         });
     }
