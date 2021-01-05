@@ -12,21 +12,26 @@ use BenSampo\Enum\Enum;
  */
 final class OfferType extends Enum implements LocalizedEnum
 {
-    const OFFERONE = 'approve_wait';
-    const OFFERTWO = 'approved';
-    const OFFERTHREE = 'cancel';
+    const Nullable = 'null';
+    const ApproveWait = 'approve_wait';
+    const Approved = 'approved';
+    const Cancel = 'cancel';
+    
 
 
-    public static function getOffer($value)
+    public static function getOffer($value): string
     {
         switch($value) {
-            case self::OFFERONE:
+            case self::Nullable:
+                return '';
+                break;
+            case self::ApproveWait:
                 return '承認待ち';
                 break;
-            case self::OFFERTWO;
-                return '承認済';
+            case self::Approved;
+                return '承認済み';
                 break;
-            case self::OFFERTHREE;
+            case self::Cancel;
                 return '取消済み';
                 break;
             default:

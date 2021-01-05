@@ -64,8 +64,7 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        <p>{{ $offer->status->description}}</p>
-                        {{-- <p>{{ \App\Enums\OfferType::getOffer($offer->status)}}</p> --}}
+                        {{ $offer->status}}
                         <a href="{{route('meeting.offer', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
                       </div>
                     </td>
@@ -73,12 +72,14 @@
                       <div>
                         <a href="{{ route('message.index', ['id' => $offer->id])}}"><p class="p-matching--message p-matching--width">メッセージ</p></a>
                       </div>
-                      <div>
-                        <p class="p-matching--zoom p-matching--width">zoom</p>
-                      </div>
-                      <div>
-                        <p class="p-matching--review p-matching--width">レビュー投稿</p>
-                      </div>
+                      @if($offer->status === App\Offer::STATUS[3])
+                        <div>
+                          <p class="p-matching--zoom p-matching--width">zoom</p>
+                        </div>
+                        <div>
+                          <p class="p-matching--review p-matching--width">レビュー投稿</p>
+                        </div>
+                      @endif
                     </td>
                   </tr>
                 </tbody>
@@ -93,5 +94,3 @@
   </div>
   @include('footer')
 @endsection
-
-{{-- {{dd($offer->id)}} --}}

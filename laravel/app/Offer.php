@@ -20,13 +20,21 @@ class Offer extends Model
         'updated_at'
     ];
 
-    protected $enumCasts = [
-        'status' => OfferType::class,
-    ];
+    // protected $enumCasts = [
+    //     'status' => OfferType::class,
+    // ];
 
     protected $casts = [
         'status' => 'string',
     ];
+
+    const STATUS  = [
+        1 => '',
+        2 =>  '承認待ち',
+        3 =>  '承認済み',
+        4 =>  'キャンセル',
+    ];
+
 
     public function user()
     {
