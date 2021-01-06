@@ -3,8 +3,23 @@
     <input 
       type="hidden"
       name="star"
-    
+      :value="rating"
     >
+    <star-rating
+      :max-rating="maxRating"
+      :star-size="starSize"
+      :inactive-color="inactiveColor"
+      :active-color="activeColor"
+      :rounded-corners="roundedCorners"
+      @rating-rating="selectRating"
+      :current-rating="currentRating"
+      :set-rating="setRating"
+      :read-only="readOnly"
+      :show-rating="showRating"
+      v-model="rating"
+    >
+      
+    </star-rating>
   </div>
 </template>
 
@@ -15,7 +30,61 @@ export default {
     StarRating
   },
   props: {
-    
-  }  
+    increments: {
+      type: Number,
+      default: 1
+    },
+    maxRating: {
+      type: Number,
+      default: 5
+    },
+    starSize: {
+      type: Number,
+      default: 30
+    },
+    inactiveColor: {
+      type: String,
+      default: '#000000'
+    },
+    activeColor: {
+      type: String,
+      default: '#ffd055'
+    },
+    roundedCorners: {
+      type: Boolean,
+      default: true
+    },
+    rating: {
+      type: [String, Number],
+      default: () => 0,
+    },
+    showRating: {
+      type: Boolean,
+      default: false
+    },
+    readOnly: {
+      type: Boolean,
+      default: false
+    },
+    currentRating:{
+      type: Number
+    },
+  },
+  data() {
+    return {
+      setRating: 0,
+      dataRating: this.rating,
+    };
+  },  
+  mounted() {
+    if(this.setRating) {
+      return this.currentRating = this.setRating;
+    }
+  },
+  methods: {
+    selectRating: function(rating) {
+      this.dataRating = rating;
+    },
+  },
 }
 </script>

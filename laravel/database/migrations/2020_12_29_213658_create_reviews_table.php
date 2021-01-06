@@ -20,8 +20,10 @@ class CreateReviewsTable extends Migration
             $table->string('body');
             $table->integer('reviewer_id')->unsigned();
             $table->integer('reviewed_id')->unsigned();
+            $table->integer('matching_id')->unsigned();
             $table->foreign('reviewer_id')->references('id')->on('users')->OnDelete('cascade');
             $table->foreign('reviewed_id')->references('id')->on('users')->OnDelete('cascade');
+            $table->foreign('matching_id')->references('id')->on('matchings')->OnDelete('cascade');
             $table->timestamps();
         });
     }

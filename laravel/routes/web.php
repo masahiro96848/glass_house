@@ -23,7 +23,8 @@ Route::prefix('users')->name('users.')->group(function() {
 
 Route::prefix('user')->name('users.')->group(function() {
     Route::get('/show/{name}', 'UserController@show')->name('show');
-    Route::get('/review/new', 'UserController@new')->name('new');
+    Route::get('/review/new/{id}', 'UserController@new')->name('new');
+    Route::post('/review/new/{id}/store', 'UserController@store')->name('store');
 });
 
 // ミーティング関連

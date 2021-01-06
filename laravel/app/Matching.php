@@ -8,6 +8,11 @@ class Matching extends Model
 {
     protected $fillable = ['apply_id', 'approve_id','offer_id'];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function apply()
     {
         return $this->belongsTo(User::class, 'apply_id');
