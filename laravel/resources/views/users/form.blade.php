@@ -3,7 +3,11 @@
     <div class="c-user--featureArea">
       <div class="c-user">
         <img src="/img/wed.jpeg" alt=""class="c-user--image--sm" >
-        <span class="">masahiro</span>
+        @if($current_user !== $matching->apply_id && $matching->approve_id)
+          <span class="">{{ $matching->apply->name}}</span>
+        @else 
+          <span class="">{{ $matching->approve->name}}</span>
+        @endif
       </div>
     </div>
   </div>
@@ -11,7 +15,11 @@
     <h5 class="c-user--featureTitle">評価</h5>
     <div class="c-user--featureArea">
       <p class="c-user--body">
-        🌟🌟🌟🌟🌟
+        <comment-star
+          rating={{ $reveiw->star ?? old('star')}}
+        >
+
+        </comment-star>
       </p>
     </div>
   </div>
@@ -28,5 +36,5 @@
     </div>
   </div>
   <div class="p-comment--button">
-      <button class="c-button--message">メッセージを送信する</button>
+      <button class="c-button--message">レビューを投稿する</button>
   </div>

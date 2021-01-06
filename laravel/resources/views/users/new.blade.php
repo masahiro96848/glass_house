@@ -12,7 +12,7 @@
           <div class="p-comment--area">
             <div class="c-user--feature u-bb--none">
               @include('error')
-              <form method="POST" action="">
+              <form method="POST" action="{{ route('users.store', ['id' => $matching->id])}}">
                 @csrf
                 @include('users.form')
               </form>
