@@ -29,12 +29,11 @@ class UserController extends Controller
 
     public function new($id)
     {
-        $current_user = Auth::user();
-        $user = User::where('id', $current_user->id)->get();
+        $current_user = Auth::id();
         $matching = Matching::where('id', $id)->first();
+        
         return view('users.new', [
             'current_user' => $current_user,
-            'user' => $user,
             'matching' => $matching,
         ]);
     }
@@ -43,17 +42,36 @@ class UserController extends Controller
     {
         $current_user = Auth::user();
         $matching = Matching::find($id);
-        $review = Review::create([
-            'star' => $request->star,
-            'title' => $request->title,
-            'body' => $request->body,
-            'reviewer_id' => $current_user->id,
-            'reviewed_id' => $request->user()->id,
-        ]);
+        $reviewed = Matching::where('apply_id', $matching->apply_id )
+                                ->orWhere('approve_id', $matching->approve_id)->first();
 
-        return redirect()->route('users.show', [
-            'name' => $request->user()->name,
-        ]);
+        if($matching->apply_id !== Auth::id() ) {
+            $review = Review::create([
+                'star' => $request->star,
+                'title' => $request->title,
+                'body' => $request->body,
+                'reviewer_id' => $current_user->id,
+                'reviewed_id' => $matching->apply_id,
+                'matching_id' => $matching->id
+            ]);
+            return redirect()->route('users.show',[
+                'name' => $matching->apply->name
+            ]);    
+        }elseif($matching->approve_id  !== Auth::id()){
+            $review = Review::create([
+                'star' => $request->star,
+                'title' => $request->title,
+                'body' => $request->body,
+                'reviewer_id' => $current_user->id,
+                'reviewed_id' => $matching->approve_id,
+                'matching_id' => $matching->id
+            ]);
+            return redirect()->route('users.show',[
+                'name' => $matching->approve->name
+            ]);  
+        }else{
+            return redirect()->route('mypage.matching');
+        }
     }
 
     public function edit()
