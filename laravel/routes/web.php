@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ゲストログイン
+Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
+
 
 // ユーザー一覧
 Route::prefix('users')->name('users.')->group(function() {
