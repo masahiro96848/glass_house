@@ -21,11 +21,12 @@
               </div>
             @endforeach
           <div class="p-comment--form">
-            <form method="POST" action="{{ route('message.store', ['id' => $offer->id])}}">
+            <form method="POST" action="{{ route('message.store', ['id' => $matching->id])}}">
               @csrf
               <textarea name="comment" id="" cols="30" rows="10" placeholder="メッセージを入力してください" class="p-comment--text"></textarea>
               <div class="p-comment--button">
                 <button class="c-button--message">メッセージを送信する</button>
+                <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel"><< 戻る</p></a>
               </div>
             </form>
           </div>

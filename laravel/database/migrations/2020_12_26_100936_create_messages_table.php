@@ -18,10 +18,10 @@ class CreateMessagesTable extends Migration
             $table->string('comment');
             $table->integer('to_user')->unsigned();
             $table->integer('from_user')->unsigned();
-            $table->integer('offer_id')->unsigned();
+            $table->integer('matching_id')->unsigned();
             $table->foreign('to_user')->references('id')->on('users')->OnDelete('cascade');
             $table->foreign('from_user')->references('id')->on('users')->OnDelete('cascade');
-            $table->foreign('offer_id')->references('id')->on('offers')->OnDelete('cascade');
+            $table->foreign('matching_id')->references('id')->on('matchings')->OnDelete('cascade');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     protected $fillable = [
-        'comment', 'to_user', 'from_user', 'offer_id',
+        'comment', 'to_user', 'from_user', 'matching_id',
     ];
 
     public function user()
