@@ -70,7 +70,7 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        <a href="{{ route('message.index', ['id' => $offer->id])}}"><p class="p-matching--message p-matching--width">メッセージ</p></a>
+                        <a href="{{ route('message.index', ['id' => $matching->id])}}"><p class="p-matching--message p-matching--width">メッセージ</p></a>
                       </div>
                       @if($offer->status === App\Offer::STATUS[3])
                         <div>

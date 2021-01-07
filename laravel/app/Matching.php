@@ -27,5 +27,10 @@ class Matching extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
     
 }
