@@ -26,6 +26,8 @@
       opacity: 0.8;
     }
 
+    
+
     &--search {
       margin-left: $space_l;
       display: inline-block;
@@ -36,6 +38,24 @@
       width: 80%;
     }
   }
+
+  &--guest {
+      display: block;
+      background-color: $background-color_guest;
+      margin: 0 auto;
+      font-size: $font-size_l;
+      margin-top: $space_xxl;
+      width: 30%;
+      border-radius: 50px;
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        color: black;
+        background-color: rgb(236, 201, 86);
+        transition: 0.5s;
+        opacity: 0.8;
+      }
+    }
 
   &--profileEdit {
     text-align: center;

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -23,6 +25,9 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    // ゲストユーザー用のメールアドレスを定数として定義
+    private const GUEST_USER_EMAIL  = 'guest@sample.com';
+
     /**
      * Where to redirect users after login.
      *
@@ -43,5 +48,15 @@ class LoginController extends Controller
     public function loggedOut(Request $request)
     {
         return redirect(route('login'));
+    }
+
+    public function guestLogin()
+    {
+        $user = User::where('email', self::GUEST_USER_EMAIL)->first();
+        if($user) {
+            Auth::login($user);
+            return redirect()->route('users.index');
+        }
+        return redirect('/');
     }
 }

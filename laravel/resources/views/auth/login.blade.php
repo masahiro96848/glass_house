@@ -28,9 +28,12 @@
                     ログイン状態を記憶する
                 </label>
               </div>
-                <button class="c-button c-button--submit " type="submit">ログイン</button>
+                <button class="c-button c-button--submit" type="submit">ログイン</button>
                 <p class="c-form--link">パスワードを忘れた方は<a href="{{ route('password.request')}}">こちら</a></p>
                 <p class="c-form--link">新規登録は<a href="{{ route('register')}}">こちら</a></p>
+                <button class="c-button c-button--guest">
+                  <a href="{{ route('login.guest')}}" class="">ゲストログイン</a>
+                </button>
             </form>
           </div>
         </div>  
