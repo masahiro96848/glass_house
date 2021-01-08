@@ -10,8 +10,8 @@ class Review extends Model
         'title', 'star', 'body', 'reviewer_id', 'reviewed_id', 'matching_id',
     ];
 
-    public function reviewed()
+    public function reviewer()
     {
-        return $this->belongsTo(User::class, 'reviewed_id');
+        return $this->belongsTo(User::class, 'reviewer_id');
     }
 }
