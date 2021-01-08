@@ -6,6 +6,7 @@ use App\User;
 use App\Matching;
 use App\Offer;
 use App\Review;
+use App\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -22,8 +23,10 @@ class UserController extends Controller
     public function show($name) 
     {
         $user = User::where('name', $name)->first();
+        $matchings = Matching::all();
         return view('users.show', [
             'user' => $user,
+            'matchings' => $matchings,
         ]);
     }
 
