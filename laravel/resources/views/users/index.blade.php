@@ -38,35 +38,44 @@
 
         <div class="l-container--wrapper u-pt_0 l-container--flexstart">
           @foreach($users as $user)
-            <a href="{{ route('users.show', [$user->name])}}">
-              <div class="p-panel--box c-shadow--image">
-                <div class="p-panel--area">
-                  <div class="p-panel-image">
-                    <img src="./img/wed.jpeg" alt="" class="c-user--image">
-                  </div>
-                  <p class="p-panel--name">
-                    {{ $user->name }}
-                  </p>
+            <div class="p-panel--box c-shadow">
+              <div class="p-panel--area">
+                <div class="p-panel-image">
+                  <a href="{{ route('users.show', [$user->name])}}">
+                    <img src="./img/wed.jpeg" alt="" class="c-user--image c-shadow--image">
+                  </a>
                 </div>
-                <div class="c-user--detail">
-                  <p class="c-user--clamp">
-                    {{ $user->intro }}
-                  </p>
+                <p class="p-panel--name">
+                  {{ $user->name }}
+                </p>
+              </div>
+              <div class="c-user--detail">
+                <p class="c-user--clamp">
+                  {{ $user->intro }}
+                </p>
+              </div>
+              <div class="p-panel--body">
+                <div class="c-review--star">
+                  <i class="far fa-comment-alt fa-lg"></i>
+                    レビュー{{ $user->revieweds()->count()}}件
                 </div>
-                <div class="p-panel--body">
-                  <div class="c-review--star">
-                    <i class="far fa-comment-alt fa-lg"></i>
-                      レビュー{{ $user->revieweds()->count()}}件
-                  </div>
-                  <div class="c-user--likes">
-                    気になるリストに登録
-                  </div>
-                  <div class="c-user--count">
-                    5人が気になるリストに登録済み
-                  </div>
+                <div class="c-user--likes">
+                  話してみたいリストに登録
+                  @if(Auth::id() !== $user->id)
+                    <user-like
+                      :initial-liked-by='@json($user->isLikedBy(Auth::user()))'
+                      :initial-count-likes='@json($user->count_likes)'
+                      :authorized='@json(Auth::check())'
+                      endpoint="{{ route('users.like', ['user' => $user])}}"
+                    >
+                    </user-like>
+                  @endif
+                </div>
+                <div class="c-user--count">
+                  5人が気になるリストに登録済み
                 </div>
               </div>
-            </a>
+            </div>
           @endforeach
         </div>
       </div>

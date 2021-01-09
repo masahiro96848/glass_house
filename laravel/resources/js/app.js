@@ -14,11 +14,13 @@ window.$ = require('jquery');
 
 import Vue from 'vue'
 import CommentStar from './components/CommentStar'
+import UserLike from './components/UserLike'
 
 const app  = new Vue({
   el: '#app',
   components: {
     CommentStar,
+    UserLike,
   }
 });
 
