@@ -65,6 +65,8 @@
                     <user-like
                       :initial-liked-by='@json($user->isLikedBy(Auth::user()))'
                       :initial-count-likes='@json($user->count_likes)'
+                      :authorized='@json(Auth::check())'
+                      endpoint="{{ route('users.like', ['user' => $user])}}"
                     >
                     </user-like>
                   @endif

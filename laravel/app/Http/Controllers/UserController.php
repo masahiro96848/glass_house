@@ -86,4 +86,32 @@ class UserController extends Controller
 
     }
 
+    public function like(Request $request, $name)
+    {
+        $user = User::where('id', $id)->first();
+        if($user->id === $request->user()->id) {
+            return abort('404', '自分にはいいねできません');
+        }
+        $request->user()->liking()->detach($user);
+        $request->user()->liking()->attach($user);
+
+        return [
+            'id' => $user->id,
+            'countLikes' => $user->count_likes,
+        ];
+    }
+
+    public function unlike(Request $request, $name)
+    {
+        $user = User::where('id', $id)->first();
+        if($user->id === $request->user()->id) {
+            return abort('404', '自分にはいいねできません');
+        }
+        $request->user()->liking()->detach($user);
+
+        return [
+            'id' => $user->id,
+            'countLikes' => $user->count_likes,
+        ];
+    }
 }

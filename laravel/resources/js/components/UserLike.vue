@@ -7,6 +7,7 @@
     {{ buttonText }}
   <i class="fas fa-heart"
       :class="{'red-text':this.isLikedBy}"
+      @click="clickLike"
   >
 
   </i>
@@ -25,6 +26,13 @@ export default {
     initialCountLikes: {
       type: Number,
       default:0,
+    },
+    authorized: {
+      type: Boolean,
+      default: false,
+    },
+    endpoint: {
+      type: String,
     }
   },
   data() {
@@ -38,6 +46,30 @@ export default {
       return this.isLikedBy
       ? 'リストに登録'
       : '登録済み'
+    },
+  },
+  methods: {
+    clickLike() {
+      if(!this.authorized) {
+        alert('いいね機能はログイン中のみ利用できます')
+        return
+      }
+
+      this.isLikedBy
+        ?this.unlike()
+        :this.like()
+    },
+    async like() {
+      const response = await axios.put(this.endpoint)
+
+      this.isLikedBy = true
+      this.countLikes = response.data.countLikes
+    },
+    async unlike() {
+      const response = await axios.delete(this.endpoint)
+
+      this.isLikedBy = false
+      this.countLikes = response.data.countLikes
     },
   },
 }
