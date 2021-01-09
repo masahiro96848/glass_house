@@ -82,4 +82,9 @@ class User extends Authenticatable
             ?(bool)$this->likes->where('id', $user->id)->count()
             : false;
     }       
+
+    public function getCountLikesAttribute()
+    {
+        return $this->likes->count();
+    }
 }
