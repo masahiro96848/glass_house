@@ -15,6 +15,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        foreach($users as $user) {
+            $user->revieweds();
+        }
+        
         return view('users.index', [
             'users' => $users,
         ]);
