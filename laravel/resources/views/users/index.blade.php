@@ -59,7 +59,8 @@
                       レビュー{{ $user->revieweds()->count()}}件
                   </div>
                   <div class="c-user--likes">
-                    気になるリストに登録
+                    話してみたいリストに登録
+                    <user-like></user-like>
                   </div>
                   <div class="c-user--count">
                     5人が気になるリストに登録済み
