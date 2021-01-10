@@ -22,8 +22,8 @@ Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 // ユーザー一覧
 Route::prefix('users')->name('users.')->group(function() {
     Route::get('/', 'UserController@index')->name('index');
-    Route::put('{user}/like', 'UserController@like')->name('like')->middleware('auth');
-    Route::delete('{user}/like', 'UserController@unlike')->name('unlike')->middleware('auth');
+    Route::put('{id}/like', 'UserController@like')->name('like')->middleware('auth');
+    Route::delete('{id}/like', 'UserController@unlike')->name('unlike')->middleware('auth');
 });
 
 Route::prefix('user')->name('users.')->group(function() {

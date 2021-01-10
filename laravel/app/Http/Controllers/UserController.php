@@ -86,7 +86,7 @@ class UserController extends Controller
 
     }
 
-    public function like(Request $request, $name)
+    public function like(Request $request, $id)
     {
         $user = User::where('id', $id)->first();
         if($user->id === $request->user()->id) {
@@ -97,11 +97,10 @@ class UserController extends Controller
 
         return [
             'id' => $user->id,
-            'countLikes' => $user->count_likes,
         ];
     }
 
-    public function unlike(Request $request, $name)
+    public function unlike(Request $request, $id)
     {
         $user = User::where('id', $id)->first();
         if($user->id === $request->user()->id) {
@@ -111,7 +110,6 @@ class UserController extends Controller
 
         return [
             'id' => $user->id,
-            'countLikes' => $user->count_likes,
         ];
     }
 }
