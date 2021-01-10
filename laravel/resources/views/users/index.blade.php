@@ -60,13 +60,11 @@
                     レビュー{{ $user->revieweds()->count()}}件
                 </div>
                 <div class="c-user--likes">
-                  話してみたいリストに登録
                   @if(Auth::id() !== $user->id)
                     <user-like
                       :initial-liked-by='@json($user->isLikedBy(Auth::user()))'
-                      :initial-count-likes='@json($user->count_likes)'
                       :authorized='@json(Auth::check())'
-                      endpoint="{{ route('users.like', ['user' => $user])}}"
+                      endpoint="{{ route('users.like', ['id' => $user->id])}}"
                     >
                     </user-like>
                   @endif
