@@ -2,7 +2,8 @@
   <div>
     <button
       type="button"
-      class=""
+      class="c-button--like"
+      :class="buttonColor"
       @click="clickLike"
     >
     {{ buttonText }}
@@ -36,6 +37,11 @@ export default {
       return this.isLikedBy
       ? '登録済み'
       : 'リストに登録'
+    },
+    buttonColor() {
+      return this.isLikedBy
+        ? 'c-button-like c-button--active'
+        : 'c-button-like c-button--before'
     },
   },
   methods: {

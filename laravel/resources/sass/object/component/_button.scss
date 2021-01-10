@@ -162,4 +162,26 @@
     }
   }
 
+  &--like {
+    border: none;
+    display: inline-block;
+    box-shadow: 2px 2px 2px rgb(204, 202, 202);
+    border-radius: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--before {
+    padding: $space_s $space_xl;
+    background-color: $backgorund-color_like_before;
+  }
+  &--active {
+    border: none;
+    padding: $space_s 48px;
+    color: rgb(255, 255, 255);
+    background-color: $backgorund-color_like_active;
+    
+    box-shadow: 2px 2px 2px;
+  }
 }
