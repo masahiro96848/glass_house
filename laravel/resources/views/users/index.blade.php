@@ -63,6 +63,7 @@
                   @if(Auth::id() !== $user->id)
                     <user-like
                       :initial-liked-by='@json($user->isLikedBy(Auth::user()))'
+                      :initial-count-likes='@json($user->count_likes)'
                       :authorized='@json(Auth::check())'
                       endpoint="{{ route('users.like', ['id' => $user->id])}}"
                     >
