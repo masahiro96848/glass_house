@@ -97,6 +97,7 @@ class UserController extends Controller
 
         return [
             'id' => $user->id,
+            'countLikes' => $user->count_likes,
         ];
     }
 
@@ -110,6 +111,7 @@ class UserController extends Controller
 
         return [
             'id' => $user->id,
+            'countLikes' => $user->count_likes,
         ];
     }
 }

@@ -20,7 +20,15 @@
                 <p>🌟🌟🌟🌟🌟　レビュー５件</p>
               </div>
               <div class="c-user--like">
-                <p>気になるメンバーに登録</p>
+                @if(Auth::id() !== $user->id)
+                    <user-like
+                      :initial-liked-by='@json($user->isLikedBy(Auth::user()))'
+                      :initial-count-likes='@json($user->count_likes)'
+                      :authorized='@json(Auth::check())'
+                      endpoint="{{ route('users.like', ['id' => $user->id])}}"
+                    >
+                    </user-like>
+                  @endif
               </div>
               <div class="c-user--apply">
                 <a href="{{route('meeting.confirm', ['id' => $user->id])}}"><p class="p-card--apply">申請する</p></a> 

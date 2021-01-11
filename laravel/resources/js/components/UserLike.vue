@@ -9,6 +9,7 @@
     {{ buttonText }}
       
     </button>
+    <p>{{ countLikes }}人がいいねをしています</p>
   </div>
 </template>
 
@@ -18,6 +19,10 @@ export default {
     initialLikedBy: {
       type: Boolean,
       default: false,
+    },
+    initialCountLikes: {
+      type: Number,
+      default: 0
     },
     authorized: {
       type: Boolean,
@@ -30,6 +35,7 @@ export default {
   data() {
     return {
       isLikedBy: this.initialLikedBy,
+      countLikes: this.initialCountLikes,
     }
   },
   computed: {
@@ -59,11 +65,13 @@ export default {
       const response = await axios.put(this.endpoint)
 
       this.isLikedBy = true
+      this.countLikes = response.data.countLikes
     },
     async unlike() {
       const response = await axios.delete(this.endpoint)
 
       this.isLikedBy = false
+      this.countLikes = response.data.countLikes
     },
   },
 }
