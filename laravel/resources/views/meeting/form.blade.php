@@ -10,6 +10,11 @@
 
 <label for="tags">タグ</label>
   <div class="c-post">
+    <job-tags-input
+      
+    >
+
+    </job-tags-input>
   </div>
 
 
