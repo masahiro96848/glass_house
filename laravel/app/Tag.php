@@ -14,4 +14,9 @@ class Tag extends Model
     {
         return $this->belongsToMany(Job::class)->withTimestamps();
     }
+
+    public function getHashtagAttribute(): string
+    {
+        return '#' . $this->name;
+    }
 }

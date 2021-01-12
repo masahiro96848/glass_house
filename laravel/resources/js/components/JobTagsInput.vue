@@ -23,21 +23,16 @@ export default {
   components: {
     VueTagsInput,
   },
+  props: {
+    autocompleteItems: {
+      type: Array,
+      default: [],
+    }
+  },
   data() {
     return {
       tag: '',
       tags: [],
-      autocompleteItems: [{
-        text: 'Spain',
-      }, {
-        text: 'France',
-      }, {
-        text: 'USA',
-      }, {
-        text: 'Germany',
-      }, {
-        text: 'China',
-      }],
     };
   },
   computed: {
