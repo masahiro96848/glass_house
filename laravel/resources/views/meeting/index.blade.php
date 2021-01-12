@@ -33,11 +33,13 @@
         </div>
         <div class="p-card">
           @foreach($jobs as $job)
-          <a href="{{ route('meeting.show', [$job->id])}}">
+          
             <div class="p-card--area">
               <div class="p-card--content">
                 <div class="p-card--photo">
-                  <img src="../img/wed.jpeg" alt=""class="c-user--image" >
+                  <a href="{{ route('meeting.show', [$job->id])}}">
+                    <img src="../img/wed.jpeg" alt=""class="c-user--image" >
+                  </a> 
                 </div>
                 <div class="p-card--box">
                   <div class="p-card--detail">
@@ -47,6 +49,17 @@
                   <div class="p-card--name">
                     <h5 class="p-card--userName">{{ $job->user->name}}</h5>
                   </div>
+                  @foreach($job->tags as $tag)
+                    @if($loop->first)
+                      <div class="p-card--tag">
+                    @endif
+                      <a href="">
+                        {{ $tag->name }}
+                      </a>
+                    @if($loop->last)
+                      </div>
+                    @endif
+                  @endforeach
                 </div>
                 <div class="p-card--right">
                   <p class="p-card--apply">申請する</p>
@@ -56,7 +69,6 @@
                 </div>
               </div>
             </div>
-          </a>
           @endforeach
         </div>
       </div>
