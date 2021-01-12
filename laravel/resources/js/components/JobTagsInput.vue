@@ -46,9 +46,9 @@ export default {
         return i.text.toLowerCase().indexOf(this.tag.toLowerCase()) !== -1;
       });
     },
-  },
-  tagsJson() {
-    return JSON.stringify(this.tags)
+    tagsJson() {
+      return JSON.stringify(this.tags)
+    },
   },
 };
 </script>
