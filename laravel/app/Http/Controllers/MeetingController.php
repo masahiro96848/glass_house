@@ -33,8 +33,14 @@ class MeetingController extends Controller
 
     public function new()
     {
-        
-        return view('meeting.new');
+        $allTagNames = Tag::all()->map(function($tag) {
+        return [
+                'text' => $tag->name
+            ];
+        });
+        return view('meeting.new' , [
+            'allTagNames' => $allTagNames,
+        ]);
     }
     
     public function create(JobRequest $request)

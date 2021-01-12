@@ -11,7 +11,7 @@
 <label for="tags">タグ</label>
   <div class="c-post">
     <job-tags-input
-      
+      :autocomplete-items='@json($allTagNames ?? [])'
     >
 
     </job-tags-input>
