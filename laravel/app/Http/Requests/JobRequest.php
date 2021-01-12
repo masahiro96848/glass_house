@@ -24,8 +24,8 @@ class JobRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'require|max:50',
-            'summary'=> 'require|max:500',
+            'title' => 'required|max:50',
+            'summary'=> 'required|max:500',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
         ];
     }

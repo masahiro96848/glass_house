@@ -7,9 +7,11 @@ use App\Job;
 use App\Offer;
 use App\Message;
 use App\Matching;
+use App\Tag;
 use Illuminate\Support\Facades\Auth;
 use App\Enums\OfferType;
 use Illuminate\Http\Request;
+use App\Http\Requests\JobRequest;
 
 class MeetingController extends Controller
 {
@@ -35,7 +37,7 @@ class MeetingController extends Controller
         return view('meeting.new');
     }
     
-    public function create(Request $request)
+    public function create(JobRequest $request)
     {
         $user = Auth::user();
         $job = Job::create([
@@ -44,6 +46,12 @@ class MeetingController extends Controller
             'user_id' => $request->user()->id
         ]);
 
+        $request->tags->each(function ($tagName) use ($job) {
+            $tag = Tag::firstOrCreate([
+                'name' => $tagName,
+            ]);
+            $job->tags()->attach($tag);
+        });
         return redirect()->route('meeting.index');
     }
 
