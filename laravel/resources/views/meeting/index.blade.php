@@ -54,7 +54,7 @@
                       <div class="p-card--tag">
                     @endif
                       <a href="">
-                        {{ $tag->name }}
+                        {{ $tag->hashtag }}
                       </a>
                     @if($loop->last)
                       </div>
