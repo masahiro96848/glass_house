@@ -11,7 +11,8 @@
       placeholder="タグを5個まで追加できます"
       :autocomplete-items="filteredItems"
       @tags-changed="newTags => tags = newTags"
-    />
+    >
+    </vue-tags-input>
   </div>
 </template>
 
