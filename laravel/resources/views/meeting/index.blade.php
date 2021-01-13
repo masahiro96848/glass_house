@@ -9,9 +9,11 @@
       <div class="l-container--layout">
         <h3 class="p-detail--title">新着の仲間・メンバー募集</h3>
         <div class="p-detail--tag">
-          <a href="" class="p-detail--tagList">
-            {{ $tag->jobs}}
-          </a>
+          @foreach($tags as $tag)
+            <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
+              {{ $tag->hashtag }}
+            </a>
+          @endforeach
         </div>
         <div class="p-card">
           @foreach($jobs as $job)
