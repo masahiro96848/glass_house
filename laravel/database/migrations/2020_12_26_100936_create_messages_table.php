@@ -15,7 +15,7 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('comment');
+            $table->text('comment');
             $table->integer('to_user')->unsigned();
             $table->integer('from_user')->unsigned();
             $table->integer('matching_id')->unsigned();
