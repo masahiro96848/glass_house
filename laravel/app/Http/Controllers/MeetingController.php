@@ -19,7 +19,8 @@ class MeetingController extends Controller
     {
         $jobs = Job::all();
         return view('meeting.index', [
-            'jobs' => $jobs
+            'jobs' => $jobs,
+            'tag' => $tag,
         ]);
     }
 
