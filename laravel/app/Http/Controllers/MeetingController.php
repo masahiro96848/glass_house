@@ -18,8 +18,10 @@ class MeetingController extends Controller
     public function index()
     {
         $jobs = Job::all();
+        $tags = Tag::all();
         return view('meeting.index', [
-            'jobs' => $jobs
+            'jobs' => $jobs,
+            'tags' => $tags,
         ]);
     }
 

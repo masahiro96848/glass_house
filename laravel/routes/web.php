@@ -45,6 +45,11 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::get('/message', 'MeetingController@message')->name('message');
 });
 
+// タグ関連
+Route::prefix('tag')->name('tag.')->group(function() {
+    Route::get('/{name}', 'TagController@index')->name('index');
+});
+
 // メッセージやりとり
 Route::prefix('message')->name('message.')->group(function() {
     Route::get('/{id}', 'MessageController@message')->name('index');

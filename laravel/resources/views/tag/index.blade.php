@@ -7,16 +7,9 @@
   <div class="l-container--content">
     <div class="l-container--wrapper">
       <div class="l-container--layout">
-        <h3 class="p-detail--title">新着の仲間・メンバー募集</h3>
-        <div class="p-detail--tag">
-          @foreach($tags as $tag)
-            <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
-              {{ $tag->hashtag }}
-            </a>
-          @endforeach
-        </div>
+        <h3 class="p-detail--title">{{ $tag->hashtag }} {{$tag->jobs->count()}}件</h3>
         <div class="p-card">
-          @foreach($jobs as $job)
+          @foreach($tag->jobs as $job)
             <div class="p-card--area">
               <div class="p-card--content">
                 <div class="p-card--photo">
@@ -36,7 +29,7 @@
                     @if($loop->first)
                       <div class="p-card--tag">
                     @endif
-                      <a href="">
+                      <a href="{{ route('tag.index', ['name' => $tag->name])}}">
                         {{ $tag->hashtag }}
                       </a>
                     @if($loop->last)
