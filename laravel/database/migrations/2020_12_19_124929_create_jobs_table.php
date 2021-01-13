@@ -16,7 +16,7 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('summary');
+            $table->text('summary');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->OnDelete('cascade');
             $table->timestamps();

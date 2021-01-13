@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('star');
-            $table->string('body');
+            $table->text('body');
             $table->integer('reviewer_id')->unsigned();
             $table->integer('reviewed_id')->unsigned();
             $table->integer('matching_id')->unsigned();
