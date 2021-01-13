@@ -88,4 +88,20 @@
     margin-bottom: 0;
   }
 
+  
+  &--tag a {
+    background-color: transparent;
+    border: 1px solid rgb(114, 113, 109);
+    color: rgb(0, 0, 0);
+    padding: $space_s $space_m;
+    margin-top: $space_m;
+    margin-right: 4px;
+    border-radius: 20px;
+    font-size: $font-size_14;
+  }
+
+  &--tag a:hover {
+    transition: 0.5s;
+    color: rgb(2, 26, 243);
+  }
 }

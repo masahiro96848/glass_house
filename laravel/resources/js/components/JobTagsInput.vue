@@ -47,3 +47,18 @@ export default {
   },
 };
 </script>
+<style lang="css">
+  .vue-tags-input .ti-tag {
+    background: transparent;
+    border: 1px solid rgb(114, 113, 109);
+    color: #111111;
+    margin-right: 4px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .vue-tags-input .ti-tag::before {
+    content: "#";
+    font-size: 14px;
+  }
+</style>
