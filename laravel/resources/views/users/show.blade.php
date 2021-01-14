@@ -30,9 +30,11 @@
                     </user-like>
                   @endif
               </div>
-              <div class="c-user--apply">
-                <a href="{{route('meeting.confirm', ['id' => $user->id])}}"><p class="p-card--apply">申請する</p></a> 
-              </div>
+              @if(Auth::id() !== $user->id)
+                <div class="c-user--apply">
+                  <a href="{{route('meeting.confirm', ['id' => $user->id])}}"><p class="p-card--apply">話してみたい</p></a> 
+                </div>
+              @endif
               <p class="c-user--intro">{{ $user->intro}}</p>
             </div>
             <div class="c-user--feature">
