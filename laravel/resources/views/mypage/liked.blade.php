@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $current_user->name. 'さんのいいねしたリスト')
+@section('title', $current_user->name. 'さんの')
 
 @section('content')
   @include('nav')
@@ -12,7 +12,7 @@
             <a href="{{ route('mypage.liking')}}"><h5 class="p-card--button">気になるリスト</h5></a>
           </div>
           <div class="p-card--tab">
-            <h5 class="p-card--button">あなたと話してみたいリスト</h5>
+            <a href="{{ route('mypage.liked')}}"><h5 class="p-card--button">あなたと話してみたいリスト</h5></a>
           </div>
           <div class="p-card--tab">
             <h5 class="p-card--button">マッチングリスト</h5>
