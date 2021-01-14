@@ -28,9 +28,11 @@ class UserController extends Controller
     {
         $user = User::where('name', $name)->first();
         $matchings = Matching::all();
+        $reviews = $user->revieweds()->get()->sortByDesc('created_at');
         return view('users.show', [
             'user' => $user,
             'matchings' => $matchings,
+            'reviews' => $reviews,
         ]);
     }
 

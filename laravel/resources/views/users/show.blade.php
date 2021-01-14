@@ -77,36 +77,34 @@
               <h5 class="c-user--myName">{{ $user->name }}さんへのレビュー</h5>
             </div>
             <div class="c-user--reviewContainer">
-              @foreach ($matchings as $matching)
-                @foreach ($matching->reviews as $review)
-                  <div class="c-user--card">
-                    <div class="c-user--member">
-                      <div class="c-user--imageArea">
-                        <img src="../img/wed.jpeg" alt="" class="c-user--image--sm">
-                        <span class="c-user--other">{{ $review->reviewer->name }}</span>
-                      </div>
-                      <div class="c-user--opponent">
-                        <span class="c-user--time">{{ $review->created_at->format('Y-m-d')}}</span>
-                      </div>
+              @foreach ($reviews as $review)
+                <div class="c-user--card">
+                  <div class="c-user--member">
+                    <div class="c-user--imageArea">
+                      <img src="../img/wed.jpeg" alt="" class="c-user--image--sm">
+                      <span class="c-user--other">{{ $review->reviewer->name}}</span>
                     </div>
-                    <div class="c-user--reviewTitle">
-                      <p class="c-user--title">{{ $review->title}}</p>
-                      <p class="c-user--rate">
-                        <comment-star
-                          rating={{ $review->star}}
-                          :star-size=25
-                          :read-only=true
-                        >
-
-                        </comment-star>
-                      </p>
-                      <p class="c-user--detail">
-                        {{ $review->body}}
-                      </p>
+                    <div class="c-user--opponent">
+                      <span class="c-user--time">{{ $review->created_at->format('Y-m-d')}}</span>
                     </div>
                   </div>
-                @endforeach        
-              @endforeach
+                  <div class="c-user--reviewTitle">
+                    <p class="c-user--title">{{ $review->title}}</p>
+                    <p class="c-user--rate">
+                      <comment-star
+                        rating={{ $review->star}}
+                        :star-size=25
+                        :read-only=true
+                      >
+
+                      </comment-star>
+                    </p>
+                    <p class="c-user--detail">
+                      {{ $review->body}}
+                    </p>
+                  </div>
+                </div>
+              @endforeach        
             </div>
           </div>
         </div>
