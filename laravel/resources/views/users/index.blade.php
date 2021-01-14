@@ -70,8 +70,10 @@
                     </user-like>
                   @endif
                 </div>
-                <div class="c-user--count">
-                  5人が気になるリストに登録済み
+                <div class="c-user--apply">
+                  @if(Auth::id() !== $user->id)
+                    <a href="{{route('meeting.confirm', ['id' => $user->id])}}"><p class="p-card--apply">話してみたい</p></a> 
+                  @endif  
                 </div>
               </div>
             </div>
