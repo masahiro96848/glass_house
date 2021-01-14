@@ -67,6 +67,8 @@ Route::prefix('profile')->name('profile.')->group(function() {
 Route::prefix('mypage')->name('mypage.')->group(function() {
     Route::get('/index', 'MypageController@index')->name('index');
     Route::get('/matching', 'MypageController@matching')->name('matching');
+    Route::get('/liking', 'MypageController@liking')->name('liking');
+    Route::get('/liked', 'MypageController@liked')->name('liked');
 });
 
 // ログイン関連

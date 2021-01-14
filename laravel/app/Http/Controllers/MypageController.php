@@ -28,4 +28,14 @@ class MypageController extends Controller
             'status' => $status,
         ]);
     }
+
+    public function liking() 
+    {
+        $current_user = Auth::user();
+        $users = $current_user->liking()->get()->sortByDesc('created_at');
+        return view('mypage.liking', [
+            'current_user' => $current_user,
+            'users' => $users,
+        ]);
+    }
 }
