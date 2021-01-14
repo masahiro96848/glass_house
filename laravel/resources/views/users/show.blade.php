@@ -17,7 +17,7 @@
                 <h3 class="c-user--name">{{ $user->name}}</h3>
               </div>
               <div class="c-user--review">
-                <p>🌟🌟🌟🌟🌟　レビュー５件</p>
+                <p>レビュー{{ $user->revieweds()->count()}}件</p>
               </div>
               <div class="c-user--like">
                 @if(Auth::id() !== $user->id)
