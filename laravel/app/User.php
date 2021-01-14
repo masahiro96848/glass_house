@@ -71,7 +71,7 @@ class User extends Authenticatable
         return $this->hasMany(Review::class, 'reviewed_id');
     }
 
-    public function likes()
+    public function liked()
     {
     return $this->belongsToMany(User::class, 'likes', 'liked_id', 'liking_id')->withTimestamps();
     }
@@ -84,12 +84,12 @@ class User extends Authenticatable
     public function isLikedBy(?User $user): bool
     {
         return $user
-            ?(bool)$this->likes->where('id', $user->id)->count()
+            ?(bool)$this->liked->where('id', $user->id)->count()
             : false;
     }       
 
     public function getCountLikesAttribute()
     {
-        return $this->likes->count();
+        return $this->liked->count();
     }
 }
