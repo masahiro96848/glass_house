@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Review;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -10,10 +11,11 @@ class ProfileController extends Controller
 {
     public function home()
     {
-        // $user = User::where('name', $name)->first();
         $user = Auth::user();
+        $reviews = $user->revieweds()->get()->sortByDesc('created_at');
         return view('profile.home', [
-            'user' => $user
+            'user' => $user,
+            'reviews' => $reviews,
         ]);
     }
 
