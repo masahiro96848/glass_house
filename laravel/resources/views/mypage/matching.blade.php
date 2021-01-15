@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'マッチングリスト')
+@section('title', $current_user->name. 'さんのマッチングリスト')
 
 @section('content')
   @include('nav')

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $current_user->name. 'さんの')
+@section('title', $current_user->name. 'さんのいいねされたリスト')
 
 @section('content')
   @include('nav')
