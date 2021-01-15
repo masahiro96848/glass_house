@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Offer;
 use App\Matching;
+use App\Job;
 use Illuminate\Support\Facades\Auth;
 use App\Enums\OfferType;
 use Illuminate\Http\Request;
@@ -48,6 +49,16 @@ class MypageController extends Controller
         return view('mypage.liked', [
             'current_user' => $current_user,
             'users' => $users,
+        ]);
+    }
+
+    public function job()
+    {
+        $current_user = Auth::user();
+        $jobs = $current_user->jobs()->get()->sortByDesc('created_at');
+        return view('mypage.job', [
+            'current_user' => $current_user,
+            'jobs' => $jobs,
         ]);
     }
 }

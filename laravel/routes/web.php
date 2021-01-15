@@ -69,6 +69,7 @@ Route::prefix('mypage')->name('mypage.')->group(function() {
     Route::get('/matching', 'MypageController@matching')->name('matching');
     Route::get('/liking', 'MypageController@liking')->name('liking');
     Route::get('/liked', 'MypageController@liked')->name('liked');
+    Route::get('/job', 'MypageController@job')->name('job');
 });
 
 // ログイン関連
