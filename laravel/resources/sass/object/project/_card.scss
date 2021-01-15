@@ -27,6 +27,9 @@
     margin-left: $space_xxl;
     margin-right: $space_xxl;
     width: 75%;
+    &--mypage {
+      width: 100%;
+    }
   }
 
   &--title {
@@ -36,7 +39,7 @@
 
   &--paragragh {
     border-bottom: 2px solid rgb(158, 158, 158);
-    line-height: 2.0;
+    line-height: 2.5;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
@@ -106,5 +109,11 @@
   &--tag a:hover {
     transition: 0.5s;
     color: rgb(2, 26, 243);
+  }
+
+  &--date {
+    display: inline-block;
+    margin-top: $space_l;
+    font-weight: bold;
   }
 }

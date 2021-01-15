@@ -9,6 +9,6 @@
     <a href="{{ route('mypage.matching')}}"><h5 class="p-card--button">マッチングリスト</h5></a>
   </div>
   <div class="p-card--tab">
-    <a href="{{ route('mypage.matching')}}"><h5 class="p-card--button">テーマリスト</h5></a>
+    <a href="{{ route('mypage.job')}}"><h5 class="p-card--button">テーマリスト</h5></a>
   </div>
 </div>
