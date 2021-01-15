@@ -18,11 +18,13 @@ class MypageController extends Controller
 
     public function matching()
     {
+        $current_user = Auth::user();
         $offers = Offer::all();         
         $offer_status = OfferType::getValue('Approved');
         $status = Offer::STATUS[3];
 
         return view('mypage.matching', [
+            'current_user' => $current_user,
             'offers' => $offers,
             'offer_status' => $offer_status,
             'status' => $status,
