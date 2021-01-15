@@ -1,5 +1,5 @@
 <div class="c-user--Container">
-    <h5 class="c-user--featureTitle">ユーザー名</h5>
+  <h5 class="c-user--featureTitle">ユーザー名</h5>
     <div class="c-user--featureArea">
       <div class="c-user">
         <img src="/img/wed.jpeg" alt=""class="c-user--image--sm" >
@@ -16,7 +16,7 @@
     <div class="c-user--featureArea">
       <p class="c-user--body">
         <comment-star
-          rating={{ $reveiw->star ?? old('star')}}
+          rating={{ $review->star ?? old('star')}}
         >
 
         </comment-star>

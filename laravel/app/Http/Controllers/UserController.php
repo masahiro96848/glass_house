@@ -27,11 +27,9 @@ class UserController extends Controller
     public function show($name) 
     {
         $user = User::where('name', $name)->first();
-        $matchings = Matching::all();
         $reviews = $user->revieweds()->get()->sortByDesc('created_at');
         return view('users.show', [
             'user' => $user,
-            'matchings' => $matchings,
             'reviews' => $reviews,
         ]);
     }
@@ -83,9 +81,31 @@ class UserController extends Controller
         }
     }
 
-    public function edit()
+    public function edit($r_id, $m_id)
     {
+        $current_user = Auth::id();
+        $review = Review::find($r_id);
+        $matching = Matching::find($m_id);
+        
+        return view('users.edit', [
+            'current_user' => $current_user,
+            'review' => $review,
+            'matching' => $matching,
+        ]);
+    }
 
+    public function update(Request $request, $id)
+    {
+        $review = Review::find($id);
+        $review->update([
+            'star' => $request->star,
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->route('users.show', [
+            'name' => $review->reviewed->name,
+        ]);
     }
 
     public function like(Request $request, $id)

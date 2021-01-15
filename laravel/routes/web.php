@@ -30,6 +30,8 @@ Route::prefix('user')->name('users.')->group(function() {
     Route::get('/show/{name}', 'UserController@show')->name('show');
     Route::get('/review/new/{id}', 'UserController@new')->name('new');
     Route::post('/review/new/{id}/store', 'UserController@store')->name('store');
+    Route::get('/review/{r_id}/edit/{m_id}', 'UserController@edit')->name('edit');
+    Route::put('/review/{r_id}/edit/{m_id}', 'UserController@update')->name('update');
 });
 
 // ミーティング関連

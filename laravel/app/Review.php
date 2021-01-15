@@ -19,4 +19,9 @@ class Review extends Model
     {
         return $this->belongsTo(User::class, 'reviewed_id');
     }
+
+    public function matching()
+    {
+        return $this->belongsTo(Matching::class);
+    }
 }

@@ -42,7 +42,6 @@ class User extends Authenticatable
         return $this->hasMany(Job::class);
     }
 
-
     public function messages()
     {
         return $this->belongsToMany(Message::class);
@@ -57,7 +56,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'offers', 'approve_id', 'apply_id');
     }
-
 
     public function isOfferedBy(?User $user):bool
     {
