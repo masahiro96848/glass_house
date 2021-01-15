@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout--lg">
+      <div class="l-container--layout--80">
         @include('mypage.tab')
 
         <div class="p-matching--area">
@@ -53,8 +53,8 @@
                       </div>
                     </td>
                     <td class="p-matching--line">
-                      <div>
-                        {{ $offer->status}}
+                      <div class="p-matching--status">
+                        {{ $offer->status}} <br>
                         <a href="{{route('meeting.offer', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
                       </div>
                     </td>

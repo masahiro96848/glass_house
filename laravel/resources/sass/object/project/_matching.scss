@@ -1,9 +1,5 @@
 .p-matching {
 
-  &--area {
-
-  }
-
   &--list {
     background-color: #fff;
     padding: $space_l;
@@ -44,6 +40,11 @@
 
   &--line {
     padding: $space_l;
+  }
+
+  &--status {
+    width: 150px;
+    text-align: center;
   }
 
   &--message {
