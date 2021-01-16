@@ -63,6 +63,28 @@ class MeetingController extends Controller
         return redirect()->route('meeting.index');
     }
 
+    public function edit($id)
+    {
+        $job = Job::find($id);
+        return view('meeting.edit', [
+            'job' => $job,
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $job = Job::find($id);
+        $job->update([
+            'title' => $request->title,
+            'summary' => $request->summary,
+            'user_id' => $request->user()->id,
+        ]);
+
+        return redirect()->route('meeting.show', [
+            'id' => $job->id,
+        ]);
+    }
+
     // 申請確認画面
     public function confirm($id)
     {

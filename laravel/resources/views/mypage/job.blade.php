@@ -17,6 +17,18 @@
                     <a href="{{ route('meeting.show', [$job->id])}}">
                       <h4 class="p-card--title">{{ $job->title}}</h4>
                     </a>
+                    @if(Auth::id() === $job->user->id)
+                        <a href="{{ route('meeting.edit', ['id' => $job->id])}}">
+                          <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
+                        </a>
+                        {{-- <form action="{{ route('users.delete', ['r_id' => $review->id,  'm_id' => $review->matching->id])}}" method="POST" class="p-panel--trash">
+                          @csrf
+                          @method('DELETE')
+                          <button class="p-panel--trash--button">
+                            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                          </button>
+                        </form> --}}
+                      @endif
                   </div>
                   <p class="p-card--paragragh">{{ $job->summary}}</p>
                   @foreach($job->tags as $tag)
