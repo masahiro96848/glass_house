@@ -28,10 +28,21 @@
               {{ $job->summary}}
             </p>
           </div>
+          <div class="p-member--tag">
+            @foreach($job->tags as $tag)
+              @if($loop->first)
+                <div class="p-card--tag">
+              @endif
+                <a href="{{ route('tag.index', ['name' => $tag->name])}}">
+                  {{ $tag->hashtag }}
+                </a>
+              @if($loop->last)
+                </div>
+              @endif
+            @endforeach
+          </div>
           <div class="p-member--apply">
-            
-              <a href="{{route('meeting.confirm', ['id' => $job->user->id])}}"><p class="p-card--apply">申請する</p></a> 
-            
+              <a href="{{route('meeting.confirm', ['id' => $job->user->id])}}"><p class="p-card--apply">話してみたい</p></a> 
           </div>
         </div>
       </div>
