@@ -12,6 +12,7 @@
   <div class="c-post">
     <job-tags-input
       :autocomplete-items='@json($allTagNames ?? [])'
+      :initial-tags='@json($tagNames ?? [])'
     >
 
     </job-tags-input>

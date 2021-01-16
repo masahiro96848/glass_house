@@ -36,10 +36,9 @@ class MeetingController extends Controller
     public function new()
     {
         $allTagNames = Tag::all()->map(function($tag) {
-        return [
-                'text' => $tag->name
-            ];
+            return ['text' => $tag->name];
         });
+
         return view('meeting.new' , [
             'allTagNames' => $allTagNames,
         ]);
@@ -66,12 +65,16 @@ class MeetingController extends Controller
     public function edit($id)
     {
         $job = Job::find($id);
+        $tagNames = $job->tags->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
         return view('meeting.edit', [
             'job' => $job,
+            'tagNames' => $tagNames,
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(JobRequest $request, $id)
     {
         $job = Job::find($id);
         $job->update([
@@ -79,6 +82,14 @@ class MeetingController extends Controller
             'summary' => $request->summary,
             'user_id' => $request->user()->id,
         ]);
+
+        $job->tags()->detach();
+        $request->tags->each(function ($tagNames) use ($job) {
+            $tag = Tag::firstOrCreate([
+                'name' => $tagNames,
+            ]);
+            $job->tags()->attach($tag);
+        });
 
         return redirect()->route('meeting.show', [
             'id' => $job->id,
