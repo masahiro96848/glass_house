@@ -57,6 +57,18 @@
     margin-top: $space_m;
   }
 
+  &--profile {
+    text-align: center;
+    border: none;
+    background: rgb(207, 202, 202);
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  &--edit {
+    padding: $space_m $space_l;
+  }
+
   &--intro {
     padding: $space_xxl $space_xxl;
     border-bottom: 2px solid rgb(148, 146, 146);

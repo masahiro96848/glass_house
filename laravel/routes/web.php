@@ -63,7 +63,7 @@ Route::prefix('message')->name('message.')->group(function() {
 
 // プロフィール
 Route::prefix('profile')->name('profile.')->group(function() {
-    Route::get('/home', 'ProfileController@home')->name('home');
+    Route::get('/home/{name}', 'ProfileController@home')->name('home');
     Route::get('/edit', 'ProfileController@edit')->name('edit');
     Route::put('/update', 'ProfileController@update')->name('update');
 });

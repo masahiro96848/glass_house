@@ -19,6 +19,11 @@
               <div class="c-user--review">
                 <p>レビュー{{ $user->revieweds()->count()}}件</p>
               </div>
+              <div class="c-user--profile">
+                <a href="{{ route('profile.edit')}}">
+                  <p class="c-user--edit">プロフィール編集</p>
+                </a>
+              </div>
               <p class="c-user--intro">{{ $user->intro}}</p>
             </div>
             <div class="c-user--feature">
@@ -40,7 +45,7 @@
                 <h5 class="c-user--featureTitle">話のテーマ</h5>
                 <div class="c-user--featureArea">
                   <p class="c-user--body">
-                    サービス開発 / 最近気になるアプリ・サービス / ラジオ / ポッドキャスト / プロレス / 野球（カープ） / 90年代のサブカルチャー / 映画 / ゲーム・オブ・スローンズ / ストレンジャー・シングス / 音楽（ヒップホップ・ラップ） / サウナ / ボードゲーム
+                    {{ $user->talk_theme }}
                   </p>
                 </div>
               </div>
@@ -48,11 +53,7 @@
                 <h5 class="c-user--featureTitle">こんな方と話したい</h5>
                 <div class="c-user--featureArea">
                   <p class="c-user--featureBody">
-                    オンライン、オフラインでコミュニティの運営に関わっている方
-                    語学を勉強している方
-                    副業を持っている方
-                    子どもや親に関わる仕事をしている方
-                    子育て中の方
+                    {{ $user->speaking }}
                   </p>
                 </div>
               </div>
