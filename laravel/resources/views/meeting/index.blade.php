@@ -26,7 +26,9 @@
                 </div>
                 <div class="p-card--box">
                   <div class="p-card--detail">
-                    <h4 class="p-card--title">{{ $job->title}}</h4>
+                    <a href="{{ route('meeting.show', [$job->id])}}">
+                      <h4 class="p-card--title">{{ $job->title}}</h4>
+                    </a>
                   </div>
                   <p class="p-card--paragragh">{{ $job->summary}}</p>
                   <div class="p-card--name">
