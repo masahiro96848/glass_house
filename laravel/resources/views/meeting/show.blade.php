@@ -41,9 +41,11 @@
               @endif
             @endforeach
           </div>
-          <div class="p-member--apply">
-              <a href="{{route('meeting.confirm', ['id' => $job->user->id])}}"><p class="p-card--apply">話してみたい</p></a> 
-          </div>
+          @if(Auth::id() !== $job->user->id )
+            <div class="p-member--apply">
+                <a href="{{route('meeting.confirm', ['id' => $job->user->id])}}"><p class="p-card--apply">話してみたい</p></a> 
+            </div>
+          @endif
         </div>
       </div>
     </div>
