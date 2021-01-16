@@ -108,6 +108,17 @@ class UserController extends Controller
         ]);
     }
 
+    public function delete($r_id, $m_id)
+    {
+        $review = Review::find($r_id);
+        $matching = Matching::find($m_id);
+        $review->delete();
+
+        return redirect()->route('users.show', [
+            'name' => $review->reviewed->name,
+        ]);
+    }
+
     public function like(Request $request, $id)
     {
         $user = User::where('id', $id)->first();
