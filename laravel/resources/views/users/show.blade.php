@@ -87,9 +87,16 @@
                     <div class="c-user--opponent">
                       <span class="c-user--time">{{ $review->created_at->format('Y-m-d')}}</span>
                       @if(Auth::id() === $review->reviewer->id)
-                      <a href="{{ route('users.edit', ['r_id' => $review->id, 'm_id' => $review->matching->id])}}">
-                        <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
-                      </a>
+                        <a href="{{ route('users.edit', ['r_id' => $review->id, 'm_id' => $review->matching->id])}}">
+                          <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
+                        </a>
+                        <form action="{{ route('users.delete', ['r_id' => $review->id,  'm_id' => $review->matching->id])}}" method="POST" class="p-panel--trash">
+                          @csrf
+                          @method('DELETE')
+                          <button class="p-panel--trash--button">
+                            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                          </button>
+                        </form>
                       @endif
                     </div>
                   </div>

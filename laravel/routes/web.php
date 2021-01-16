@@ -32,6 +32,7 @@ Route::prefix('user')->name('users.')->group(function() {
     Route::post('/review/new/{id}/store', 'UserController@store')->name('store');
     Route::get('/review/{r_id}/edit/{m_id}', 'UserController@edit')->name('edit');
     Route::put('/review/{r_id}/edit/{m_id}', 'UserController@update')->name('update');
+    Route::delete('/review/{r_id}/delete/{m_id}', 'UserController@delete')->name('delete');
 });
 
 // ミーティング関連
