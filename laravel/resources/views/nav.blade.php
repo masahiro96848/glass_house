@@ -10,9 +10,9 @@
   <nav class="p-menu--wrap">
     <ul class="p-menu--list u-pl_0 u-mt_l u-mb_l">
     <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.index')}}">仲間を探す</a></li>
-    <li class="p-menu--item "><a class="p-menu--link" href="{{ route('meeting.index')}}">募集を探す</a></li>
+    <li class="p-menu--item "><a class="p-menu--link" href="{{ route('meeting.index')}}">テーマを探す</a></li>
       @if (Auth::check())
-      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('meeting.new')}}">募集する</a></li>
+      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('meeting.new')}}">テーマを作る</a></li>
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('profile.home', ['name' => Auth::user()->name])}}">マイページ</a></li>
       <li class="p-menu--item ">
         <form id="logout-form" method="POST" action="{{ route('logout') }}" class="p-menu--logout">

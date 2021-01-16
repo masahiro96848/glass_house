@@ -1,13 +1,13 @@
 @extends('app')
 
-@section('title', 'メンバー募集・仲間募集')
+@section('title', 'テーマ一覧')
 
 @section('content')
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
       <div class="l-container--layout">
-        <h3 class="p-detail--title">新着の仲間・メンバー募集</h3>
+        <h3 class="p-detail--title">テーマ一覧・話題</h3>
         <div class="p-detail--tag">
           @foreach($tags as $tag)
             <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
