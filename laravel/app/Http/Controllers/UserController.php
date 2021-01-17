@@ -9,6 +9,7 @@ use App\Review;
 use App\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\ReviewRequest;
 
 class UserController extends Controller
 {
@@ -45,7 +46,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function store(Request $request, $id)
+    public function store(ReviewRequest $request, $id)
     {
         $current_user = Auth::user();
         $matching = Matching::find($id);
@@ -94,7 +95,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(ReviewRequest $request, $id)
     {
         $review = Review::find($id);
         $review->update([
