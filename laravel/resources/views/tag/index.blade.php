@@ -38,7 +38,9 @@
                   @endforeach
                 </div>
                 <div class="p-card--right">
-                  <p class="p-card--apply">申請する</p>
+                  @if(Auth::id() !== $job->user->id)
+                    <a href="{{ route('meeting.confirm', ['name' => $job->user->name])}}"><p class="p-card--apply">話してみたい</p></a>
+                  @endif  
                   <p class="p-card--star">🌟🌟🌟🌟🌟</p>
                   <p class="pcard--starCount">5.0</p>
                     <p class="pcard--reviewCount">レビュー{{$job->user->revieweds->count() }}件</p>
