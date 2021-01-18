@@ -82,10 +82,12 @@ class UserController extends Controller
         }
     }
 
-    public function edit($r_id, $m_id)
+    public function edit($r_id, $m_id, Review $review)
     {
         $current_user = Auth::id();
         $review = Review::find($r_id);
+        // ReviewPolicyでアクセス制限
+        $this->authorize('update', $review);
         $matching = Matching::find($m_id);
         
         return view('users.edit', [
@@ -98,6 +100,8 @@ class UserController extends Controller
     public function update(ReviewRequest $request, $id)
     {
         $review = Review::find($id);
+         // ReviewPolicyでアクセス制限
+        $this->authorize('update', $review);
         $review->update([
             'star' => $request->star,
             'title' => $request->title,
@@ -112,6 +116,8 @@ class UserController extends Controller
     public function delete($r_id, $m_id)
     {
         $review = Review::find($r_id);
+        // ReviewPolicyでアクセス制限
+        $this->authorize('delete', $review);
         $matching = Matching::find($m_id);
         $review->delete();
 
