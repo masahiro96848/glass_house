@@ -18,7 +18,7 @@
           </div>
           <div class="p-confirm--intro">
             <p>
-              1人でも多くの人が自分の人生の価値に気づき、そのために全力で生きられるコミュニティを創っていきたいと思っています。誰かの【評価】に苛まれるのではなく、自分の【価値】をしっかり見出せるように。世界中にそんな人を増やしていけるプロジェクトを考えたいです。
+              {{ $matching->apply->intro}}
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@
             </div>
           <div class="p-confirm--preserve">
             @if(Auth::id() === $matching->apply->id)
-              <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">戻る</p></a>
+              <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">マイページに戻る</p></a>
             @else  
               <form method="POST" action="{{ route('meeting.approve', ['id' => $offer->id])}}">
                 @csrf

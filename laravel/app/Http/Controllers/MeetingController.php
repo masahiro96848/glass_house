@@ -108,10 +108,10 @@ class MeetingController extends Controller
     }
 
     //申請送信画面
-    public function apply(Request $request, $id) 
+    public function apply(Request $request, $name) 
     {
         $current_user = Auth::user();
-        $user = User::where('id', $id)->first();
+        $user = User::where('name', $name)->first();
         //offer作成
         $offer = Offer::create([
             'status' => Offer::STATUS[2],
