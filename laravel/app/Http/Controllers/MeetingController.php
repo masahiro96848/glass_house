@@ -97,9 +97,9 @@ class MeetingController extends Controller
     }
 
     // 申請確認画面
-    public function confirm($id)
+    public function confirm($name)
     {
-        $user = User::where('id', $id)->first();
+        $user = User::where('name', $name)->first();
         $currnet_user = Auth::user();
         return view('meeting.confirm', [
             'user' => $user,
