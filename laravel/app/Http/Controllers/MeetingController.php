@@ -133,8 +133,11 @@ class MeetingController extends Controller
     //オファー画面
     public function offer($id)
     {
+        
         $offer = Offer::find($id);
         $matching = $offer->matchings()->first();
+        // MatchingPolicyでアクセス制限
+        $this->authorize('view', $matching);
         return view('meeting.offer', [
             'offer' => $offer,
             'matching' => $matching
@@ -144,6 +147,9 @@ class MeetingController extends Controller
     public function approve(Request $request, $id)
     {
         $offer = Offer::where('id', $id)->first();
+        $matching = $offer->matchings()->first();
+         // MatchingPolicyでアクセス制限
+        $this->authorize('view', $matching);
         $offer->update([
             'status' => Offer::STATUS[3],
         ]);
