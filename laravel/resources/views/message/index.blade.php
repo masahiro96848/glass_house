@@ -13,6 +13,11 @@
             @foreach($messages as $message)
               <div class="p-comment--left">
                 <img src="../img/wed.jpeg" alt="" class="c-user--image--sm">
+                @if($message->toUser)
+                  <span class="p-comment--name">{{ $message->toUser->name}}</span>
+                @else
+                  <span class="p-comment--name">{{ $message->fromUser->name}}</span>
+                @endif
                   <div class="p-comment--details">
                     <p>
                       {{ $message->comment}}

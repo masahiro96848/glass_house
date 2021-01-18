@@ -4,6 +4,11 @@
     display: flex;
   }
 
+  &--name {
+    margin-left: $space_m;
+    margin-top: $space_m;
+  }
+
   &--details {
     background-color: #ededed;
     padding: 20px 20px 10px;
