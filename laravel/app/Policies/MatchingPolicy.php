@@ -16,9 +16,9 @@ class MatchingPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user, Matching $matching)
     {
-        //
+        return optional($user)->id === $matching->apply_id || optional($user)->id === $matching->approve_id;
     }
 
     /**
