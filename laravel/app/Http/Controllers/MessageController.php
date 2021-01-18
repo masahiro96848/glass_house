@@ -13,10 +13,11 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    public function message($id)
+    public function message($id, Message $message)
     {
         $matching = Matching::where('id', $id)->first();
         $messages = $matching->messages()->get();
+        $this->authorize('viewAny', $matching);
         return view('message.index', [
             'matching' => $matching,
             'messages' => $messages
