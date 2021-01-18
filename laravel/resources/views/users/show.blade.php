@@ -32,7 +32,7 @@
               </div>
               @if(Auth::id() !== $user->id)
                 <div class="c-user--apply">
-                  <a href="{{route('meeting.confirm', ['id' => $user->id])}}"><p class="p-card--apply">話してみたい</p></a> 
+                  <a href="{{route('meeting.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a> 
                 </div>
               @endif
               <p class="c-user--intro">{{ $user->intro}}</p>

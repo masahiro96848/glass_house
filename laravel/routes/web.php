@@ -43,8 +43,8 @@ Route::prefix('meeting')->name('meeting.')->group(function() {
     Route::post('/create', 'MeetingController@create')->name('create');
     Route::get('/edit/{id}', 'MeetingController@edit')->name('edit');
     Route::put('/edit/{id}', 'MeetingController@update')->name('update');
-    Route::get('/confirm/{id}', 'MeetingController@confirm')->name('confirm');
-    Route::post('confirm/{id}', 'MeetingController@apply')->name('apply');
+    Route::get('/confirm/{name}', 'MeetingController@confirm')->name('confirm');
+    Route::post('confirm/{name}', 'MeetingController@apply')->name('apply');
     Route::get('/offer/{id}', 'MeetingController@offer')->name('offer');
     Route::put('/offer/{id}/approve', 'MeetingController@approve')->name('approve');
     Route::get('/message', 'MeetingController@message')->name('message');
