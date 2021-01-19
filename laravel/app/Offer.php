@@ -12,7 +12,7 @@ class Offer extends Model
     use CastsEnums;
 
     protected $fillable = [
-        'status'
+        'status', 'user_id',
     ];
 
     protected $dates = [

@@ -115,6 +115,7 @@ class MeetingController extends Controller
         //offer作成
         $offer = Offer::create([
             'status' => Offer::STATUS[2],
+            'user_id' => $request->user()->id,
         ]);
 
         // matchingを作成
