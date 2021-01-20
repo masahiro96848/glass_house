@@ -26,10 +26,14 @@
           <div class="c-post">
             <textarea name="intro" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="200文字以内" >{{ $user->intro ?? old('intro') }}</textarea>
           </div>
-          <label for="tags">カテゴリー</label>
+          <label for="">カテゴリー</label>
           <div class="c-post">
-            @foreach($categories as $item => $value)
-              <input type="checkbox" name="category" id="" value="{{ $value['id']}}">{{ $value['name']}}
+            @foreach($categories as $id => $category)
+            <input type="checkbox" name="category[]" id="{{ $category }}" value="{{ $id }}">
+              
+                <label for="category">
+                  {{ $category->name }}
+                </label>  
             @endforeach
           </div>
           <label for="review">話のテーマ</label>
@@ -50,4 +54,4 @@
   @include('footer')  
 @endsection
 
-{{-- {{dd($product->id)}} --}}
+{{-- {{dd($user->categories)}} --}}

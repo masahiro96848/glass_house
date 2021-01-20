@@ -13,9 +13,11 @@ class ProfileController extends Controller
     public function home()
     {
         $user = Auth::user();
+        $categories = $user->categories()->get();
         $reviews = $user->revieweds()->get()->sortByDesc('created_at');
         return view('profile.home', [
             'user' => $user,
+            'categories' => $categories,
             'reviews' => $reviews,
         ]);
     }
@@ -37,6 +39,7 @@ class ProfileController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'intro' => $request->intro,
+            'category_id' => $request->category_id,
             'talk_theme' => $request->talk_theme,
             'speaking' => $request->speaking
         ]);

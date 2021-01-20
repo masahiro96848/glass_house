@@ -30,15 +30,7 @@
               <div class="c-user--Container">
                 <h5 class="c-user--featureTitle">カテゴリー</h5>
                 <div class="c-user--featureArea">
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">マーケティング</p>
+                  <p class="c-user--categoryName">{{ $categories}}</p>
                 </div>
               </div>
               <div class="c-user--Container">
