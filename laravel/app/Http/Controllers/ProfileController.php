@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Review;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,11 @@ class ProfileController extends Controller
     public function home()
     {
         $user = Auth::user();
+        $categories = $user->categories()->get();
         $reviews = $user->revieweds()->get()->sortByDesc('created_at');
         return view('profile.home', [
             'user' => $user,
+            'categories' => $categories,
             'reviews' => $reviews,
         ]);
     }
@@ -22,8 +25,10 @@ class ProfileController extends Controller
     public function edit()
     {
         $user = Auth::user();
+        $categories = Category::all();
         return view('profile.edit', [
-            'user' => $user
+            'user' => $user,
+            'categories' => $categories,
         ]);
     }
 
@@ -34,6 +39,7 @@ class ProfileController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'intro' => $request->intro,
+            'category_id' => $request->category_id,
             'talk_theme' => $request->talk_theme,
             'speaking' => $request->speaking
         ]);
