@@ -28,6 +28,9 @@
           </div>
           <label for="tags">カテゴリー</label>
           <div class="c-post">
+            @foreach($categories as $item => $value)
+              <input type="checkbox" name="category" id="" value="{{ $value['id']}}">{{ $value['name']}}
+            @endforeach
           </div>
           <label for="review">話のテーマ</label>
           <div class="c-post">
