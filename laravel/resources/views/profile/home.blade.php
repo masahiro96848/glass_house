@@ -30,7 +30,11 @@
               <div class="c-user--Container">
                 <h5 class="c-user--featureTitle">カテゴリー</h5>
                 <div class="c-user--featureArea">
-                  <p class="c-user--categoryName">{{ $categories}}</p>
+                  @foreach($categories as $category)
+                    <p class="c-user--categoryName">
+                      {{ $category->name }}
+                    </p>
+                  @endforeach
                 </div>
               </div>
               <div class="c-user--Container">

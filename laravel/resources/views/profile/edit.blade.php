@@ -28,11 +28,12 @@
           </div>
           <label for="">カテゴリー</label>
           <div class="c-post">
-            @foreach($categories as $id => $category)
-            <input type="checkbox" name="category[]" id="{{ $category }}" value="{{ $id }}">
+            @foreach($categories as $item => $value)
+            <input type="checkbox" name="category_id[]" checked="checked" >
+                  
               
                 <label for="category">
-                  {{ $category->name }}
+                  {{ $value['name'] }}
                 </label>  
             @endforeach
           </div>

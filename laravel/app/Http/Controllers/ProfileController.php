@@ -39,10 +39,11 @@ class ProfileController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'intro' => $request->intro,
-            'category_id' => $request->category_id,
             'talk_theme' => $request->talk_theme,
             'speaking' => $request->speaking
         ]);
+
+        $user->categories()->attach($user);
 
         return redirect()->route('profile.home', [
             'name' => $request->name,
