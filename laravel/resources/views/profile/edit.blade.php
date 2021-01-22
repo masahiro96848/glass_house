@@ -34,16 +34,6 @@
                   {{ $category->name  }}
                 </label>  
             @endforeach
-            {{-- @foreach ($categories as $category)
-              @if($user->categories->contains('id', $category->id))
-                <input type="checkbox" name="category[]" value="{{ $category->id}}" checked>
-              @else
-                <input type="checkbox" name="category[]" value="{{ $category->id}}">
-              @endif 
-                <label for="">
-                  {{ $category->name }}
-                </label>
-            @endforeach --}}
           </div>
           <label for="review">話のテーマ</label>
           <div class="c-post">
