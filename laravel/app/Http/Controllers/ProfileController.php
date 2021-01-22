@@ -43,7 +43,8 @@ class ProfileController extends Controller
             'speaking' => $request->speaking
         ]);
 
-        $user->categories()->attach($user);
+        $user->categories()->detach();
+        $user->categories()->attach($request->category);
 
         return redirect()->route('profile.home', [
             'name' => $request->name,

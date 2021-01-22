@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'user_category');
+        return $this->belongsToMany(Category::class, 'category_user');
     }
 
     public function jobs()

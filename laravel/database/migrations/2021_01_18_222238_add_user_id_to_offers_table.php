@@ -28,6 +28,7 @@ class AddUserIdToOffersTable extends Migration
     {
         Schema::table('offers', function (Blueprint $table) {
             $table->dropForeign('offers_user_id_foreign');
+            $table->dropColumn('user_id');
         });
 
         // Schema::table('offers', function (Blueprint $table) {

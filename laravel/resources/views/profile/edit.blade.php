@@ -28,14 +28,22 @@
           </div>
           <label for="">カテゴリー</label>
           <div class="c-post">
-            @foreach($categories as $item => $value)
-            <input type="checkbox" name="category_id[]" checked="checked" >
-                  
-              
+            @foreach($categories as $category)
+            <input type="checkbox" name="category[]" id=""  value="{{ $category->id }}" {{ $category->id == old('category', $user->categories->contains('id', $category->id) ?? '') ? 'checked' : ''}}  >
                 <label for="category">
-                  {{ $value['name'] }}
+                  {{ $category->name  }}
                 </label>  
             @endforeach
+            {{-- @foreach ($categories as $category)
+              @if($user->categories->contains('id', $category->id))
+                <input type="checkbox" name="category[]" value="{{ $category->id}}" checked>
+              @else
+                <input type="checkbox" name="category[]" value="{{ $category->id}}">
+              @endif 
+                <label for="">
+                  {{ $category->name }}
+                </label>
+            @endforeach --}}
           </div>
           <label for="review">話のテーマ</label>
           <div class="c-post">
@@ -54,5 +62,3 @@
   </div>
   @include('footer')  
 @endsection
-
-{{-- {{dd($user->categories)}} --}}
