@@ -29,7 +29,9 @@
                   <tr>
                     <td class="p-matching--line">
                       <div>
-                        <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
+                        <a href="{{ route('users.show',['name' => $matching->apply->name])}}">
+                          <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
+                        </a>
                       </div>
                       <div>
                         <p>{{ $matching->apply->name}}</p>
@@ -37,7 +39,9 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
+                        <a href="{{ route('users.show',['name' => $matching->approve->name])}}">
+                          <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
+                        </a>
                       </div>
                       <div>
                         <p>{{ $matching->approve->name }}</p>
