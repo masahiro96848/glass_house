@@ -41,22 +41,18 @@
               <div class="c-user--Container">
                 <h5 class="c-user--featureTitle">カテゴリー</h5>
                 <div class="c-user--featureArea">
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">エンジニア</p>
-                  <p class="c-user--categoryName">マーケティング</p>
-                  <p class="c-user--categoryName">マーケティング</p>
+                  @foreach ($user->categories as $category)
+                    <p class="c-user--categoryName">
+                      {{ $category->name }}
+                    </p>    
+                  @endforeach
                 </div>
               </div>
               <div class="c-user--Container">
                 <h5 class="c-user--featureTitle">話のテーマ</h5>
                 <div class="c-user--featureArea">
                   <p class="c-user--body">
-                    サービス開発 / 最近気になるアプリ・サービス / ラジオ / ポッドキャスト / プロレス / 野球（カープ） / 90年代のサブカルチャー / 映画 / ゲーム・オブ・スローンズ / ストレンジャー・シングス / 音楽（ヒップホップ・ラップ） / サウナ / ボードゲーム
+                    {{ $user->talk_theme }}
                   </p>
                 </div>
               </div>
@@ -64,11 +60,7 @@
                 <h5 class="c-user--featureTitle">こんな方と話したい</h5>
                 <div class="c-user--featureArea">
                   <p class="c-user--featureBody">
-                    オンライン、オフラインでコミュニティの運営に関わっている方
-                    語学を勉強している方
-                    副業を持っている方
-                    子どもや親に関わる仕事をしている方
-                    子育て中の方
+                    {{ $user->speaking }}
                   </p>
                 </div>
               </div>
@@ -126,4 +118,4 @@
   @include('footer')
 @endsection
 
-{{-- {{dd($review->id)}} --}}
+{{-- {{dd($category->name)}} --}}
