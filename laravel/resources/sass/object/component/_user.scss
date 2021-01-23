@@ -83,6 +83,7 @@
 
   &--clamp {
     display: -webkit-box;
+    line-height: 2.0;
     overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -189,6 +190,20 @@
     border: 1px solid #f9fafb;
     padding: $space_m;
     border-radius: 5px;
+  }
+
+  &--professional {
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-all;
+  }
+  &--category {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: $font-size_m;
+    border: 1px solid black;
+    padding: $space_s $space_m;
+    margin-right: $space_m;
   }
 
 
