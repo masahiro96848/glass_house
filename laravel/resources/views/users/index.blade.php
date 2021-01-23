@@ -75,6 +75,15 @@
                     <a href="{{route('meeting.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a> 
                   @endif  
                 </div>
+                <div class="c-user--professional">
+                  @foreach ($user->categories as $category)
+                  <a href="">
+                    <p class="c-user--category">
+                      {{ $category->name }}
+                    </p>
+                  </a>
+                  @endforeach
+                </div>
               </div>
             </div>
           @endforeach
