@@ -13,7 +13,7 @@
             <div class="p-card--area">
               <div class="p-card--content">
                 <div class="p-card--photo">
-                  <a href="{{ route('meeting.show', [$job->id])}}">
+                  <a href="{{ route('users.show', ['name' => $job->user->name])}}">
                     <img src="../img/wed.jpeg" alt=""class="c-user--image" >
                   </a> 
                 </div>
