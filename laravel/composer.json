@@ -11,6 +11,8 @@
         "php": "^7.2",
         "bensampo/laravel-enum": "2.2",
         "fideloper/proxy": "^4.0",
+        "firebase/php-jwt": "^5.2",
+        "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.0"
