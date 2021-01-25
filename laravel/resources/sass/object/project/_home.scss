@@ -1,0 +1,121 @@
+.p-home {
+
+  &--main {
+    width: 100%;
+    height: 800px;
+    background-image: url('./img/zoom.sample03.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include mq(sm) {
+      height: 600px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &--mainTitle {
+    padding-top: 200px;
+    padding-left: 150px;
+    color: #ffffff;
+    display: inline-block;
+    font-family: $font-family_main_title;
+
+    @include mq(lg) {
+      padding-top: 200px;
+    }
+    @include mq(md) {
+      padding-left: 50px;
+    }
+    @include mq(sm) {
+      padding-left: 0;
+      padding-top: 0;
+      padding-bottom: 100px;
+      width: 100%;
+    }
+  }
+
+  &--title {
+    text-align: center;
+    margin-bottom: $space_xl;
+  }
+
+  &--contentsTitle {
+    padding-top: $space_xxxl;
+    text-align: center;
+  }
+
+  &--paragraph {
+    margin-top: $space_xxl;
+    font-size: 18px;
+    line-height: 1.9;
+    @include mq (sm) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &--contents {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 100px 150px;
+    @include mq(lg) {
+      padding: $space_xxxl;
+    }
+
+    @include  mq(md) {
+      padding: $space_xxxl;
+    }
+
+    @include mq(sm) {
+      display: block;
+      padding: $space_l ;
+    }
+  }
+
+  &--panel {
+    width: 300px;
+    @include mq(lg) {
+      width: 250px;
+    }
+    @include mq(md) {
+      width: 180px;
+    }
+    @include mq(sm) {
+      width: 250px;
+      margin: 0 auto;
+    }
+  }
+
+  &--head {
+    width: 300px;
+    height: 200px;
+    @include mq(lg) {
+      width: 250px;
+    }
+    @include mq(md) {
+      width: 180px;
+    }
+    @include mq(sm) {
+      width: 250px;
+    }
+
+    & img {
+      width: 300px;
+      height: 200px;
+      @include mq(lg) {
+        width: 250px;
+      }
+      @include mq(md) {
+        width: 180px;
+      }
+      @include mq(sm) {
+        width: 250px;
+      }
+    }
+  }
+
+  &--body {
+    padding-top: $space_l;
+    line-height: 1.8;
+  }
+}
