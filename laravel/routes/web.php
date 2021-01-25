@@ -10,11 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// LP関連
+Route::get('/', 'HomeController@index')->name('home.index');
 // ログイン関連
 Auth::routes();
 
