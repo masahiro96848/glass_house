@@ -26,6 +26,7 @@ class ZoomJWTTraits
   private function zoomRequest()
   {
     $jwt = $this->generateZoomToken();
+
     return \Illuminate\Support\Facades\Http::withHeaders([
         'authorization' => 'Bearer' .$jwt,
         'content-type' => 'application/json',
@@ -36,6 +37,7 @@ class ZoomJWTTraits
   {
     $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
+
     return $request->get($url . $path, $query);
   }
 
@@ -50,6 +52,7 @@ class ZoomJWTTraits
   {
     $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
+
     return $request->patch($url . $path, $body);
   }
 
@@ -57,6 +60,7 @@ class ZoomJWTTraits
   {
     $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
+    
     return $request->delete($url . $path, $body);
   }
 
