@@ -45,6 +45,7 @@ class ZoomJWTTraits
   {
     $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
+    
     return $request->post($url . $path, $body);
   }
 
@@ -60,7 +61,7 @@ class ZoomJWTTraits
   {
     $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
-    
+
     return $request->delete($url . $path, $body);
   }
 
