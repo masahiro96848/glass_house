@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'メンバー募集を編集する')
+@section('title', 'メンバー募集を作る')
 
 @section('content')
   @include('nav')
@@ -11,10 +11,9 @@
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="POST" action="{{ route('meeting.update', ['id' => $job->id])}}" enctype="">
+        <form method="POST" action="{{ route('job.create')}}" enctype="">
           @csrf
-          @method('PUT')
-            @include('meeting.form')
+            @include('job.form')
           <button class="c-button c-button--submit " type="submit">公開する</button>
         </form>
       </div>
@@ -22,3 +21,5 @@
   </div>
   @include('footer')  
 @endsection
+
+{{-- {{dd($product->id)}} --}}

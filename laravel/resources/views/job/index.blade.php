@@ -26,7 +26,7 @@
                 </div>
                 <div class="p-card--box">
                   <div class="p-card--detail">
-                    <a href="{{ route('meeting.show', [$job->id])}}">
+                    <a href="{{ route('job.show', [$job->id])}}">
                       <h4 class="p-card--title">{{ $job->title}}</h4>
                     </a>
                   </div>

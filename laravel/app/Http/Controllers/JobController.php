@@ -9,7 +9,6 @@ use App\Message;
 use App\Matching;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
-use App\Enums\OfferType;
 use Illuminate\Http\Request;
 use App\Http\Requests\JobRequest;
 
