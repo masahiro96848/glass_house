@@ -53,10 +53,10 @@ Route::group(['middleware' => 'auth'], function() {
 
     // meeting関連
     Route::prefix('meeting')->name('meeting.')->group(function() {
-        Route::get('/confirm/{name}', 'UserController@confirm')->name('confirm');
-        Route::post('confirm/{name}', 'UserController@apply')->name('apply');
-        Route::get('/offer/{id}', 'UserController@offer')->name('offer');
-        Route::put('/offer/{id}/approve', 'UserController@approve')->name('approve');
+        Route::get('/confirm/{name}', 'MeetingController@confirm')->name('confirm');
+        Route::post('confirm/{name}', 'MeetingController@apply')->name('apply');
+        Route::get('/offer/{id}', 'MeetingController@offer')->name('offer');
+        Route::put('/offer/{id}/approve', 'MeetingController@approve')->name('approve');
     });
 
     // message関連
