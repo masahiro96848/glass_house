@@ -53,6 +53,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     // meeting関連
     Route::prefix('meeting')->name('meeting.')->group(function() {
+        Route::get('/new', 'MeetingController@new')->name('new');
+        Route::post('/create', 'MeetingController@create')->name('create');
         Route::get('/confirm/{name}', 'MeetingController@confirm')->name('confirm');
         Route::post('confirm/{name}', 'MeetingController@apply')->name('apply');
         Route::get('/offer/{id}', 'MeetingController@offer')->name('offer');
