@@ -68,7 +68,7 @@
                       </div>
                       @if($offer->status === App\Offer::STATUS[3])
                         <div>
-                          <a href=""> <p class="p-matching--zoom p-matching--width">zoom</p></a>
+                          <a href="{{ route('meeting.new')}}"> <p class="p-matching--zoom p-matching--width">zoom</p></a>
                         </div>
                         <div>
                           <a href="{{ route('users.new', ['id' => $matching->id])}}"><p class="p-matching--review p-matching--width">レビュー投稿</p></a>

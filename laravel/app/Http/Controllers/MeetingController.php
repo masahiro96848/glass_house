@@ -15,6 +15,16 @@ use App\Http\Requests\JobRequest;
 
 class MeetingController extends Controller
 {
+
+    public function new()
+    {
+        return view('meeting.new');
+    }
+
+    public function create()
+    {
+        
+    }
     //===============================
     // 申請関連
     //===============================
