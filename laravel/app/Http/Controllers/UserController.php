@@ -126,6 +126,10 @@ class UserController extends Controller
         ]);
     }
 
+    //===============================
+    // 申請関連
+    //===============================
+    
     // 申請確認画面
     public function confirm($name)
     {

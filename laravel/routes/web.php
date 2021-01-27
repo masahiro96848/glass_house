@@ -34,10 +34,11 @@ Route::group(['middleware' => 'auth'], function() {
         
     // user関連
     Route::prefix('user')->name('users.')->group(function() {
-        Route::get('/confirm/{name}', 'UserController@confirm')->name('confirm');
-        Route::post('confirm/{name}', 'UserController@apply')->name('apply');
-        Route::get('/offer/{id}', 'UserController@offer')->name('offer');
-        Route::put('/offer/{id}/approve', 'UserController@approve')->name('approve');
+        Route::get('/review/new/{id}', 'UserController@new')->name('new');
+        Route::post('/review/new/{id}/store', 'UserController@store')->name('store');
+        Route::get('/review/{r_id}/edit/{m_id}', 'UserController@edit')->name('edit');
+        Route::put('/review/{r_id}/edit/{m_id}', 'UserController@update')->name('update');
+        Route::delete('/review/{r_id}/delete/{m_id}', 'UserController@delete')->name('delete');
         Route::put('{id}/like', 'UserController@like')->name('like');
         Route::delete('{id}/like', 'UserController@unlike')->name('unlike');
     });
@@ -52,25 +53,16 @@ Route::group(['middleware' => 'auth'], function() {
 
     // meeting関連
     Route::prefix('meeting')->name('meeting.')->group(function() {
-        Route::get('/new', 'MeetingController@new')->name('new');
-        Route::post('/create', 'MeetingController@create')->name('create');
-        Route::get('/edit/{id}', 'MeetingController@edit')->name('edit');
-        Route::put('/edit/{id}', 'MeetingController@update')->name('update');
+        Route::get('/confirm/{name}', 'UserController@confirm')->name('confirm');
+        Route::post('confirm/{name}', 'UserController@apply')->name('apply');
+        Route::get('/offer/{id}', 'UserController@offer')->name('offer');
+        Route::put('/offer/{id}/approve', 'UserController@approve')->name('approve');
     });
 
     // message関連
     Route::prefix('message')->name('message.')->group(function() {
         Route::get('/{id}', 'MessageController@message')->name('index');
         Route::post('/{id}', 'MessageController@store')->name('store');
-    });
-
-    // review関連
-    Route::prefix('review')->name('review.')->group(function() {
-        Route::get('/review/new/{id}', 'UserController@new')->name('new');
-        Route::post('/review/new/{id}/store', 'UserController@store')->name('store');
-        Route::get('/review/{r_id}/edit/{m_id}', 'UserController@edit')->name('edit');
-        Route::put('/review/{r_id}/edit/{m_id}', 'UserController@update')->name('update');
-        Route::delete('/review/{r_id}/delete/{m_id}', 'UserController@delete')->name('delete');
     });
 
     // profile関連
@@ -85,9 +77,9 @@ Route::group(['middleware' => 'auth'], function() {
 // 未ログインユーザー閲覧可能
 Route::get('/users', 'UserController@index')->name('users.index');
 Route::get('/show/{name}', 'UserController@show')->name('users.show');
-Route::prefix('meeting')->name('meeting.')->group(function() {
-    Route::get('/index', 'MeetingController@index')->name('index');
-    Route::get('/show/{id}', 'MeetingController@show')->name('show');
+Route::prefix('job')->name('job.')->group(function() {
+    Route::get('/index', 'JobController@index')->name('index');
+    Route::get('/show/{id}', 'JobController@show')->name('show');
 });
 
 Route::prefix('tag')->name('tag.')->group(function() {
