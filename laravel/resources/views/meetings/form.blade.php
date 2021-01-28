@@ -1,6 +1,6 @@
-<label for="title">タイトル</label>
+<label for="title">トピック</label>
 <div class="c-post">
-  <input type="text" class="c-form--control" placeholder="タイトル名"  name="title"   value="{{ $job->title ?? old('title')}}">
+  <input type="text" class="c-form--control" placeholder="タイトル名"  name="topic"   value="{{ $job->title ?? old('title')}}">
 </div>
 
 <label for="review">アジェンダ</label>
