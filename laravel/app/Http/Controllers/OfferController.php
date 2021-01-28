@@ -13,28 +13,15 @@ use App\Enums\OfferType;
 use Illuminate\Http\Request;
 use App\Http\Requests\JobRequest;
 
-class MeetingController extends Controller
+class OfferController extends Controller
 {
 
-    public function new()
-    {
-        return view('meeting.new');
-    }
-
-    public function create()
-    {
-        
-    }
-    //===============================
-    // 申請関連
-    //===============================
-    
     // 申請確認画面
     public function confirm($name)
     {
         $user = User::where('name', $name)->first();
         $currnet_user = Auth::user();
-        return view('meeting.confirm', [
+        return view('offer.confirm', [
             'user' => $user,
             'current_user' => $currnet_user,
         ]);
@@ -58,26 +45,26 @@ class MeetingController extends Controller
             'offer_id' => $offer->id
         ]);
 
-        return redirect()->route('meeting.offer', [
+        return redirect()->route('offer.detail', [
             'id' => $offer->id,
             'matching' => $matching
         ]);
     }
 
     //オファー画面
-    public function offer($id)
+    public function detail($id)
     {
-        
         $offer = Offer::find($id);
         $matching = $offer->matchings()->first();
         // MatchingPolicyでアクセス制限
         $this->authorize('view', $matching);
-        return view('meeting.offer', [
+        return view('offer.detail', [
             'offer' => $offer,
             'matching' => $matching
         ]);
     }
 
+    // オファー承諾画面
     public function approve(Request $request, $id)
     {
         $offer = Offer::where('id', $id)->first();

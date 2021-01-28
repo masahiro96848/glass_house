@@ -52,11 +52,11 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
     // meeting関連
-    Route::prefix('meeting')->name('meeting.')->group(function() {
-        Route::get('/confirm/{name}', 'MeetingController@confirm')->name('confirm');
-        Route::post('confirm/{name}', 'MeetingController@apply')->name('apply');
-        Route::get('/offer/{id}', 'MeetingController@offer')->name('offer');
-        Route::put('/offer/{id}/approve', 'MeetingController@approve')->name('approve');
+    Route::prefix('offer')->name('offer.')->group(function() {
+        Route::get('/confirm/{name}', 'OfferController@confirm')->name('confirm');
+        Route::post('confirm/{name}', 'OfferController@apply')->name('apply');
+        Route::get('/offer/{id}', 'OfferController@detail')->name('detail');
+        Route::put('/offer/{id}/approve', 'OfferController@approve')->name('approve');
     });
 
     // message関連

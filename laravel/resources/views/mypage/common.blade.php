@@ -19,7 +19,7 @@
         </div>
         <div class="p-card--right">
           
-            <a href="{{ route('meeting.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a>
+            <a href="{{ route('offer.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a>
           
           <p class="c-user--likes">
             <user-like

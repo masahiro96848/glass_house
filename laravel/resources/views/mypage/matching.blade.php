@@ -59,7 +59,7 @@
                     <td class="p-matching--line">
                       <div class="p-matching--status">
                         {{ $offer->status}} <br>
-                        <a href="{{route('meeting.offer', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
+                        <a href="{{route('offer.detail', ['id' => $offer])}}"><p class="p-matching--offer">申請画面</p> </a>
                       </div>
                     </td>
                     <td class="p-matching--line">
@@ -68,7 +68,7 @@
                       </div>
                       @if($offer->status === App\Offer::STATUS[3])
                         <div>
-                          <a href="{{ route('meeting.new')}}"> <p class="p-matching--zoom p-matching--width">zoom</p></a>
+                          {{-- <a href="{{ route('meeting.new')}}"> <p class="p-matching--zoom p-matching--width">zoom</p></a> --}}
                         </div>
                         <div>
                           <a href="{{ route('users.new', ['id' => $matching->id])}}"><p class="p-matching--review p-matching--width">レビュー投稿</p></a>
