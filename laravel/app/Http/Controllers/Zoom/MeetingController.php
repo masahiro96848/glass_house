@@ -35,6 +35,11 @@ class MeetingController extends Controller
 
     }
 
+    public function new()
+    {
+        return view('meetings.new');
+    }
+
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [

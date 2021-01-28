@@ -3,7 +3,7 @@
 namespace App\Traits;
 use Illuminate\Support\Facades\Log;
 
-class ZoomJWTTraits
+trait ZoomJWT
 {
   private function generateZoomToken()
   {
