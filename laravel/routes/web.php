@@ -53,8 +53,6 @@ Route::group(['middleware' => 'auth'], function() {
 
     // meeting関連
     Route::prefix('meeting')->name('meeting.')->group(function() {
-        Route::get('/new', 'MeetingController@new')->name('new');
-        Route::post('/create', 'MeetingController@create')->name('create');
         Route::get('/confirm/{name}', 'MeetingController@confirm')->name('confirm');
         Route::post('confirm/{name}', 'MeetingController@apply')->name('apply');
         Route::get('/offer/{id}', 'MeetingController@offer')->name('offer');
@@ -87,3 +85,14 @@ Route::prefix('job')->name('job.')->group(function() {
 Route::prefix('tag')->name('tag.')->group(function() {
     Route::get('/{name}', 'TagController@index')->name('index');
 });
+
+// zoomミーティングの全件取得
+// Route::get('/meetings', 'Zoom\MeetingController@list');
+// zoomミーティングの作成
+Route::get('/meeting/new', 'Zoom\MeetingController@new');
+Route::post('/meetings', 'Zoom\MeetingController@create');
+
+// zoomミーティングの取得・編集・削除
+Route::get('/meetings/{id}', 'Zoom\MeetingController@get')->where('id', '[0-9]+');
+Route::patch('/meetings/{id}', 'Zoom\MeetingController@update')->where('id', '[0-9]+');
+Route::delete('/meetings/{id}', 'Zoom\MeetingController@delete')->where('id', '[0-9]+');
