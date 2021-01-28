@@ -6,6 +6,7 @@ use App\User;
 use App\Offer;
 use App\Matching;
 use App\Job;
+use App\Meeting;
 use Illuminate\Support\Facades\Auth;
 use App\Enums\OfferType;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class MypageController extends Controller
         return view('mypage.index');
     }
 
-    public function matching()
+    public function matching(Meeting $meeting)
     {
         $current_user = Auth::user();
         $offers = Offer::all();         
@@ -29,6 +30,7 @@ class MypageController extends Controller
             'offers' => $offers,
             'offer_status' => $offer_status,
             'status' => $status,
+            'meeting' => $meeting,
         ]);
     }
 

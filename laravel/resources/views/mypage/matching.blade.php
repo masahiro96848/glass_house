@@ -54,6 +54,7 @@
                       </div>
                       <div>
                         <p>日時を編集</p>
+                        <a href="{{ $meeting->start_url }}"><p>{{ $meeting->start_url }}</p></a>
                       </div>
                     </td>
                     <td class="p-matching--line">
