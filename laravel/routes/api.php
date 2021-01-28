@@ -25,13 +25,5 @@ Route::get('/', function() {
 });
 
 
-// zoomミーティングの全件取得
-Route::get('/meetings', 'Zoom\MeetingController@list');
-// zoomミーティングの作成
-Route::post('/meetings', 'Zoom\MeetingController@create');
 
-// zoomミーティングの取得・編集・削除
-Route::get('/meetings/{id}', 'Zoom\MeetingController@get')->where('id', '[0-9]+');
-Route::patch('/meetings/{id}', 'Zoom\MeetingController@update')->where('id', '[0-9]+');
-Route::delete('/meetings/{id}', 'Zoom\MeetingController@delete')->where('id', '[0-9]+');
 
