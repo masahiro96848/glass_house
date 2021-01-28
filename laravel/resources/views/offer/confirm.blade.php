@@ -9,7 +9,7 @@
       <div class="l-container--layout">
         <h3 class="p-member--other">{{$user->name}}さんへの申請</h3>
         <div class="l-container--border ">
-          <form method="post" action="{{ route('meeting.confirm', ['name' => $user->name])}}" enctype="multipart/form-data">
+          <form method="post" action="{{ route('offer.confirm', ['name' => $user->name])}}" enctype="multipart/form-data">
             @csrf
             <div class="p-comment--area">
               <div class="c-user--feature u-bb--none">

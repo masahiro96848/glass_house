@@ -47,7 +47,7 @@
             @if(Auth::id() === $matching->apply->id)
               <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">マイページに戻る</p></a>
             @else  
-              <form method="POST" action="{{ route('meeting.approve', ['id' => $offer->id])}}">
+              <form method="POST" action="{{ route('offer.approve', ['id' => $offer->id])}}">
                 @csrf
                 @method('PUT')
                 <button class="p-confirm--apply">承認する</button>

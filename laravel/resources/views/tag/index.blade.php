@@ -39,7 +39,7 @@
                 </div>
                 <div class="p-card--right">
                   @if(Auth::id() !== $job->user->id)
-                    <a href="{{ route('meeting.confirm', ['name' => $job->user->name])}}"><p class="p-card--apply">話してみたい</p></a>
+                    <a href="{{ route('offer.confirm', ['name' => $job->user->name])}}"><p class="p-card--apply">話してみたい</p></a>
                   @endif  
                   <p class="p-card--star">🌟🌟🌟🌟🌟</p>
                   <p class="pcard--starCount">5.0</p>

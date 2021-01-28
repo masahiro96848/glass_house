@@ -72,7 +72,7 @@
                 </div>
                 <div class="c-user--apply">
                   @if(Auth::id() !== $user->id)
-                    <a href="{{route('meeting.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a> 
+                    <a href="{{route('offer.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a> 
                   @endif  
                 </div>
                 <div class="c-user--professional">
