@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Zoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Traits\ZoomJWT;
+use App\Meeting;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -40,7 +41,7 @@ class MeetingController extends Controller
         return view('meetings.new');
     }
 
-    public function create(Request $request)
+    public function create(Request $request, Meeting $meeting)
     {
         $validator = Validator::make($request->all(), [
             'topic' => 'required|string',
@@ -57,7 +58,7 @@ class MeetingController extends Controller
 
         $data = $validator->validated();
 
-        $path = '/meetings/create';
+        $path = 'users/'. env('ZOOM_ACCOUNT_EMAIL'). '/meetings';
         $response = $this->zoomPost($path, [
                 'topic' => $data['topic'],
                 'type' => self::MEETING_TYPE_SCHEDULE,
@@ -70,13 +71,17 @@ class MeetingController extends Controller
                 'waiting_room' => true,
             ]
         ]);
-
-        return redirect()->route('mypage.matching');
-
+        // if($response) {
+        //     $meeting = $request->all();
+        //     $meeting->save();
+        // }
+        
         // return [
         //     'success' => $response->status() === 201,
-        //     'data' => $json_decode($response->body(), true),
+        //     'data' => json_decode($response->body(), true),
         // ];
+        // dd($response);
+        return redirect()->route('mypage.matching');
     }
 
     public function get(Request $request, string $id)
@@ -91,7 +96,7 @@ class MeetingController extends Controller
 
         return [
             'success' => $response->ok(),
-            'data' => $$data,
+            'data' => $data,
         ];
     }
 
