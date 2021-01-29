@@ -90,7 +90,7 @@ Route::prefix('tag')->name('tag.')->group(function() {
 Route::get('/meetings', 'Zoom\MeetingController@list');
 // zoomミーティングの作成
 Route::get('/meetings/new', 'Zoom\MeetingController@new')->name('meetings.new');
-Route::post('/meetings/create', 'Zoom\MeetingController@create')->name('meetings.create');
+Route::post('/meetings', 'Zoom\MeetingController@create')->name('meetings.create');
 
 // zoomミーティングの取得・編集・削除
 Route::get('/meetings/{id}', 'Zoom\MeetingController@get')->where('id', '[0-9]+');
