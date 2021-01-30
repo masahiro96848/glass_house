@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 trait ZoomJWT
@@ -24,18 +26,30 @@ trait ZoomJWT
     return env('ZOOM_API_URL');
   }
 
-  private function zoomRequest()
+  private function zoomRequest($body = [])
   {
     $jwt = $this->generateZoomToken();
     $client = new Client([
       'base_url'=> env('ZOOM_API_URL')
     ]);
-    $response = $client->request('POST', $client);
+    $method = 'POST';
+    $url = "https://api.zoom.us/v2/";
+    $response = $client->request('POST', $url, [
+        'headers' => [
+          'authorization' => 'Bearer' . $jwt,
+          'content-type' => 'application/json',
+        ],
+        [
+          'body' => $body,
+        ],
+    ]);
+    // dd($response);
 
-    $posts = $response->getBody();
-    $posts = json_decode($posts, true);
+    // $list = json_decode((string)$response->getBody(), true);
+    // dd($list);
 
-    return $posts;
+
+    return $response;
 
         // [
         //   'headers' => [
@@ -67,15 +81,15 @@ trait ZoomJWT
 
   public function zoomPost(string $path, array $body = [])
   {
-    // $url = $this->retrieveZoomUrl();
-    $request = $this->zoomRequest();
-    
-    return $request->post($url . $path, $body);
+    $url = $this->retrieveZoomUrl();
+    return $this->zoomRequest('POST', $path, $url, $body);
+  
+    // return $request->post($url . $path, $body);
   }
 
   public function zoomPatch(string $path, array $body = [])
   {
-    $url = $this->retrieveZoomUrl();
+    // $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
 
     return $request->patch($url . $path, $body);
