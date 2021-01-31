@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Zoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Traits\ZoomJWT;
+use GuzzleHttp\Client;
 use App\Meeting;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
@@ -72,11 +73,8 @@ class MeetingController extends Controller
                 'waiting_room' => true,
             ]
         ]);
-        // if($response) {
-        //     $meeting = $request->all();
-        //     $meeting->save();
-        // }
         
+        return $response;
         // return [
         //     'success' => $response->status() === 201,
         //     'data' => json_decode($response->body(), true),
@@ -147,4 +145,6 @@ class MeetingController extends Controller
             'data' => json_decode($response->body(), true),
         ];
     }
+
+
 }

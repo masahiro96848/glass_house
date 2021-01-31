@@ -34,7 +34,7 @@ trait ZoomJWT
     ]);
     $method = 'POST';
     $url = "https://api.zoom.us/v2/";
-    $response = $client->request('POST', $url, [
+    $request = $client->request('POST', $url, [
         'headers' => [
           'authorization' => 'Bearer' . $jwt,
           'content-type' => 'application/json',
@@ -43,13 +43,13 @@ trait ZoomJWT
           'body' => $body,
         ],
     ]);
-    // dd($response);
+    // dd($request);
 
     // $list = json_decode((string)$response->getBody(), true);
     // dd($list);
 
 
-    return $response;
+    return $request;
 
         // [
         //   'headers' => [
@@ -125,5 +125,5 @@ trait ZoomJWT
     }
   }
 
-
+  
 }
