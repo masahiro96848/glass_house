@@ -26,7 +26,7 @@ trait ZoomJWT
     return env('ZOOM_API_URL');
   }
 
-  private function zoomRequest($body = [])
+  private function zoomRequest()
   {
     $jwt = $this->generateZoomToken();
     $client = new Client([
@@ -34,41 +34,65 @@ trait ZoomJWT
     ]);
     $method = 'POST';
     $url = "https://api.zoom.us/v2/";
-    $request = $client->request('POST', $url, [
-        'headers' => [
-          'authorization' => 'Bearer' . $jwt,
-          'content-type' => 'application/json',
-        ],
-        [
-          'body' => $body,
-        ],
-    ]);
-    // dd($request);
 
+    $email = env('ZOOM_ACCOUNT_EMAIL');
+    $path = 'users/' . $email . '/meetings';
+    
+    $options = [
+      'headers' => [
+        'authorization' => 'Bearer' . $jwt,
+        'content-type' => 'application/json',
+      ],
+      'json' => [
+          'topic' => 'test_meeting',
+          'type' => self::MEETING_TYPE_SCHEDULE,
+          'start_at' => '2020-08-31T18:30:00',
+          'duration' => 30,
+          'agenda' => '今日のアジェンダ',
+      ],
+    ];
+    // dd($options);
+    $response = $client->request('POST', $path, $options);
+    $post = $response->getBody();
+    $post = json_decode($post, true);
+  
     // $list = json_decode((string)$response->getBody(), true);
     // dd($list);
 
 
-    return $request;
+    return $post;
 
-        // [
-        //   'headers' => [
-        //     'authorization' => 'Bearer' .$jwt,
-        //     'content-type' => 'application/json',
-        //   ],
-        //   'query' => json_encode($query),
-        //   'body' => json_encode($body),
-        // ],
-    
-    
-    // return $response;
-    // return json_decode($response);
-    // $json = json_decode($response->getBody(), ture);
+  }
 
-    // return \Illuminate\Support\Facades\Http::withHeaders([
-    //     'authorization' => 'Bearer' .$jwt,
-    //     'content-type' => 'application/json',
-    // ]);
+  public function sendRequest()
+  {
+    $jwt = $this->generateZoomToken(); // JWTで作成されたトークン
+    $client = new Client([
+      'base_url'=> env('ZOOM_API_URL')
+    ]);
+    $method = 'POST';
+    $url = "https://api.zoom.us/v2/";
+
+    $email = env('ZOOM_ACCOUNT_EMAIL');
+    $path = 'users/' . $email . '/meetings';
+    
+    $options = [
+      'headers' => [
+        'authorization' => 'Bearer' . $jwt,
+        'content-type' => 'application/json',
+      ],
+    ];
+    // dd($options);
+    $response = $client->request('POST', $url, $options);
+    dd($response);
+    $post = $response->getBody();
+    $post = json_decode($post, true);
+  
+    // $list = json_decode((string)$response->getBody(), true);
+    // dd($list);
+
+
+    return $post;
   }
 
   public function zoomGet(string $path, array $query = [])  
@@ -79,13 +103,13 @@ trait ZoomJWT
     return $request->get($url . $path, $query);
   }
 
-  public function zoomPost(string $path, array $body = [])
-  {
-    $url = $this->retrieveZoomUrl();
-    return $this->zoomRequest('POST', $path, $url, $body);
+  // public function zoomPost($path)
+  // {
+  //   $url = $this->retrieveZoomUrl();
+  //   return $this->sendRequest('POST', $path,);
   
-    // return $request->post($url . $path, $body);
-  }
+  //   return $request->post($url,$path, $body);
+  // }
 
   public function zoomPatch(string $path, array $body = [])
   {

@@ -45,42 +45,22 @@ class MeetingController extends Controller
 
     public function create(Request $request, Meeting $meeting)
     {
-        $validator = Validator::make($request->all(), [
-            'topic' => 'required|string',
-            'start_at' => 'required|date',
-            'agenda' => 'string|nullable',
-        ]);
-
-        if($validator->fails()) {
-            return [
-                'success' => false,
-                'data' => $validator->errors(),
-            ];
-        }
-
-        $data = $validator->validated();
-
-        $path = 'users/'. env('ZOOM_ACCOUNT_EMAIL'). '/meetings';
-        $response = $this->zoomPost($path, [
-                'topic' => $data['topic'],
-                'type' => self::MEETING_TYPE_SCHEDULE,
-                'start_at' => $this->toZoomTimeFormat($data['start_at']),
-                'duration' => 30,
-                'agenda' => $data['agenda'],
-                'settings' => [
-                'host_video' => false,
-                'participant_video' => false,
-                'waiting_room' => true,
-            ]
-        ]);
+        $url = env('ZOOM_ACCOUNT_EMAIL');
+        $method = 'POST';
+        $path = 'users/' . $url . '/meetings';
         
+        // $params = [
+        //     'topic' => $request->topic,
+        //     'agenda' => $request->agenda,
+        //     'start_at' => $request->start_at,
+        // ];
+        $response = $this->sendRequest($method, $path);
         return $response;
         // return [
-        //     'success' => $response->status() === 201,
-        //     'data' => json_decode($response->body(), true),
+        //     'success' => $response->getStatusCode() === 201,
+        //     'data' => json_decode($response->getBody(), true),
         // ];
-        // dd($response);
-        return redirect()->route('mypage.matching');
+        // return redirect()->route('mypage.matching');
     }
 
     public function get(Request $request, string $id)
