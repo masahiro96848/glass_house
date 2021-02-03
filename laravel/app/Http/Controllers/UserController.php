@@ -64,7 +64,7 @@ class UserController extends Controller
             ]);
             return redirect()->route('users.show',[
                 'name' => $matching->apply->name
-            ]);    
+            ])->with('flash_message', 'レビューを投稿しました！');  
         }elseif($matching->approve_id  !== Auth::id()){
             $review = Review::create([
                 'star' => $request->star,
@@ -106,11 +106,10 @@ class UserController extends Controller
             'star' => $request->star,
             'title' => $request->title,
             'body' => $request->body,
-        ])->with('flash_message', 'レビューを編集しました！');  ;
-
+        ]);
         return redirect()->route('users.show', [
             'name' => $review->reviewed->name,
-        ]);
+        ])->with('flash_message', 'レビューを編集しました！');
     }
 
     public function delete($r_id, $m_id)
@@ -123,7 +122,7 @@ class UserController extends Controller
 
         return redirect()->route('users.show', [
             'name' => $review->reviewed->name,
-        ])->with('flash_message', 'レビューを削除しました！');  ;
+        ])->with('flash_message', 'レビューを削除しました！');
     }
 
     public function like(Request $request, $id)
