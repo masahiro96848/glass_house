@@ -27,12 +27,14 @@
             <textarea name="intro" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="200文字以内" >{{ $user->intro ?? old('intro') }}</textarea>
           </div>
           <label for="">カテゴリー</label>
-          <div class="c-post">
+          <div class="c-post p-profile--category">
             @foreach($categories as $category)
-            <input type="checkbox" name="category[]" id=""  value="{{ $category->id }}" {{ $category->id == old('category', $user->categories->contains('id', $category->id) ?? '') ? 'checked' : ''}}  >
-                <label for="category">
-                  {{ $category->name  }}
-                </label>  
+            <div class="p-profile--professional">
+              <input type="checkbox" name="category[]" id="{{ $category->id }}"  value="{{ $category->id }}" {{ $category->id == old('category', $user->categories->contains('id', $category->id) ?? '') ? 'checked' : ''}}  >
+              <label for="{{ $category->id }}" class="p-profile--label">
+                  {{ $category->name }}
+              </label>  
+            </div>
             @endforeach
           </div>
           <label for="review">話のテーマ</label>

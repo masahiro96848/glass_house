@@ -1,0 +1,18 @@
+.p-profile {
+
+  &--category {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--professional {
+    width: 300px;
+    margin-bottom: $space_m;
+  }
+
+  &--label {
+    display: inline;
+    width: 200px;
+    
+  }
+}
