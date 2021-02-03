@@ -76,7 +76,7 @@ class UserController extends Controller
             ]);
             return redirect()->route('users.show',[
                 'name' => $matching->approve->name
-            ]);  
+            ])->with('flash_message', 'レビューを投稿しました！');  
         }else{
             return redirect()->route('mypage.matching');
         }
@@ -106,7 +106,7 @@ class UserController extends Controller
             'star' => $request->star,
             'title' => $request->title,
             'body' => $request->body,
-        ]);
+        ])->with('flash_message', 'レビューを編集しました！');  ;
 
         return redirect()->route('users.show', [
             'name' => $review->reviewed->name,
@@ -123,7 +123,7 @@ class UserController extends Controller
 
         return redirect()->route('users.show', [
             'name' => $review->reviewed->name,
-        ]);
+        ])->with('flash_message', 'レビューを削除しました！');  ;
     }
 
     public function like(Request $request, $id)

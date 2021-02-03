@@ -48,7 +48,7 @@ class OfferController extends Controller
         return redirect()->route('offer.detail', [
             'id' => $offer->id,
             'matching' => $matching
-        ]);
+        ])->with('flash_message', '申請しました！');
     }
 
     //オファー画面
@@ -77,6 +77,6 @@ class OfferController extends Controller
 
         return redirect()->route('mypage.matching', [
             'id' => $offer->id
-        ]);
+        ])->with('flash_message', 'オファーを承諾しました！　メッセージやりとりをしましょう！');
     }
 }

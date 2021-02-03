@@ -48,6 +48,6 @@ class ProfileController extends Controller
 
         return redirect()->route('profile.home', [
             'name' => $request->name,
-        ]);
+        ])->with('flash_message', 'プロフィール編集をしました');
     }
 }

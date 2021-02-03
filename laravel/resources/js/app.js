@@ -35,3 +35,8 @@ $('.p-menu--button').on('click', function() {
     $('.p-menu--wrap').addClass('open').removeClass('close');
   }
 });
+
+// フラッシュメッセージ
+$(function() {
+  $('.u-flash_message').hide().fadeIn('slow').delay('5000').slideUp('slow');
+});
