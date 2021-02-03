@@ -47,7 +47,7 @@ class LoginController extends Controller
 
     public function loggedOut(Request $request)
     {
-        return redirect(route('login'));
+        return redirect(route('login'))->with('flash_message', 'ログアウトしました');
     }
 
     public function guestLogin()
@@ -55,7 +55,7 @@ class LoginController extends Controller
         $user = User::where('email', self::GUEST_USER_EMAIL)->first();
         if($user) {
             Auth::login($user);
-            return redirect()->route('users.index');
+            return redirect()->route('users.index')->with('flash_message', 'ゲストログインしました！');
         }
         return redirect('/');
     }

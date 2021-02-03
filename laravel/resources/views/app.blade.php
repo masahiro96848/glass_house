@@ -31,7 +31,10 @@
 </head>
 
 <body>
+  <!-- フラッシュメッセージ -->
+  
   <div id="app">
+    
     @yield('content')
   </div>
 

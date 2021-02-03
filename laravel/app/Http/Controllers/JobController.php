@@ -58,6 +58,7 @@ class JobController extends Controller
             ]);
             $job->tags()->attach($tag);
         });
+        $request->session()->flash('flash_message', 'テーマを投稿しました');
         return redirect()->route('job.index');
     }
 
@@ -92,6 +93,6 @@ class JobController extends Controller
 
         return redirect()->route('job.show', [
             'id' => $job->id,
-        ]);
+        ])->with('flash_message', 'テーマを編集しました！');  ;
     }
 }
