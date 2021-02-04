@@ -40,3 +40,15 @@ $('.p-menu--button').on('click', function() {
 $(function() {
   $('.u-flash_message').hide().fadeIn('slow').delay('5000').slideUp('slow');
 });
+
+//　モーダル
+$(function() {
+  $('.c-modal--open').on('click', function() {
+    $('.c-modal--js').fadeIn();
+    return false;
+  });
+  $('.c-modal--close').on('click', function() {
+    $('.c-modal--js').fadeOut();
+    return false;
+  });
+})
