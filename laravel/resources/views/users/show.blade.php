@@ -82,13 +82,25 @@
                         <a href="{{ route('users.edit', ['r_id' => $review->id, 'm_id' => $review->matching->id])}}">
                           <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
                         </a>
-                        <form action="{{ route('users.delete', ['r_id' => $review->id,  'm_id' => $review->matching->id])}}" method="POST" class="p-panel--trash">
-                          @csrf
-                          @method('DELETE')
-                          <button class="p-panel--trash--button">
-                            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-                          </button>
-                        </form>
+                        <a href="" class="c-modal--open">
+                          <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                        </a>
+                        <div class="c-modal c-modal--js">
+                          <div class="c-modal--bg c-modal--close"></div>
+                          <div class="c-modal--display">
+                            <p class="c-modal--title">レビューを削除しますか？</p>
+                            <div class="c-modal--select">
+                              <form action="{{ route('users.delete', ['r_id' => $review->id,  'm_id' => $review->matching->id])}}" method="POST" class="p-panel--trash">
+                                @csrf
+                                @method('DELETE')
+                                <button class="p-panel--trash--button" onfocus="this.blur();" >
+                                  <p class="c-modal--delete">削除する</p>
+                                </button>
+                              </form>
+                              <a href="" class="c-modal--close c-modal--cancel">キャンセル</a>
+                            </div>
+                          </div>
+                        </div>
                       @endif
                     </div>
                   </div>
@@ -100,7 +112,6 @@
                         :star-size=25
                         :read-only=true
                       >
-
                       </comment-star>
                     </p>
                     <p class="c-user--detail">
@@ -117,5 +128,3 @@
   </div>
   @include('footer')
 @endsection
-
-{{-- {{dd($category->name)}} --}}
