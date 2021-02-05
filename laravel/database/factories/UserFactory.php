@@ -26,5 +26,7 @@ $factory->define(User::class, function (Faker $faker) {
         'talk_theme' => $faker->realText(200),
         'speaking' => $faker->realText(200),
         'remember_token' => Str::random(10),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
     ];
 });
