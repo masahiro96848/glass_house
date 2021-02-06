@@ -57,7 +57,7 @@
               <div class="p-panel--body">
                 <div class="c-review--star">
                   <i class="far fa-comment-alt fa-lg"></i>
-                    レビュー{{ $user->revieweds()->count()}}件
+                    {{ $user->revieweds()->count()}}件
                 </div>
                 <div class="c-user--likes">
                   @if(Auth::id() !== $user->id)

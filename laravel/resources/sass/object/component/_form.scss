@@ -28,6 +28,13 @@
   &--link {
     text-align: center;
     margin-top: $space_l;
+    a {
+      color: $font-color_default;
+      &:hover{
+        color: $font-color_sub03;
+      }
+    }
+    
   }
 
   &--radius {
