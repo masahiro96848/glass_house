@@ -12,7 +12,7 @@ class JobsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Job::class, 30)->create()->each(function(App\Job $job) {
+        factory(App\Job::class, 3)->create()->each(function(App\Job $job) {
             $job->user()->associate(factory(App\User::class)->create());
         });
     }

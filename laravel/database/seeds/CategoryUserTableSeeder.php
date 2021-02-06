@@ -15,7 +15,7 @@ class CategoryUserTableSeeder extends Seeder
         $categories = Category::all(); 
         
         // userデータを作成
-        factory(App\User::class, 10)->create()->each(function(App\User $user) use($categories) {
+        factory(App\User::class, 3)->create()->each(function(App\User $user) use($categories) {
             $random = rand(1, 9);
 
             // 中間テーブルに紐付け
