@@ -10,6 +10,7 @@
   }
 
   &--other {
+    color: $font-color_default;
     font-weight: bold;
     text-align: center;
     margin-bottom: $space_l;
@@ -41,6 +42,7 @@
   }
 
   &--content {
+    color: $font-color_black;
     border: none;
     border-radius: 10px;
     padding: $space_xl;
