@@ -20,6 +20,9 @@
     text-decoration: none;
     color: $font-color_title;
     font-size: $font-size_xxl;
+    &:hover {
+        color: $font-color_sub03;
+      }
 
     &--link a {
       text-decoration: none;

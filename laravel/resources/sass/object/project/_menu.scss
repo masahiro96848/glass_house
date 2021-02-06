@@ -58,6 +58,7 @@
     display: inline-block;
     font-family: $font-family_title;
     margin-right: $space_xl;
+    
     @include mq(sm) {
       display: block;
       margin-bottom: $space_xl;
@@ -70,6 +71,9 @@
     color: #fff;
     border: none;
     font-family: $font-family_title;
+    &:hover {
+      color: $font-color_sub03;
+    }
     &:active {
       border: none;
     }
