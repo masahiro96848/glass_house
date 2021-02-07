@@ -1,6 +1,10 @@
 <header class="l-header--nav ">
   <h1 class="l-header--title u-mt_m u-ml_l ">
-    <a href="" class="l-header--title">Guild Branch</a>
+    @if(Auth::check())
+      <a href="{{ route('users.index')}}" class="l-header--title">Guild Branch</a>
+    @else
+      <a href="{{ route('home.index')}}" class="l-header--title">Guild Branch</a>
+    @endif
   </h1>
   <div class="p-menu--button u-mr_l">
     <span></span>
