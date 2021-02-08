@@ -8,16 +8,21 @@
       <div class="l-container--top">
         <div class="p-home--main">
           <div class="p-home--mainTitle">
-            <h2 class="p-home--title">オンラインでお仕事の通話をしませんか？</h2>
+            <h2 class="p-home--title">オンラインでお仕事の話をしませんか？</h2>
             <h2 class="p-home--title">お酒 ✖︎ オンライン ✖︎ マッチングで繋がろう！</h2>
+          </div>
+          <div class="p-home--buttonArea">
+            <div class="p-home--buttonTop">
+              <p class="p-home--login"><a href="{{ route('login')}}" class="p-home--link">ログイン</a></p>
+              <p class="p-home--register"><a href="{{ route('register')}}" class="p-home--link">新規登録</a></p>
+            </div>
           </div>
         </div>
         <div class="p-home--contentsTitle">
           <h3>タイトル名とは？</h3>
           <p class="p-home--paragraph">
-            タイトル名は、ミニマリストの共有プラットフォームです。<br>
-            引越しや日々の生活など、必要最小限で良いという人が増えています。<br>
-            ミニマリストの生活を共有して、必要最小限の生活をしましょう！！
+            タイトル名は、。<br>
+           
           </p>
         </div>
         <div class="p-home--contents">
@@ -26,7 +31,7 @@
               {{-- <img src="./img/content01.jpeg" alt=""> --}}
             </div>
             <div class="p-home--body">
-              <p>これからミニマリストになる人にも、できるだけ不必要なものを減らすことができます。</p>
+              <p>。</p>
             </div>
           </div>
           <div class="p-home--panel">
@@ -34,9 +39,7 @@
               {{-- <img src="./img/content02.jpg" alt=""> --}}
             </div>
             <div class="p-home--body">
-              <p>本当に必要な物だけを揃えることができます。<br>
-                 無駄なコストを抑え、自分にあった最適な生活を目指しましょう！！                 
-              </p>
+              
             </div>
           </div>
           <div class="p-home--panel">
@@ -44,7 +47,7 @@
               {{-- <img src="./img/content03.jpg" alt=""> --}}
             </div>
             <div class="p-home--body">
-              <p>SNSで自分の生活をシェアしてミニマリストの生活を広めよう！！</p>
+              
             </div>
           </div>
         </div>
