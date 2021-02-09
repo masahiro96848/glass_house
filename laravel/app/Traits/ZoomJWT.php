@@ -3,96 +3,76 @@
 namespace App\Traits;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+use App\Meeting;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 trait ZoomJWT
 {
-  private function generateZoomToken()
+  public $client;
+  public $jwt;
+  public $headers;
+
+  public function __construct()
+  {
+    $this->client = new Client();
+    $this->jwt = $this->generateZoomToken();
+    $this->headers = [
+      'Authorization' => 'Bearer'.$this->jwt,
+      'Content-Type' => 'application/json',
+      'Accept' => 'application/json',
+    ];
+  }
+
+  public function generateZoomToken()
   {
     $key = env('ZOOM_API_KEY', '');
     $secret = env('ZOOM_API_SECRET', '');
     $payload = [
         'iss' => $key,
-        'exp' => strtotime('*1 minite'),
+        'exp' => strtotime('+1 minute'),
     ];
-
     return \Firebase\JWT\JWT::encode($payload, $secret, 'HS256');
 
   }
 
   private function retrieveZoomUrl()
   {
-    return env('ZOOM_API_URL');
+    return env('ZOOM_API_URL', '');
   }
 
-  private function zoomRequest()
+  public function zoomRequest($data)
   {
-    $jwt = $this->generateZoomToken();
-    $client = new Client([
-      'base_url'=> env('ZOOM_API_URL')
-    ]);
-    $method = 'POST';
-    $url = "https://api.zoom.us/v2/";
-
     $email = env('ZOOM_ACCOUNT_EMAIL');
-    $path = 'users/' . $email . '/meetings';
-    
-    $options = [
-      'headers' => [
-        'authorization' => 'Bearer' . $jwt,
-        'content-type' => 'application/json',
-      ],
-      'json' => [
-          'topic' => 'test_meeting',
-          'type' => self::MEETING_TYPE_SCHEDULE,
-          'start_at' => '2020-08-31T18:30:00',
-          'duration' => 30,
-          'agenda' => '今日のアジェンダ',
-      ],
+    $path = 'users/'. $email. '/meetings';
+    $url = $this->retrieveZoomUrl();
+
+    $body = [
+      'headers' => $this->headers,
+      'body' => json_encode([
+              'topic'      => $data['topic'],
+              'type'       => self::MEETING_TYPE_SCHEDULE,
+              'start_at' => $this->toZoomTimeFormat($data['start_at']),
+              'agenda'     => (! empty($data['agenda'])) ? $data['agenda'] : null,
+              'timezone'   => 'Asia/Tokyo',
+          ]),
     ];
-    // dd($options);
-    $response = $client->request('POST', $path, $options);
-    $post = $response->getBody();
-    $post = json_decode($post, true);
-  
-    // $list = json_decode((string)$response->getBody(), true);
-    // dd($list);
 
-
-    return $post;
-
-  }
-
-  public function sendRequest()
-  {
-    $jwt = $this->generateZoomToken(); // JWTで作成されたトークン
-    $client = new Client([
-      'base_url'=> env('ZOOM_API_URL')
-    ]);
-    $method = 'POST';
-    $url = "https://api.zoom.us/v2/";
-
-    $email = env('ZOOM_ACCOUNT_EMAIL');
-    $path = 'users/' . $email . '/meetings';
-    
-    $options = [
-      'headers' => [
-        'authorization' => 'Bearer' . $jwt,
-        'content-type' => 'application/json',
-      ],
-    ];
-    // dd($options);
-    $response = $client->request('POST', $url, $options);
-    dd($response);
-    $post = $response->getBody();
-    $post = json_decode($post, true);
-  
-    // $list = json_decode((string)$response->getBody(), true);
-    // dd($list);
-
-
-    return $post;
+        $response =  $this->client->post($url.$path, $body);     
+        // if($response->getStatusCode() === 201) {
+        //   Meeting::create([
+        //     'topic' => $data['topic'],
+        //     'agenda' => $data['topic'],
+        //     'start_at' => $data['topic'],
+        //     'start_url' => $body['start_url'],
+        //     'join_url' => $body['join_url'],
+        //   ]);
+        // }
+        return [
+          'success' => $response->getStatusCode() === 201,
+          'data'    => json_decode($response->getBody(), true),
+        ];
+        
   }
 
   public function zoomGet(string $path, array $query = [])  
@@ -103,13 +83,13 @@ trait ZoomJWT
     return $request->get($url . $path, $query);
   }
 
-  // public function zoomPost($path)
-  // {
-  //   $url = $this->retrieveZoomUrl();
-  //   return $this->sendRequest('POST', $path,);
+  public function zoomPost($path)
+  {
+    // $url = $this->retrieveZoomUrl();
+    // $request =  $this->zoomRequest('POST', $path,);
   
-  //   return $request->post($url,$path, $body);
-  // }
+    // return $request->post($url,$path, $body);
+  }
 
   public function zoomPatch(string $path, array $body = [])
   {
