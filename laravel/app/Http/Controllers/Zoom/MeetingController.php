@@ -44,23 +44,16 @@ class MeetingController extends Controller
     }
 
     public function create(Request $request, Meeting $meeting)
-    {
-        $url = env('ZOOM_ACCOUNT_EMAIL');
-        $method = 'POST';
-        $path = 'users/' . $url . '/meetings';
-        
-        // $params = [
-        //     'topic' => $request->topic,
-        //     'agenda' => $request->agenda,
-        //     'start_at' => $request->start_at,
-        // ];
-        $response = $this->sendRequest($method, $path);
-        return $response;
-        // return [
-        //     'success' => $response->getStatusCode() === 201,
-        //     'data' => json_decode($response->getBody(), true),
-        // ];
-        // return redirect()->route('mypage.matching');
+    { 
+        $this->zoomRequest(Meeting::create([
+            'topic' => $request['topic'],
+            'agenda' => $request['agenda'],
+            'start_at' => $request['start_at'],
+            'start_url' => $this->zoomRequest(''),
+            'join_url' => $request['join_url'],
+        ]));
+
+        return redirect()->route('mypage.matching');
     }
 
     public function get(Request $request, string $id)
