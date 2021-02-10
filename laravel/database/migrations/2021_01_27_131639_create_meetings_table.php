@@ -17,7 +17,7 @@ class CreateMeetingsTable extends Migration
             $table->increments('id');
             $table->string('topic');
             $table->text('agenda');
-            $table->date('start_at');
+            $table->string('start_time');
             $table->text('start_url');
             $table->text('join_url');
             $table->integer('user_id')->unsigned();

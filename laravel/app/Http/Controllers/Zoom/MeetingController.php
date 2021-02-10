@@ -15,6 +15,17 @@ class MeetingController extends Controller
 {
     use ZoomJWT;
 
+    public function __construct()
+    {
+        $this->client = new Client();
+        $this->jwt = $this->generateZoomToken();
+        $this->headers = [
+        'Authorization' => 'Bearer'.$this->jwt,
+        'Content-Type' => 'application/json',
+        'Accept' => 'application/json',
+        ];
+    }
+
     const MEETING_TYPE_INSTANT = 1;
     const MEETING_TYPE_SCHEDULE = 2;
     const MEETING_TYPE_RECURRING = 3;
@@ -45,15 +56,36 @@ class MeetingController extends Controller
 
     public function create(Request $request, Meeting $meeting)
     { 
-        $this->zoomRequest(Meeting::create([
-            'topic' => $request['topic'],
-            'agenda' => $request['agenda'],
-            'start_at' => $request['start_at'],
-            'start_url' => $this->zoomRequest(''),
-            'join_url' => $request['join_url'],
-        ]));
+        $email = env('ZOOM_ACCOUNT_EMAIL');
+        $path = 'users/'. $email. '/meetings';
+        $response = $this->zoomPost($path, [
+            'topic' => $request->topic,
+            'type' => self::MEETING_TYPE_SCHEDULE,
+            'start_time' => $request->start_time,
+            'duration' => 30,
+            'agenda' => $request->agenda,
+            'settings' => [
+                'host_video' => false,
+                'participant_video' => false,
+                'waiting_room' => true,
+            ],
+        ]);
+        $body = json_decode($response->getBody(), true);
+        
+        if($response->getStatusCode() === 201) {
+            Meeting::create([
+                'topic' => $request->topic,
+                'agenda' => $request->agenda,
+                'start_time' => $request->start_time,
+                'start_url' => $body['start_url'],
+                'join_url' => $body['join_url'],
+                'user_id' => $request->user()->id,
+            ]);
+        }
+        $response = $this->zoomRequest($request->all());
+        
 
-        return redirect()->route('mypage.matching');
+        return redirect()->route('mypage.matching')->with('flash_message', 'zoomミーティングを作成しました！');
     }
 
     public function get(Request $request, string $id)
@@ -116,6 +148,22 @@ class MeetingController extends Controller
         return [
             'success' => $response->status() === 204,
             'data' => json_decode($response->body(), true),
+        ];
+    }
+
+    public function setParams() 
+    {
+        $response = [
+            'topic' => $request->topic,
+            'type' => self::MEETING_TYPE_SCHEDULE,
+            'start_time' => $request->start_time,
+            'duration' => 30,
+            'agenda' => $request->agenda,
+            'settings' => [
+                'host_video' => false,
+                'participant_video' => false,
+                'waiting_room' => true,
+            ],
         ];
     }
 
