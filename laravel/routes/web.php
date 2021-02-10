@@ -89,8 +89,8 @@ Route::prefix('tag')->name('tag.')->group(function() {
 // zoomミーティングの全件取得
 Route::get('/meetings', 'Zoom\MeetingController@index');
 // zoomミーティングの作成
-Route::get('/meetings/new', 'Zoom\MeetingController@new')->name('meetings.new');
-Route::post('/meetings', 'Zoom\MeetingController@create')->name('meetings.create');
+Route::get('/meetings/new/matching/{id}', 'Zoom\MeetingController@new')->name('meetings.new');
+Route::post('/meetings/create/matching/{id}', 'Zoom\MeetingController@create')->name('meetings.create');
 
 // zoomミーティングの取得・編集・削除
 Route::get('/meetings/{id}', 'Zoom\MeetingController@get')->where('id', '[0-9]+');

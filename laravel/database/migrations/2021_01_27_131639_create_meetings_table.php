@@ -21,7 +21,9 @@ class CreateMeetingsTable extends Migration
             $table->text('start_url');
             $table->text('join_url');
             $table->integer('user_id')->unsigned();
+            $table->integer('matching_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->OnDelete('cascade');
+            $table->foreign('matching_id')->references('id')->on('matchings')->OnDelete('cascade');
             $table->timestamps();
         });
     }
