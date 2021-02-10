@@ -10,5 +10,5 @@
 
 <label for="review">開始時間</label>
 <div class="c-post">
-  <input type="date" name="start_at" class="" value="{{ $meeting->start_at ?? old('start_at') }}">
+  <input type="datetime-local" name="start_time" class="" value="{{ $meeting->start_time ?? old('start_time') }}">
 </div>

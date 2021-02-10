@@ -13,16 +13,16 @@ trait ZoomJWT
   public $jwt;
   public $headers;
 
-  public function __construct()
-  {
-    $this->client = new Client();
-    $this->jwt = $this->generateZoomToken();
-    $this->headers = [
-      'Authorization' => 'Bearer'.$this->jwt,
-      'Content-Type' => 'application/json',
-      'Accept' => 'application/json',
-    ];
-  }
+  // public function __construct()
+  // {
+  //   $this->client = new Client();
+  //   $this->jwt = $this->generateZoomToken();
+  //   $this->headers = [
+  //     'Authorization' => 'Bearer'.$this->jwt,
+  //     'Content-Type' => 'application/json',
+  //     'Accept' => 'application/json',
+  //   ];
+  // }
 
   public function generateZoomToken()
   {
@@ -41,37 +41,35 @@ trait ZoomJWT
     return env('ZOOM_API_URL', '');
   }
 
-  public function zoomRequest($data)
+  public function zoomRequest()
   {
-    $email = env('ZOOM_ACCOUNT_EMAIL');
-    $path = 'users/'. $email. '/meetings';
-    $url = $this->retrieveZoomUrl();
+    $jwt = $this->generateZoomToken();
+    return \Illuminate\Support\Facades\Http::withHeaders([
+      'authorization' => 'Bearer ' . $jwt,
+      'content-type' => 'application/json',
+    ]);
+    // $email = env('ZOOM_ACCOUNT_EMAIL');
+    // $path = 'users/'. $email. '/meetings';
+    // $url = $this->retrieveZoomUrl();
 
-    $body = [
-      'headers' => $this->headers,
-      'body' => json_encode([
-              'topic'      => $data['topic'],
-              'type'       => self::MEETING_TYPE_SCHEDULE,
-              'start_at' => $this->toZoomTimeFormat($data['start_at']),
-              'agenda'     => (! empty($data['agenda'])) ? $data['agenda'] : null,
-              'timezone'   => 'Asia/Tokyo',
-          ]),
-    ];
+    // $body = [
+    //   'body' => json_encode([
+    //           'topic'      => $data['topic'],
+    //           'type'       => self::MEETING_TYPE_SCHEDULE,
+    //           'start_at' => $this->toZoomTimeFormat($data['start_at']),
+    //           'agenda'     => (! empty($data['agenda'])) ? $data['agenda'] : null,
+    //           'timezone'   => 'Asia/Tokyo',
+    //       ]),
+    // ];
 
-        $response =  $this->client->post($url.$path, $body);     
-        // if($response->getStatusCode() === 201) {
-        //   Meeting::create([
-        //     'topic' => $data['topic'],
-        //     'agenda' => $data['topic'],
-        //     'start_at' => $data['topic'],
-        //     'start_url' => $body['start_url'],
-        //     'join_url' => $body['join_url'],
-        //   ]);
-        // }
-        return [
-          'success' => $response->getStatusCode() === 201,
-          'data'    => json_decode($response->getBody(), true),
-        ];
+        // $response =  $this->client->post($url.$path, $body);  
+        // $result = json_decode($response->getBody(), true);
+        
+        // return [
+        //   'success' => $response->getStatusCode() === 201,
+        //   'data'    => json_decode($response->getBody(), true),
+        // ];
+        // return $result;
         
   }
 
@@ -83,15 +81,15 @@ trait ZoomJWT
     return $request->get($url . $path, $query);
   }
 
-  public function zoomPost($path)
+  public function zoomPost($path, $body = [])
   {
-    // $url = $this->retrieveZoomUrl();
-    // $request =  $this->zoomRequest('POST', $path,);
+    $url = $this->retrieveZoomUrl();
+    $request =  $this->zoomRequest();
   
-    // return $request->post($url,$path, $body);
+    return $request->post($url.$path, $body);
   }
 
-  public function zoomPatch(string $path, array $body = [])
+  public function zoomPatch(string $path, array $body = [], $data = [])
   {
     // $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();

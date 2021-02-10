@@ -87,7 +87,7 @@ Route::prefix('tag')->name('tag.')->group(function() {
 });
 
 // zoomミーティングの全件取得
-Route::get('/meetings', 'Zoom\MeetingController@list');
+Route::get('/meetings', 'Zoom\MeetingController@index');
 // zoomミーティングの作成
 Route::get('/meetings/new', 'Zoom\MeetingController@new')->name('meetings.new');
 Route::post('/meetings', 'Zoom\MeetingController@create')->name('meetings.create');

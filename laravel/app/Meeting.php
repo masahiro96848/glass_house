@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Meeting extends Model
 {
-    protected $fillable = ['topic', 'agenda', 'start_at', 'start_url', 'join_url'];
+    protected $fillable = ['topic', 'agenda', 'start_time', 'start_url', 'join_url', 'user_id'];
 
     public function user()
     {
