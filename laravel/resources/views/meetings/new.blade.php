@@ -11,7 +11,7 @@
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="POST" action="{{ route('meetings.create')}}" enctype="">
+        <form method="POST" action="{{ route('meetings.create', ['id' => $matching->id])}}" enctype="">
           @csrf
             @include('meetings.form')
           <button class="c-button c-button--submit " type="submit">作成する</button>

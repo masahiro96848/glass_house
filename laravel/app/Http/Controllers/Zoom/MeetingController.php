@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Traits\ZoomJWT;
 use GuzzleHttp\Client;
+use App\Matching;
 use App\Meeting;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
@@ -49,12 +50,15 @@ class MeetingController extends Controller
 
     }
 
-    public function new()
+    public function new($id)
     {
-        return view('meetings.new');
+        $matching = Matching::where('id', $id)->first();
+        return view('meetings.new', [
+            'matching' => $matching
+        ]);
     }
 
-    public function create(Request $request, Meeting $meeting)
+    public function create(Request $request, Meeting $meeting, $id)
     { 
         $email = env('ZOOM_ACCOUNT_EMAIL');
         $path = 'users/'. $email. '/meetings';
@@ -71,7 +75,8 @@ class MeetingController extends Controller
             ],
         ]);
         $body = json_decode($response->getBody(), true);
-        
+        $matching = Matching::find($id);
+
         if($response->getStatusCode() === 201) {
             Meeting::create([
                 'topic' => $request->topic,
@@ -80,6 +85,7 @@ class MeetingController extends Controller
                 'start_url' => $body['start_url'],
                 'join_url' => $body['join_url'],
                 'user_id' => $request->user()->id,
+                'matching_id' => $matching->id,
             ]);
         }
         $response = $this->zoomRequest($request->all());
