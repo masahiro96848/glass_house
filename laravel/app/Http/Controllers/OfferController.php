@@ -109,10 +109,7 @@ class OfferController extends Controller
             ]);
         }
         $response = $this->zoomRequest($request->all());
-        // $meeting = app()->make('App\Http\Controllers\zoom\MeetingController');
-        // dd($meeting->create($request, $meeting, $id));
-        // $meeting->create($request,$meeting);
-
+        
         return redirect()->route('mypage.matching', [
             'id' => $offer->id
         ])->with('flash_message', 'オファーを承諾しました！　メッセージやりとりをしましょう！');
