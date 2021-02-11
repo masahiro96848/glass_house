@@ -7,14 +7,24 @@ use App\Job;
 use App\Offer;
 use App\Message;
 use App\Matching;
+use App\Meeting;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
 use App\Enums\OfferType;
+use App\Traits\ZoomJWT;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Http\Requests\JobRequest;
 
 class OfferController extends Controller
 {
+    use ZoomJWT;
+    const MEETING_TYPE_INSTANT = 1;
+    const MEETING_TYPE_SCHEDULE = 2;
+    const MEETING_TYPE_RECURRING = 3;
+    const MEETING_TYPE_FIXED_RECURRING_FIXED = 8;
+
 
     // 申請確認画面
     public function confirm($name)
@@ -65,7 +75,7 @@ class OfferController extends Controller
     }
 
     // オファー承諾画面
-    public function approve(Request $request, $id)
+    public function approve(Request $request, Meeting $meeting, $id)
     {
         $offer = Offer::where('id', $id)->first();
         $matching = $offer->matchings()->first();
@@ -74,6 +84,34 @@ class OfferController extends Controller
         $offer->update([
             'status' => Offer::STATUS[3],
         ]);
+        $email = env('ZOOM_ACCOUNT_EMAIL');
+        $path = 'users/'. $email. '/meetings';
+        $response = $this->zoomPost($path, [
+            'type' => self::MEETING_TYPE_SCHEDULE,
+            'start_time' => '2020-07-01T20:24:04Z',
+            'duration' => 30,
+            'settings' => [
+                'host_video' => false,
+                'participant_video' => false,
+                'waiting_room' => true,
+            ],
+        ]);
+        $body = json_decode($response->getBody(), true);
+        $matching = Matching::find($id);
+
+        if($response->getStatusCode() === 201) {
+            Meeting::create([
+                'start_time' => '2020-07-01T20:24:04Z',
+                'start_url' => $body['start_url'],
+                'join_url' => $body['join_url'],
+                'user_id' => $request->user()->id,
+                'matching_id' => $matching->id,
+            ]);
+        }
+        $response = $this->zoomRequest($request->all());
+        // $meeting = app()->make('App\Http\Controllers\zoom\MeetingController');
+        // dd($meeting->create($request, $meeting, $id));
+        // $meeting->create($request,$meeting);
 
         return redirect()->route('mypage.matching', [
             'id' => $offer->id

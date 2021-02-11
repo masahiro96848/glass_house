@@ -49,19 +49,18 @@
                       </div>
                     </td>
                     <td class="p-matching--line">
-                      {{-- @foreach($meetings as $meeting) --}}
-
-                      {{-- @if($meeting->matching_id === $matching->id ) --}}
-                        {{-- @if(!empty($current_user->meetings)) --}}
+                      @foreach($meetings as $meeting)
+                      {{-- @if($matching->meetings === $matching->id ) --}}
+                          @if(Auth::id() === $matching->apply->id || Auth::id() === $matching->approve->id )
                           <div>
-                            {{-- <p>{{ $meeting->topic}}</p> --}}
-                            {{-- <p><a href="{{ $meeting->start_url}}">zoomに参加する</a></p> --}}
+                            <p>{{ $meeting->start_time}}</p>
+                            <p><a href="{{ $meeting->start_url}}">zoom会議をする</a></p>
                           </div>
                         {{-- @endif --}}
-                      {{-- @endif --}}
-                      {{-- @endforeach --}}
+                      @endif
+                      @endforeach
                       <div>
-                        <p>zoomを編集</p>
+                        <p>日程をを編集</p>
                         <a href="s"><p></p></a>
                       </div>
                     </td>
@@ -98,3 +97,4 @@
   </div>
   @include('footer')
 @endsection
+{{-- {{dd($matching->meetings->contains($meeting->matching_id))}} --}}
