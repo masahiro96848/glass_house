@@ -74,6 +74,11 @@ class User extends Authenticatable
         return $this->hasMany(Review::class, 'reviewed_id');
     }
 
+    public function meetings()
+    {
+        return $this->hasMany(Meeting::class);
+    }
+
     public function liked()
     {
     return $this->belongsToMany(User::class, 'likes', 'liked_id', 'liking_id')->withTimestamps();
