@@ -21,10 +21,7 @@
                 <th class="p-matching--scope">ツール</th>
               </tr>
             </thead>
-            
-            {{-- @foreach($offers as $offer) --}}
               @foreach($matchings as $matching)
-                {{-- @foreach($matching->meetings as $meeting) --}}
                 @if(Auth::id() === $matching->apply->id || Auth::id() === $matching->approve->id )
                 <tbody class="p-matching--body">
                   <tr>
@@ -81,9 +78,7 @@
                   </tr>
                 </tbody>
                 @endif
-                @endforeach
-              {{-- @endforeach  --}}
-              {{-- @endforeach --}}
+              @endforeach
             </table>
           </div>
         </div>
@@ -92,4 +87,3 @@
   </div>
   @include('footer')
 @endsection
-{{-- {{dd($matching->offer->status)}} --}}

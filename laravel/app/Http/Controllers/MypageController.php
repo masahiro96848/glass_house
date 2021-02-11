@@ -30,8 +30,7 @@ class MypageController extends Controller
         $meetings = Meeting::all();
         $offer_status = OfferType::getValue('Approved');
         $status = Offer::STATUS[3];
-    
-    
+
         return view('mypage.matching', [
             'current_user' => $current_user,
             'offers' => $offers,
