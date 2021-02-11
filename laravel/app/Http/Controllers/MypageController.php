@@ -27,7 +27,7 @@ class MypageController extends Controller
         foreach($matchings as $matching) {
             $offer = Offer::where('id', $matching->id)->get();
         }
-        $meetings = Meeting::where('user_id', $current_user->id)->get();
+        $meetings = Meeting::all();
         $offer_status = OfferType::getValue('Approved');
         $status = Offer::STATUS[3];
     
