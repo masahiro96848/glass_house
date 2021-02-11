@@ -63,11 +63,9 @@ class MeetingController extends Controller
         $email = env('ZOOM_ACCOUNT_EMAIL');
         $path = 'users/'. $email. '/meetings';
         $response = $this->zoomPost($path, [
-            'topic' => $request->topic,
             'type' => self::MEETING_TYPE_SCHEDULE,
             'start_time' => $request->start_time,
             'duration' => 30,
-            'agenda' => $request->agenda,
             'settings' => [
                 'host_video' => false,
                 'participant_video' => false,
@@ -79,8 +77,6 @@ class MeetingController extends Controller
 
         if($response->getStatusCode() === 201) {
             Meeting::create([
-                'topic' => $request->topic,
-                'agenda' => $request->agenda,
                 'start_time' => $request->start_time,
                 'start_url' => $body['start_url'],
                 'join_url' => $body['join_url'],

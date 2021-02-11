@@ -13,6 +13,11 @@ class Matching extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function offer()
+    {
+        return $this->belongsTo(Offer::class);
+    }
+
     public function apply()
     {
         return $this->belongsTo(User::class, 'apply_id');
@@ -31,5 +36,10 @@ class Matching extends Model
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function meetings()
+    {
+        return $this->hasMany(Meeting::class);
     }
 }

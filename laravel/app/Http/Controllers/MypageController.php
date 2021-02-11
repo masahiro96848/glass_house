@@ -18,19 +18,28 @@ class MypageController extends Controller
         return view('mypage.index');
     }
 
-    public function matching(Meeting $meeting)
+    public function matching()
     {
         $current_user = Auth::user();
-        $offers = Offer::all();         
+        $offers = Offer::all();   
+        
+        $matchings = Matching::all();
+        foreach($matchings as $matching) {
+            $offer = Offer::where('id', $matching->id)->get();
+        }
+        $meetings = Meeting::where('user_id', $current_user->id)->get();
         $offer_status = OfferType::getValue('Approved');
         $status = Offer::STATUS[3];
-
+    
+    
         return view('mypage.matching', [
             'current_user' => $current_user,
             'offers' => $offers,
             'offer_status' => $offer_status,
             'status' => $status,
-            'meeting' => $meeting,
+            'matchings' => $matchings,
+            'offer' => $offer,
+            'meetings' => $meetings,
         ]);
     }
 
