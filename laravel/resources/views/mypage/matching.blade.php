@@ -50,14 +50,12 @@
                     </td>
                     <td class="p-matching--line">
                       @foreach($meetings as $meeting)
-                      {{-- @if($matching->meetings === $matching->id ) --}}
-                          @if(Auth::id() === $matching->apply->id || Auth::id() === $matching->approve->id )
-                          <div>
-                            <p>{{ $meeting->start_time}}</p>
-                            <p><a href="{{ $meeting->start_url}}">zoom会議をする</a></p>
-                          </div>
-                        {{-- @endif --}}
-                      @endif
+                        @if($meeting->matching_id === $matching->id )
+                            <div>
+                              <p>{{ $meeting->start_time}}</p>
+                              <a href="{{ $meeting->start_url}}"><p class="p-matching--zoom p-matching--width">zoom通話</p></a>
+                            </div>
+                        @endif
                       @endforeach
                       <div>
                         <p>日程をを編集</p>
@@ -74,14 +72,11 @@
                       <div>
                         <a href="{{ route('message.index', ['id' => $matching->id])}}"><p class="p-matching--message p-matching--width">メッセージ</p></a>
                       </div>
-                      {{-- @if($offer->status === App\Offer::STATUS[3]) --}}
-                        <div>
-                          <a href="{{ route('meetings.new', ['id' => $matching->id])}}"> <p class="p-matching--zoom p-matching--width">zoom</p></a>
-                        </div>
+                      @if($matching->offer->status === App\Offer::STATUS[3])
                         <div>
                           <a href="{{ route('users.new', ['id' => $matching->id])}}"><p class="p-matching--review p-matching--width">レビュー投稿</p></a>
                         </div>
-                      {{-- @endif --}}
+                      @endif
                     </td>
                   </tr>
                 </tbody>
@@ -97,4 +92,4 @@
   </div>
   @include('footer')
 @endsection
-{{-- {{dd($matching->meetings->contains($meeting->matching_id))}} --}}
+{{-- {{dd($matching->offer->status)}} --}}
