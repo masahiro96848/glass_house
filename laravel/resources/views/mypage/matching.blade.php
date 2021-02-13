@@ -53,7 +53,7 @@
                             <a href="{{ $meeting->join_url}}"><p class="p-matching--zoom p-matching--width">zoom通話</p></a>
                           </div>
                           <div>
-                            <a href="{{route('meetings.edit', ['id' => $meeting->id])}}"><p>日程をを編集</p></a>
+                            <a href="{{route('meetings.edit', ['id' => $matching->id])}}"><p>日程をを編集</p></a>
                           </div>
                         @endif
                       @endforeach

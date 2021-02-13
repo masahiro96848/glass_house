@@ -112,10 +112,11 @@ class MeetingController extends Controller
         ]);
     }
 
-    public function update(Request $request, Meeting $meeting, string $id)
+    public function update(Request $request, Meeting $meeting, $id)
     {
         $email = env('ZOOM_ACCOUNT_EMAIL');
-        $path = 'meetings/'. $id;
+        $meeting = Meeting::find($id);
+        $path = 'meetings/'. $meeting->meeting_id;
         $response = $this->zoomUpdate($path, [
             'type' => self::MEETING_TYPE_SCHEDULE,
             'start_time' => $request->start_time,
@@ -126,19 +127,17 @@ class MeetingController extends Controller
                 'waiting_room' => true,
             ],
         ]);
-
         $body = json_decode($response->getBody(), true);
-
         if($response->getStatusCode() === 204) {
-            Meeting::update([
+            $meeting->update([
+                'topic' => $request->topic,
+                'agenda' => $request->agenda,
                 'start_time' => $request->start_time,
-                'start_url' => $body['start_url'],
-                'join_url' => $body['join_url'],
-                'user_id' => $request->user()->id,
-                'matching_id' => $matching->id,
+                // 'start_url' => $body['start_url'],
+                // 'join_url' => $body['join_url'],
             ]);
         }
-        $response = $this->zoomRequest($request->all());
+        // $response = $this->zoomRequest($request->all());
 
         return redirect()->route('mypage.matching')->with('flash_message', 'zoomミーティングの日程を変更しました');
     }
