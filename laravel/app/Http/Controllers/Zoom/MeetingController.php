@@ -64,7 +64,6 @@ class MeetingController extends Controller
         $path = 'users/'. $email. '/meetings';
         $response = $this->zoomPost($path, [
             'type' => self::MEETING_TYPE_SCHEDULE,
-            'start_time' => $request->start_time,
             'duration' => 30,
             'settings' => [
                 'host_video' => false,
@@ -77,10 +76,9 @@ class MeetingController extends Controller
 
         if($response->getStatusCode() === 201) {
             Meeting::create([
-                'start_time' => $request->start_time,
+                'meeting_id' => $body['meeting_id'],
                 'start_url' => $body['start_url'],
                 'join_url' => $body['join_url'],
-                'user_id' => $request->user()->id,
                 'matching_id' => $matching->id,
             ]);
         }
@@ -130,7 +128,6 @@ class MeetingController extends Controller
         ]);
 
         $body = json_decode($response->getBody(), true);
-        dd($response);
 
         if($response->getStatusCode() === 204) {
             Meeting::update([
