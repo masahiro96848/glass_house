@@ -88,7 +88,6 @@ class OfferController extends Controller
         $path = 'users/'. $email. '/meetings';
         $response = $this->zoomPost($path, [
             'type' => self::MEETING_TYPE_SCHEDULE,
-            'start_time' => '2020-07-01T20:24:04Z',
             'duration' => 30,
             'settings' => [
                 'host_video' => false,
@@ -101,7 +100,7 @@ class OfferController extends Controller
 
         if($response->getStatusCode() === 201) {
             Meeting::create([
-                'start_time' => '2020-07-01T20:24:04Z',
+                'meeting_id' => $body['id'],
                 'start_url' => $body['start_url'],
                 'join_url' => $body['join_url'],
                 'user_id' => $request->user()->id,
@@ -112,6 +111,6 @@ class OfferController extends Controller
         
         return redirect()->route('mypage.matching', [
             'id' => $offer->id
-        ])->with('flash_message', 'オファーを承諾しました！　メッセージやりとりをしましょう！');
+        ])->with('flash_message', 'オファーを承諾しました！ メッセージやりとりをしましょう！');
     }
 }

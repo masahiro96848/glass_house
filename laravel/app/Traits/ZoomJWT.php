@@ -89,12 +89,12 @@ trait ZoomJWT
     return $request->post($url.$path, $body);
   }
 
-  public function zoomPatch(string $path, array $body = [], $data = [])
+  public function zoomUpdate($path, $body = [])
   {
-    // $url = $this->retrieveZoomUrl();
+    $url = $this->retrieveZoomUrl();
     $request = $this->zoomRequest();
 
-    return $request->patch($url . $path, $body);
+    return $request->patch($url.$path, $body);
   }
 
   public function zoomDelete(string $path, array $body = [])

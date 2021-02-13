@@ -13,7 +13,7 @@
         @include('error')
         <form method="post" action="{{ route('profile.update')}}" enctype="">
           @csrf
-          @method('PUT')
+          @method('PATCH')
           <label for="title">名前</label>
           <div class="c-post">
             <input type="text" class="c-form--control" placeholder="20文字以内"  name="name"   value="{{ $user->name ?? old('name')}}">
