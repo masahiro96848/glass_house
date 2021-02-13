@@ -106,40 +106,44 @@ class MeetingController extends Controller
         ];
     }
 
-    public function update(Request $request, string $id)
+    public function edit($matching_id)
     {
-        $validator = Validator::make($request->all(), [
-            'topic' => 'required|string',
-            'start_time' => 'required|date',
-            'agenda' => 'string|nullable',
+        $meeting = Meeting::where('matching_id', $matching_id)->first();
+        return view('meetings.edit', [
+            'meeting' => $meeting,
         ]);
+    }
 
-        if ($validator->fails()) {
-            return [
-                'success' => false,
-                'data' => $validator->errors(),
-            ];
-        }
-        $data = $validator->validated();
-
-        $path = 'meetings/' . $id;
-        $response = $this->zoomPatch($path, [
-            'topic' => $data['topic'],
+    public function update(Request $request, Meeting $meeting, string $id)
+    {
+        $email = env('ZOOM_ACCOUNT_EMAIL');
+        $path = 'meetings/'. $id;
+        $response = $this->zoomUpdate($path, [
             'type' => self::MEETING_TYPE_SCHEDULE,
-            'start_time' => (new \DateTime($data['start_time']))->format('Y-m-d\TH:i:s'),
+            'start_time' => $request->start_time,
             'duration' => 30,
-            'agenda' => $data['agenda'],
             'settings' => [
                 'host_video' => false,
                 'participant_video' => false,
                 'waiting_room' => true,
-            ]
+            ],
         ]);
 
-        return [
-            'success' => $response->status() === 204,
-            'data' => json_decode($response->body(), true),
-        ];
+        $body = json_decode($response->getBody(), true);
+        dd($response);
+
+        if($response->getStatusCode() === 204) {
+            Meeting::update([
+                'start_time' => $request->start_time,
+                'start_url' => $body['start_url'],
+                'join_url' => $body['join_url'],
+                'user_id' => $request->user()->id,
+                'matching_id' => $matching->id,
+            ]);
+        }
+        $response = $this->zoomRequest($request->all());
+
+        return redirect()->route('mypage.matching')->with('flash_message', 'zoomミーティングの日程を変更しました');
     }
 
     public function delete(Request $request, string $id)
@@ -156,11 +160,9 @@ class MeetingController extends Controller
     public function setParams() 
     {
         $response = [
-            'topic' => $request->topic,
             'type' => self::MEETING_TYPE_SCHEDULE,
             'start_time' => $request->start_time,
             'duration' => 30,
-            'agenda' => $request->agenda,
             'settings' => [
                 'host_video' => false,
                 'participant_video' => false,

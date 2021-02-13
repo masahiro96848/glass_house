@@ -48,16 +48,15 @@
                     <td class="p-matching--line">
                       @foreach($meetings as $meeting)
                         @if($meeting->matching_id === $matching->id )
-                            <div>
-                              <p>{{ $meeting->start_time}}</p>
-                              <a href="{{ $meeting->start_url}}"><p class="p-matching--zoom p-matching--width">zoom通話</p></a>
-                            </div>
+                          <div>
+                            <p>{{ $meeting->start_time}}</p>
+                            <a href="{{ $meeting->join_url}}"><p class="p-matching--zoom p-matching--width">zoom通話</p></a>
+                          </div>
+                          <div>
+                            <a href="{{route('meetings.edit', ['id' => $meeting->id])}}"><p>日程をを編集</p></a>
+                          </div>
                         @endif
                       @endforeach
-                      <div>
-                        <p>日程をを編集</p>
-                        <a href="s"><p></p></a>
-                      </div>
                     </td>
                     <td class="p-matching--line">
                       <div class="p-matching--status">
