@@ -116,10 +116,10 @@ trait ZoomJWT
     }
   }
 
-  public function toUnixTimeStamp(string $dateTime, string $timezone)
+  public function toUnixTimeStamp(string $dateTime)
   {
     try {
-        $date = new \DateTime($dateTime, new \DateTimeZone($timezone));
+        $date = new \DateTime($dateTime);
         return $date->getTimestamp();
     } catch (\Exception $e) {
         Log::error('ZoomJWT->toUnixTimeStamp : ' . $e->getMessage());

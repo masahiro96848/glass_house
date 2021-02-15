@@ -8,6 +8,8 @@ class Meeting extends Model
 {
     protected $fillable = ['meeting_id','topic', 'agenda', 'start_time', 'start_url', 'join_url', 'matching_id'];
 
+    // protected $dates = ['start_time'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
