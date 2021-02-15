@@ -118,8 +118,10 @@ class MeetingController extends Controller
         $meeting = Meeting::find($id);
         $path = 'meetings/'. $meeting->meeting_id;
         $response = $this->zoomUpdate($path, [
+            'topic' => $request->topic,
+            'agenda' => $request->agenda,
             'type' => self::MEETING_TYPE_SCHEDULE,
-            'start_time' => $request->start_time,
+            'start_time' => $this->toZoomTimeFormat($request->start_time),
             'duration' => 30,
             'settings' => [
                 'host_video' => false,
@@ -127,18 +129,16 @@ class MeetingController extends Controller
                 'waiting_room' => true,
             ],
         ]);
+        
         $body = json_decode($response->getBody(), true);
         if($response->getStatusCode() === 204) {
             $meeting->update([
                 'topic' => $request->topic,
                 'agenda' => $request->agenda,
                 'start_time' => $request->start_time,
-                // 'start_url' => $body['start_url'],
-                // 'join_url' => $body['join_url'],
             ]);
         }
-        // $response = $this->zoomRequest($request->all());
-
+        
         return redirect()->route('mypage.matching')->with('flash_message', 'zoomミーティングの日程を変更しました');
     }
 
