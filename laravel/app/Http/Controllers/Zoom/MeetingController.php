@@ -10,6 +10,7 @@ use App\Matching;
 use App\Meeting;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 
 class MeetingController extends Controller
@@ -107,6 +108,9 @@ class MeetingController extends Controller
     public function edit($matching_id)
     {
         $meeting = Meeting::where('matching_id', $matching_id)->first();
+        if(Auth::id() !== $meeting->matching->apply_id && Auth::id() !== $meeting->matching->approve_id){
+            return redirect()->route('users.index');
+        }
         return view('meetings.edit', [
             'meeting' => $meeting,
         ]);
