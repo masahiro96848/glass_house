@@ -88,6 +88,7 @@
             </div>
           @endforeach
         </div>
+        {{ $users->links('pagination::default') }}
       </div>
     </div>
   </div>
