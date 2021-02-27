@@ -19,18 +19,11 @@ class JobControllerTest extends TestCase
     use RefreshDatabase;
 
 
-    // 新規投稿
+    // 新規投稿画面
     // 未ログイン時のテスト
     public function testGuestNew()
     {
         $response = $this->get(route('job.new'));
-
-        $response->assertRedirect(route('login'));
-    }
-
-    public function testGuestCreate()
-    {
-        $response = $this->post(route('job.create'));
 
         $response->assertRedirect(route('login'));
     }
@@ -45,6 +38,17 @@ class JobControllerTest extends TestCase
         $response->assertStatus(200)->assertViewIs('job.new');
     }
 
+
+    // 新規登録機能のテスト
+    // 未ログイン時のテスト
+    public function testGuestCreate()
+    {
+        $response = $this->post(route('job.create'));
+
+        $response->assertRedirect(route('login'));
+    }
+
+    // ログイン済み
     public function testAuthCreate()
     {
         // テストデータを追加(UserとJobのデータを追加)
@@ -69,5 +73,27 @@ class JobControllerTest extends TestCase
 
         $response->assertRedirect(route('job.index'));
 
+    }
+
+    // 編集画面テスト
+    // 未ログイン時
+    public function testGuestEdit()
+    {
+        $job = factory(Job::class)->create();
+
+        $response = $this->get(route('job.edit', ['id' => $job->id]));
+
+        $response->assertRedirect(route('login'));
+    }
+
+    // ログイン済み
+    public function testAuthEdit()
+    {
+        $job = factory(Job::class)->create();
+        $user = $job->user;
+
+        $response = $this->actingAs($user)->get(route('job.edit', ['id' => $job->id]));
+
+        $response->assertStatus(200)->assertViewIs('job.edit', ['id' => $job->id]);
     }
 }
