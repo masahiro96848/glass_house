@@ -37,7 +37,7 @@ class OfferController extends Controller
         ]);
     }
 
-    //申請送信画面
+    // 申請送信画面
     public function apply(Request $request, $name) 
     {
         $current_user = Auth::user();

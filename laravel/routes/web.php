@@ -75,8 +75,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     // zoomミーティングの編集
     Route::prefix('meeting')->name('meetings.')->group(function() {
-        Route::get('/meetings/{id}', 'Zoom\MeetingController@edit')->name('edit');
-        Route::put('/meetings/{id}', 'Zoom\MeetingController@update')->name('update');
+        Route::get('/edit/{id}', 'Zoom\MeetingController@edit')->name('edit');
+        Route::put('/edits/{id}', 'Zoom\MeetingController@update')->name('update');
     });
 });
 
