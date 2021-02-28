@@ -15,10 +15,10 @@ class CreateJobTagTable extends Migration
     {
         Schema::create('job_tag', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('job_id')->unsigned();
             $table->integer('tag_id')->unsigned();
-            $table->foreign('job_id')->references('id')->on('jobs')->OnDelete('cascade');
-            $table->foreign('tag_id')->references('id')->on('tags')->OnDelete('cascade');
+            $table->integer('job_id')->unsigned();
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
             $table->timestamps();
         });
     }

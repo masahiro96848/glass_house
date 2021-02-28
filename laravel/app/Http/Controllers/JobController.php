@@ -95,4 +95,12 @@ class JobController extends Controller
             'id' => $job->id,
         ])->with('flash_message', 'テーマを編集しました！');  ;
     }
+
+    public function delete($id)
+    {
+        $job = Job::find($id);
+        $job->delete();
+
+        return redirect()->route('mypage.job',['id' => $job->id])->with('flash_message', 'テーマを削除しました');
+    }
 }
