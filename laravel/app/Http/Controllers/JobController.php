@@ -65,6 +65,8 @@ class JobController extends Controller
     public function edit($id)
     {
         $job = Job::find($id);
+        // JobPolicyでアクセス制限
+        $this->authorize('update', $job);
         $tagNames = $job->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
@@ -77,6 +79,8 @@ class JobController extends Controller
     public function update(JobRequest $request, $id)
     {
         $job = Job::find($id);
+        // JobPolicyでアクセス制限
+        $this->authorize('update', $review);
         $job->update([
             'title' => $request->title,
             'summary' => $request->summary,
@@ -99,6 +103,8 @@ class JobController extends Controller
     public function delete($id)
     {
         $job = Job::find($id);
+        // JobPolicyでアクセス制限
+        $this->authorize('delete', $job);
         $job->delete();
 
         return redirect()->route('mypage.job',['id' => $job->id])->with('flash_message', 'テーマを削除しました');

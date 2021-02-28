@@ -17,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
         App\Review::class => \App\Policies\ReviewPolicy::class,
         App\Matching::class => \App\Policies\MatchingPolicy::class,
         App\Message::class => \App\Policies\MessagePolicy::class,
+        App\Job::class => \App\Policies\Job::class,
     ];
 
     /**
