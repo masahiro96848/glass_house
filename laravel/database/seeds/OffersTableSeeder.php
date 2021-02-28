@@ -12,9 +12,9 @@ class OffersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i < 10; $i++) {
+        for($i = 1; $i < 5; $i++) {
             Offer::create([
-                'status' => '承認済み',
+                'status' => '承認待ち',
                 'user_id' => 1,
                 'created_at' => now(),
             ]);
