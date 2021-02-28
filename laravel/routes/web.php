@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/create', 'JobController@create')->name('create');
         Route::get('/edit/{id}', 'JobController@edit')->name('edit');
         Route::put('/edit/{id}', 'JobController@update')->name('update');
+        Route::delete('/delete/{id}', 'JobController@delete')->name('delete');
     });
 
     // offer関連

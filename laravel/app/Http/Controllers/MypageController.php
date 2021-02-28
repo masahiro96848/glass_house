@@ -37,7 +37,6 @@ class MypageController extends Controller
             'offer_status' => $offer_status,
             'status' => $status,
             'matchings' => $matchings,
-            'offer' => $offer,
             'meetings' => $meetings,
         ]);
     }
