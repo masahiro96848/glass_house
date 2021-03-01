@@ -22,14 +22,8 @@
                     </div>
                   </div>
                 </div>      
-                {{-- <div class="c-user--Container">
-                  <h5 class="c-user--featureTitle">メッセージ</h5>
-                  <div class="c-user--featureArea">
-                    <textarea name="comment"  placeholder="内容を入力してください" class="c-user--text"></textarea>
-                  </div>
-                </div> --}}
                 <div class="p-comment--button">
-                    <button class="c-button--message">申請を送信する</button>
+                    <button class="c-button--message" onfocus="this.blur();">申請する</button>
                 </div>
               </div>
             </div>

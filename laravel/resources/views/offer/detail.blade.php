@@ -50,7 +50,11 @@
               <form method="POST" action="{{ route('offer.approve', ['id' => $offer->id])}}">
                 @csrf
                 @method('PUT')
-                <button class="p-confirm--apply">承認する</button>
+                @if($offer->status === App\Offer::STATUS[3])
+                  <button class="p-confirm--applied" onfocus="this.blur();" disabled>承認済み</button>
+                @else
+                  <button class="p-confirm--apply" onfocus="this.blur();">承認する</button>
+                @endif  
               </form>
                 <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">キャンセルする</p></a>
             @endif

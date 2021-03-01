@@ -49,6 +49,15 @@
     }
   }
 
+  &--applied {
+    display: inline-block;
+    border: none;
+    background-color: rgb(194, 178, 173);
+    color: #fff;
+    padding: $space_m $space_l;
+    border-radius: 20px;
+  }
+
   &--cancel {
     margin-top: $space_xxxl;
   }
