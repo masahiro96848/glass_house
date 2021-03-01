@@ -19,7 +19,6 @@ class UserController extends Controller
         foreach($users as $user) {
             $user->revieweds();
         }
-        
         return view('users.index', [
             'users' => $users,
         ]);

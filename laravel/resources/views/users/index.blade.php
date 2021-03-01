@@ -45,19 +45,21 @@
                     <img src="./img/wed.jpeg" alt="" class="c-user--image c-shadow--image">
                   </a>
                 </div>
-                <div class="c-user--professional">
-                  @foreach ($user->categories as $category)
-                  <a href="">
-                    <p class="c-user--category">
-                      {{ $category->name }}
-                    </p>
-                  </a>
-                  @endforeach
-                </div>
                 <p class="p-panel--name">
                   {{ $user->name }}
                 </p>
               </div>
+              <div class="c-user--professional">
+                  @foreach ($user->categories as $category)
+                  @if($loop->index < 2)
+                  <a href="">
+                    <p class="c-user--category">
+                      {{ $category->name}}
+                    </p>
+                  </a>
+                  @endif
+                  @endforeach
+                </div>
               <div class="c-user--detail">
                 <p class="c-user--clamp">
                   {{ $user->intro }}
