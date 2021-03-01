@@ -80,7 +80,7 @@ class JobController extends Controller
     {
         $job = Job::find($id);
         // JobPolicyでアクセス制限
-        $this->authorize('update', $review);
+        $this->authorize('update', $job);
         $job->update([
             'title' => $request->title,
             'summary' => $request->summary,
