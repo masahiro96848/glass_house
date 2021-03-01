@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="l-container--wrapper u-pt_0 l-container--flexstart">
+        <div class="l-container--wrapper u-pt_0 l-container--flexcenter">
           @foreach($users as $user)
             <div class="p-panel--box c-shadow">
               <div class="p-panel--area">
@@ -44,6 +44,15 @@
                   <a href="{{ route('users.show', [$user->name])}}">
                     <img src="./img/wed.jpeg" alt="" class="c-user--image c-shadow--image">
                   </a>
+                </div>
+                <div class="c-user--professional">
+                  @foreach ($user->categories as $category)
+                  <a href="">
+                    <p class="c-user--category">
+                      {{ $category->name }}
+                    </p>
+                  </a>
+                  @endforeach
                 </div>
                 <p class="p-panel--name">
                   {{ $user->name }}
@@ -74,15 +83,6 @@
                   @if(Auth::id() !== $user->id)
                     <a href="{{route('offer.confirm', ['name' => $user->name])}}"><p class="p-card--apply">話してみたい</p></a> 
                   @endif  
-                </div>
-                <div class="c-user--professional">
-                  @foreach ($user->categories as $category)
-                  <a href="">
-                    <p class="c-user--category">
-                      {{ $category->name }}
-                    </p>
-                  </a>
-                  @endforeach
                 </div>
               </div>
             </div>
