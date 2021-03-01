@@ -1,3 +1,3 @@
 <footer class="footer">
-  <small>© 2020 Guild Branch </small>
+  <small>© 2020  glass house </small>
 </footer>
