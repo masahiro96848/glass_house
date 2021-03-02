@@ -1,4 +1,4 @@
-<label for="title">募集タイトル</label>
+<label for="title">タイトル</label>
 <div class="c-post">
   <input type="text" class="c-form--control" placeholder="どんな人を募集しますか？(例)テーマやカテゴリーに関するものなど"  name="title"   value="{{ $job->title ?? old('title')}}">
 </div>

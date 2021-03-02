@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container">
     <div class="l-container--title">
-      <h2 class="l-container--wrapper--center">仲間・メンバー募集を作る</h2>
+      <h2 class="l-container--wrapper--center">トークテーマを作る</h2>
     </div>
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
