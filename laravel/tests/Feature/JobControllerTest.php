@@ -92,8 +92,9 @@ class JobControllerTest extends TestCase
         $job = factory(Job::class)->create();
         $user = $job->user;
 
-        $response = $this->actingAs($user)->get(route('job.edit', ['id' => $job->id]));
+        $response = $this->actingAs($user)->get(route('job.edit', ['id' => $job]));
 
-        $response->assertStatus(200)->assertViewIs('job.edit', ['id' => $job->id]);
+        $response->assertForbidden();
+        
     }
 }
