@@ -1,7 +1,7 @@
 .p-panel {
 
   &--box {
-    width: 300px;
+    width: 24%;
     margin-top: $space_xxl;
     margin-right: $space_s;
     border: none;
@@ -26,6 +26,12 @@
       margin-bottom: $space_l;
       margin-right: 15px;
       margin-left: 15px;
+    }
+
+    &--box::after {
+      content: '';
+      width: 20%;
+      display: block;
     }
 
     &--Mypage {

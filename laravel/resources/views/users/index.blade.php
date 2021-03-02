@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="l-container--wrapper u-pt_0 l-container--flexcenter">
+        <div class="l-container--wrapper u-pt_0 l-container--flexbetween">
           @foreach($users as $user)
             <div class="p-panel--box c-shadow">
               <div class="p-panel--area">

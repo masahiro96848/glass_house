@@ -9,6 +9,6 @@
     <a href="{{ route('mypage.liked')}}"><h5 class="p-card--button">あなたと話してみたいリスト</h5></a>
   </div>
   <div class="p-card--tab">
-    <a href="{{ route('mypage.job')}}"><h5 class="p-card--button">テーマリスト</h5></a>
+    <a href="{{ route('mypage.job')}}"><h5 class="p-card--button">トークテーマリスト</h5></a>
   </div>
 </div>

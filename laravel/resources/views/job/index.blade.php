@@ -6,8 +6,8 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout">
-        <h3 class="p-detail--title">テーマ一覧・話題</h3>
+      <div class="l-container--layout--lg">
+        <h3 class="p-detail--title">トークテーマ一覧・話題</h3>
         <div class="p-detail--tag">
           @foreach($tags as $tag)
             <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
