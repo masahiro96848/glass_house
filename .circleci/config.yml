@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: laravel
+    working_directory: /var/www/html 
     docker:
       - image: circleci/php:7.4-node-browsers
     steps:
