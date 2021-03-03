@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.4-node-browsers
-    working_directory: ~/var/www/html/laravel
+    working_directory: /home/circleci/var/www/html/laravel
     steps:
       - checkout
       - run: sudo composer self-update --1 
