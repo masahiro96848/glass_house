@@ -1,15 +1,21 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/var/www/html/
     docker:
       - image: circleci/php:7.4-node-browsers
+    working_directory: /home/circleci/var/www/html/
     steps:
       - checkout
       - run: sudo composer self-update --1 
+      - restore_cache:
+          key: composer-v1-{{ checksum "laravel/composer.lock"}}
       - run:
           working_directory: laravel 
           command: composer install -n --prefer-dist
+      - save_cache: 
+          key: composer-v1-{{ checksum "laravel/composer.lock"}}
+          paths: 
+            - vendor
       - run: 
           working_directory: laravel 
           command: npm ci
