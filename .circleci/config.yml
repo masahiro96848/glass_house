@@ -25,6 +25,7 @@ jobs:
           command: | 
             sudo apt-get update
             sudo docker-php-ext-install pdo_mysql
+            sudo docker-php-ext-enable pdo_mysql
             sudo apt-get install libpq-dev
             dockerize -wait tcp://localhost:3306 -timeout 1m
       - run: sudo composer self-update --1 
