@@ -52,4 +52,4 @@ jobs:
       - run:
           name: php test
           working_directory: /var/www/html/laravel/ 
-          command: ./vendor/bin/phpunit
+          command: vendor/bin/phpunit
