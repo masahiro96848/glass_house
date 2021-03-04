@@ -51,5 +51,5 @@ jobs:
           command: npm run dev
       - run:
           name: php test
-          working_directory: /var/www/html/laravel/ 
+          working_directory: laravel 
           command: vendor/bin/phpunit
