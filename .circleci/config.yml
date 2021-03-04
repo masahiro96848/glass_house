@@ -3,7 +3,21 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.4-node-browsers
-    working_directory: /home/circleci/var/www/html/laravel
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_DATABASE: glass_house
+          MYSQL_USER: root
+          MYSQL_PASSWORD: db_password
+    environment:
+      APP_ENV: testing
+      DB_CONNECTION: mysql
+      DB_HOST: localhost
+      DB_PORT: 3306
+      DB_DATABASE: glass_house
+      DB_USERNAME: test
+      DB_PASSWORD: db_password
+
+    working_directory: /home/circleci/var/www/html/
     steps:
       - checkout
       - run: sudo composer self-update --1 
@@ -32,6 +46,7 @@ jobs:
       - run: 
           working_directory: laravel 
           command: npm run dev
+      - run: sudo docker-php-ext-install pdo_mysql
       - run:
           name: php test
           working_directory: laravel
