@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\User;
 use App\Job;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -87,14 +88,13 @@ class JobControllerTest extends TestCase
     }
 
     // ログイン済み
-    public function testAuthEdit()
-    {
-        $job = factory(Job::class)->create();
-        $user = $job->user;
+    // public function testAuthEdit()
+    // {
+    //     $user = factory(User::class)->create();
+    //     $job = factory(Job::class)->create(['user_id' => $user->id]);
 
-        $response = $this->actingAs($user)->get(route('job.edit', ['id' => $job]));
-
-        $response->assertForbidden();
+    //     $response = $this->actingAs($user)->get(route('job.edit', ['id' => $job]));
+    //     $response->assertForbidden();
         
-    }
+    // }
 }
