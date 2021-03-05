@@ -51,7 +51,7 @@ return [
             'database' => env('DB_DATABASE', 'glass_house'),
             'username' => env('DB_USERNAME', 'admin'),
             'password' => env('DB_PASSWORD', 'password'),
-            'unix_socket' => env('DB_SOCKET', '/var/run/mysqld/mysqld.sock'),
+            'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
