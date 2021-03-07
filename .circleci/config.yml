@@ -67,7 +67,7 @@ jobs:
       - run:
           name: deploy
           command: |
-            ssh -o StrictHostKeyChecking=no -t glasshouse@${HOST_NAME} "cd glasshouse/laravel && \
+            ssh -o StrictHostKeyChecking=no -t glasshouse@${HOST_NAME} "cd glass_house/laravel && \
                 git pull origin main && \
                 composer install -n --no-dev --prefer-dist && \
                 npm ci && \
