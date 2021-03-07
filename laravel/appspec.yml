@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/glasshouse/glass_house/laravel
+
+permissions:
+  - object: /home/glasshouse/glass_house/laravel
+    owner: glasshouse
+    group: glasshouse
+
+hooks:
+  AfterInstall:
+    - location: ./scripts/after_install.sh
+      timeout: 60
+      runas: glasshouse
