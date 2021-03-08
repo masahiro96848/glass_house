@@ -1,7 +1,7 @@
 .p-panel {
 
   &--box {
-    width: 24%;
+    width: 300px;
     margin-top: $space_xxl;
     margin-right: $space_s;
     border: none;
@@ -12,10 +12,6 @@
     padding-right: $space_l;
     padding-bottom: $space_l;
     border-radius: 20px;
-    @include mq(lg) {
-      width: 45%;
-    }
-
     @include mq(md) {
       width: 45%;
     }
@@ -26,6 +22,14 @@
       margin-bottom: $space_l;
       margin-right: 15px;
       margin-left: 15px;
+    }
+
+    @include mq(lg) {
+      width: 300px;
+    }
+
+    @include mq(xl) {
+      width: 335px;
     }
 
     &--box::after {

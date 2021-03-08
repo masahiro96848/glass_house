@@ -146,24 +146,11 @@
     flex-wrap: wrap;
   }
 
-  &--flexbetween::after {
+  &--flexstart::after {
     content: '';
     width: 49%;
     display: block;
   }
-
-  &--between::after {
-    content: '';
-    width: 30%;
-    display: block;
-
-    @include mq(md) {
-      content: '';
-      width: 50%;
-      display: block;
-    }
-  }
-
 
   &--box {
     justify-content: center;
