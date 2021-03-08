@@ -107,9 +107,9 @@ jobs:
           name: deploy to prod
           command: |
             aws deploy create-deployment \
-            --application-name glasshouse \
-            --deployment-group-name glasshouse \
-            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=glass_house.zip,bundleType=zip
+            --application-name glass-house \
+            --deployment-group-name glass-house \
+            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=glass-house.zip,bundleType=zip
 
 orbs:
   aws-cli: circleci/aws-cli@1.0.0
