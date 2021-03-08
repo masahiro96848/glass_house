@@ -132,10 +132,10 @@
     border-radius: 10px;
     padding: $space_xxl $space_xxxl;
   }
-  &--between {
+  &--flexstart {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
