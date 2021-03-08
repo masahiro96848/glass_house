@@ -79,6 +79,7 @@ jobs:
       - restore_cache:
           key: npm-v1-{{ checksum "laravel/package-lock.json" }}
       - run:
+          working_directory: laravel
           name: npm ci
           command: |
             if [ ! -d node_modules ]; then
@@ -87,16 +88,22 @@ jobs:
       - save_cache:
           key: npm-v1-{{ checksum "laravel/package-lock.json" }}
           paths:
-            - node_modules
-      - run: npm run prod
+            - laravel/node_modules
+      - run: 
+          working_directory: laravel
+          command: npm run prod
+          
       - run:
+          working_directory: laravel
           name: archive artifacts
           command: zip -ryq glasshouse.zip .
       - aws-cli/install
       - run:
+          working_directory: laravel
           name: upload artifacts to s3
           command: aws s3 cp glasshouse.zip s3://${AWS_S3_BUCKET_NAME}
       - run:
+          working_directory: laravel
           name: deploy to prod
           command: |
             aws deploy create-deployment \
