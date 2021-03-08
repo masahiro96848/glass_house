@@ -96,12 +96,12 @@ jobs:
       - run:
           working_directory: laravel
           name: archive artifacts
-          command: zip -ryq glasshouse.zip .
+          command: zip -ryq glass-house.zip .
       - aws-cli/install
       - run:
           working_directory: laravel
           name: upload artifacts to s3
-          command: aws s3 cp glasshouse.zip s3://${AWS_S3_BUCKET_NAME}
+          command: aws s3 cp glass-house.zip s3://${AWS_S3_BUCKET_NAME}
       - run:
           working_directory: laravel
           name: deploy to prod
