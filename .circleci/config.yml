@@ -68,13 +68,13 @@ jobs:
       - checkout
       - run: sudo composer self-update --1
       - restore_cache:
-        key: composer-no-dev-v1-{{ checksum "composer.lock" }}
+          key: composer-no-dev-v1-{{ checksum "composer.lock" }}
       - run: composer install -n --no-dev --prefer-dist
       - save_cache:
-        key: composer-no-dev-v1-{{ checksum "composer.lock" }}
-        paths:
-          - vendor
-        - restore_cache:
+          key: composer-no-dev-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      - restore_cache:
           key: npm-v1-{{ checksum "package-lock.json" }}
       - run:
           name: npm ci
