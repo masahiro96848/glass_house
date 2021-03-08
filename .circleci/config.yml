@@ -65,17 +65,6 @@ jobs:
     environment:
       AWS_DEFAULT_REGION: ap-northeast-1
     steps:
-      - add_ssh_keys
-      - run:
-          name: deploy
-          command: |
-            ssh -o StrictHostKeyChecking=no -t glasshouse@${HOST_NAME} "cd glass_house/laravel && \
-                git pull origin main && \
-                composer install -n --no-dev --prefer-dist && \
-                npm ci && \
-                npm run prod && \
-                php artisan migrate --force && \
-                php artisan config:cache"
       - checkout
       - run: sudo composer self-update --1
       - restore_cache:
