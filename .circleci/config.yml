@@ -109,7 +109,7 @@ jobs:
             aws deploy create-deployment \
             --application-name glasshouse \
             --deployment-group-name glasshouse \
-            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=laravel-ci.zip,bundleType=zip
+            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=glasshouse.zip,bundleType=zip
 
 orbs:
   aws-cli: circleci/aws-cli@1.0.0
