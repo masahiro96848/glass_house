@@ -26,7 +26,7 @@
             <button class="c-button c-button--submit c-button--submit--search " type="submit">検索</button>
         </div>
         <div class="l-container--wrapper">
-          <div class="l-container--wrapperList l-container--between ">
+          <div class="l-container--wrapperList l-container--between">
           
             <div class="p-detail--tag">
               <a href="" class="p-detail--tagList">
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="l-container--wrapper u-pt_0 l-container--flexbetween">
+        <div class="l-container--wrapper u-pt_0 l-container--flexstart">
           @foreach($users as $user)
             <div class="p-panel--box c-shadow">
               <div class="p-panel--area">
