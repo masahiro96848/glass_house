@@ -53,8 +53,12 @@
   }
 
   &--review {
-    text-align: center;
     margin-top: $space_m;
+    margin-bottom: $space_m;
+
+    &--center {
+      text-align: center;
+    }
   }
 
   &--profile {

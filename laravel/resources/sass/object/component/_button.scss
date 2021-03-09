@@ -141,6 +141,7 @@
     border: none;
     display: inline-block;
     box-shadow: 2px 2px 2px rgb(204, 202, 202);
+    margin-bottom: $space_l;
     border-radius: 20px;
     &:focus {
       outline: none;
