@@ -14,8 +14,9 @@
     background-color: $background-color_button01;
     color: $font-color_default;
     margin: 0 auto;
+    border-radius: 5px;
     font-size: $font-size_l;
-    margin-top: $space_xxl;
+    margin-top: $space_4l;
     width: 50%;
     outline: none;
     cursor: pointer;
@@ -122,15 +123,15 @@
   &--message {
     display: block;
     border: none;
-    background-color: $background-color_button02;
+    background-color: $background-color_button01;
     color: #fff;
     padding: $space_m $space_l;
-    border-radius: 20px;
+    border-radius: 5px;
     margin: 0 auto;
     cursor: pointer;
     &:hover {
       color: #fff;
-      background-color: rgb(194, 178, 173);
+      background-color: rgb(251, 5, 5);
       transition: 0.5s;
       opacity: 0.8;
     }
@@ -140,6 +141,7 @@
     border: none;
     display: inline-block;
     box-shadow: 2px 2px 2px rgb(204, 202, 202);
+    margin-bottom: $space_l;
     border-radius: 20px;
     &:focus {
       outline: none;

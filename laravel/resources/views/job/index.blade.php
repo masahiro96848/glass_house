@@ -34,6 +34,10 @@
                   <div class="p-card--name">
                     <h5 class="p-card--userName">{{ $job->user->name}}</h5>
                   </div>
+                  <div class="c-user--review">
+                    <i class="far fa-comment-alt fa-lg"></i>
+                    {{ $job->user->revieweds()->count()}}件
+                  </div>
                   @foreach($job->tags as $tag)
                     @if($loop->first)
                       <div class="p-card--tag">
@@ -49,10 +53,18 @@
                 <div class="p-card--right">
                   @if(Auth::id() !== $job->user->id)
                     <a href="{{ route('offer.confirm', ['name' => $job->user->name])}}"><p class="p-card--apply">話してみたい</p></a>
-                  @endif  
-                  <p class="p-card--star">🌟🌟🌟🌟🌟</p>
-                  <p class="pcard--starCount">5.0</p>
-                    <p class="pcard--reviewCount">レビュー{{$job->user->revieweds->count() }}件</p>
+                  @endif
+                  <div class="c-user--likes">
+                    @if(Auth::id() !== $job->user->id)
+                      <user-like
+                        :initial-liked-by='@json($job->user->isLikedBy(Auth::user()))'
+                        :initial-count-likes='@json($job->user->count_likes)'
+                        :authorized='@json(Auth::check())'
+                        endpoint="{{ route('users.like', ['id' => $job->user->id])}}"
+                      >
+                      </user-like>
+                    @endif
+                  </div>  
                 </div>
               </div>
             </div>

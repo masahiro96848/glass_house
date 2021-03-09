@@ -9,7 +9,7 @@
     {{ buttonText }}
       
     </button>
-    <p>{{ countLikes }}人がいいねをしています</p>
+    <p>{{ countLikes }}人が登録済みです</p>
   </div>
 </template>
 

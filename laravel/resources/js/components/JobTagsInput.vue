@@ -6,6 +6,7 @@
       :value="tagsJson"
     >
     <vue-tags-input
+      class="vue-tag-width"
       v-model="tag"
       :tags="tags"
       placeholder="タグを5個まで追加できます"
@@ -60,10 +61,19 @@ export default {
     margin-right: 4px;
     border-radius: 20px;
     font-size: 14px;
+    max-width: 100% !important;
   }
   
   .vue-tags-input .ti-tag::before {
     content: "#";
     font-size: 14px;
+  }
+  .ti-input {
+    border-radius: 5px;
+  }
+  .vue-tag-width {
+    width: 100%;
+    max-width: 100% !important;
+    border-radius: 5px !important;
   }
 </style>

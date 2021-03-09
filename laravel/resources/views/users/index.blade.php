@@ -66,7 +66,7 @@
                 </p>
               </div>
               <div class="p-panel--body">
-                <div class="c-review--star">
+                <div class="c-user--review">
                   <i class="far fa-comment-alt fa-lg"></i>
                     {{ $user->revieweds()->count()}}件
                 </div>
