@@ -3,10 +3,11 @@
   &--category {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: $space_xl;
   }
 
   &--professional {
-    width: 300px;
+    width: 25%;
     margin-bottom: $space_m;
   }
 

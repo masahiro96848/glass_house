@@ -98,12 +98,12 @@
   &--button {
     width: 23%;
     background-color: rgb(0, 0, 0);
-    border-radius: 10px;
+    border-radius: 5px;
     
     & a {
       display: block;
       padding: $space_l $space_s;  
-      border-radius: 10px;
+      border-radius: 5px;
     }
     & a:hover {
         transition: 0.5s;

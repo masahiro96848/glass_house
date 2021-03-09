@@ -14,6 +14,7 @@
   &--control {
     border: none;
     width: 100%;
+    border-radius: 5px;
     padding: $space_m $space_m;
     margin-bottom: $space_xl;
     outline: none;
@@ -37,6 +38,6 @@
   }
 
   &--radius {
-    border-radius: 20px;
+    border-radius: 5px;
   }
 }
