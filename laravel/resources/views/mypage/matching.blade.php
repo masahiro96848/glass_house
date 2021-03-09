@@ -31,7 +31,7 @@
                           <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
                         </a>
                       </div>
-                      <div>
+                      <div class="p-matching--name">
                         <p>{{ $matching->apply->name}}</p>
                       </div>
                     </td>
@@ -49,11 +49,11 @@
                       @foreach($meetings as $meeting)
                         @if($meeting->matching_id === $matching->id )
                           <div>
-                            <p>{{ str_replace("T", " ", $meeting->start_time) }}</p>
-                            <a href="{{ $meeting->join_url }}"><p class="p-matching--zoom p-matching--width">zoom通話</p></a>
+                            <p class="p-matching--date">{{ str_replace("T", " ", $meeting->start_time) }}</p>
+                            <p class="p-matching--zoom p-matching--width"><a href="{{ $meeting->join_url }}" class="p-matching--link">zoom通話</a></p>
                           </div>
                           <div>
-                            <a href="{{route('meetings.edit', ['id' => $matching->id])}}"><p>日程をを編集</p></a>
+                            <p class="p-matching--edit"><a href="{{route('meetings.edit', ['id' => $matching->id])}}" class="">日程をを編集</a></p>
                           </div>
                         @endif
                       @endforeach
@@ -66,11 +66,11 @@
                     </td>
                     <td class="p-matching--line">
                       <div>
-                        <a href="{{ route('message.index', ['id' => $matching->id])}}"><p class="p-matching--message p-matching--width">メッセージ</p></a>
+                        <p class="p-matching--message p-matching--width"><a href="{{ route('message.index', ['id' => $matching->id])}}" class="p-matching--link">メッセージ</a></p>
                       </div>
                       @if($matching->offer->status === App\Offer::STATUS[3])
                         <div>
-                          <a href="{{ route('users.new', ['id' => $matching->id])}}"><p class="p-matching--review p-matching--width">レビュー投稿</p></a>
+                          <p class="p-matching--review p-matching--width"><a href="{{ route('users.new', ['id' => $matching->id])}}" class="p-matching--link">レビュー投稿</a></p>
                         </div>
                       @endif
                     </td>

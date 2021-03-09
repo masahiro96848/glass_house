@@ -19,7 +19,7 @@
 
   &--scope {
     width: 20%;
-    text-align: left;
+    text-align: center;
     padding: $space_l;
   }
 
@@ -39,6 +39,11 @@
 
   &--line {
     padding: $space_l;
+    text-align: center;
+  }
+
+  &--name {
+    text-align: center;
   }
 
   &--status {
@@ -47,51 +52,52 @@
   }
 
   &--message {
-    display: inline-block;
     text-align: center;
-    padding: $space_s $space_l;
+    margin-bottom: $space_l;
     color: rgb(252, 252, 253);
     border: none;
     background-color: rgb(43, 167, 90);
     border-radius: 20px;
-    &:hover {
-      transition: 0.5s;
-      color: rgb(10, 10, 10);
-      background-color: #fff;
-      border:1px solid rgb(18, 19, 20);
-    }
   }
 
   &--zoom {
-    display: inline-block;
     text-align: center;
-    padding: $space_s $space_l;
+    margin-bottom: 0;
     color: rgb(252, 252, 253);
     border: none;
     background-color: rgb(18, 73, 224);
     border-radius: 20px;
-    &:hover {
-      transition: 0.5s;
-      color: rgb(18, 73, 224);
-      background-color: #fff;
-      border:1px solid rgb(18, 73, 224);
-    }
+    margin-bottom: $space_l;
   }
 
   &--review {
-    display: inline-block;
     text-align: center;
-    padding: $space_s $space_l;
+    margin-bottom: 0;
     color: rgb(252, 252, 253);
     border: none;
     background-color: rgba(108, 117, 35, 0.966);
     border-radius: 20px;
+  }
+
+  &--link {
+    display: block;
+    color: #fff;
+    padding: $space_s $space_l;
     &:hover {
+      background-color: rgba(199, 199, 199, 0.507);
+      color: #fff;
       transition: 0.5s;
-      color: rgb(10, 10, 10);
-      background-color: #fff;
-      border:1px solid rgb(18, 19, 20);
+      padding: $space_s $space_l;
+      border-radius: 20px;
     }
+  }
+
+  &--date {
+    margin-bottom: $space_l;
+  }
+
+  &--edit {
+    margin-bottom: 0;
   }
 
   &--width {
