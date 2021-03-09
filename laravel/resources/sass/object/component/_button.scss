@@ -12,11 +12,11 @@
   &--submit {
     display: block;
     background-color: $background-color_button01;
+    color: $font-color_default;
     margin: 0 auto;
     font-size: $font-size_l;
     margin-top: $space_xxl;
     width: 50%;
-    border-radius: 50px;
     outline: none;
     cursor: pointer;
     &:hover {
@@ -116,32 +116,6 @@
       width: 90%;
       margin: 0 auto;
       font-size: 24px;
-    }
-  }
-
-  &--google {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $background-color_google;
-    color: white;
-    margin: 0 auto;
-    margin-top: $space_xxl;
-    width: 30%;
-    padding: $space_m $space_m;
-    border-radius: 50px;
-    outline: none;
-
-    & a {
-      color: white;
-    }
-
-    @include mq(md) {
-      width: 45%;
-    }
-
-    @include mq(sm) {
-      width: 70%;
     }
   }
 
