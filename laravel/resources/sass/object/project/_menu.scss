@@ -68,11 +68,15 @@
   }
 
   &--link {
+    display: block;
+    padding: 27px 10px;
     color: #fff;
     border: none;
     font-family: $font-family_title;
     &:hover {
-      color: $font-color_sub03;
+      color: #fff;
+      background-color: rgb(255, 0, 0);
+      transition: 0.5s;
     }
     &:active {
       border: none;
