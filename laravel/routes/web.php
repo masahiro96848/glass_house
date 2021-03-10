@@ -93,5 +93,9 @@ Route::prefix('tag')->name('tag.')->group(function() {
     Route::get('/{name}', 'TagController@index')->name('index');
 });
 
+Route::prefix('users')->name('users.')->group(function() {
+    Route::get('/{name}', 'UserController@category')->name('category');
+});
+
 // zoomミーティングの作成
 Route::post('/meetings/create/{id}', 'Zoom\MeetingController@create')->name('meetings.create');

@@ -7,6 +7,7 @@ use App\Matching;
 use App\Offer;
 use App\Review;
 use App\Message;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReviewRequest;
@@ -19,8 +20,23 @@ class UserController extends Controller
         foreach($users as $user) {
             $user->revieweds();
         }
+        $category_users = Category::withCount('users')->orderBy('users_count', 'desc')->take(10)->get();
         return view('users.index', [
             'users' => $users,
+            'category_users' => $category_users,
+        ]);
+    }
+
+    public function category($name)
+    {
+        $users = $users = User::paginate(16);
+        $category_users = Category::withCount('users')->orderBy('users_count', 'desc')->take(10)->get();
+        $category = Category::where('name', $name)->first();
+
+        return view('users.category', [
+            'users' => $users,
+            'category_users' => $category_users,
+            'category' => $category
         ]);
     }
 
