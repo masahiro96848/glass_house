@@ -6,8 +6,8 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout">
-        <h3 class="p-detail--title">{{ $tag->hashtag }} {{$tag->jobs->count()}}件</h3>
+      <div class="l-container--layout--lg">
+        <h3 class="p-detail--hash">{{ $tag->hashtag }} {{$tag->jobs->count()}}件</h3>
         <div class="p-card">
           @foreach($tag->jobs as $job)
             <div class="p-card--area">

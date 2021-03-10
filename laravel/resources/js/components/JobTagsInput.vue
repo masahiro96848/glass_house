@@ -71,6 +71,9 @@ export default {
   .ti-input {
     border-radius: 5px;
   }
+  .ti-item {
+    color: black;
+  }
   .vue-tag-width {
     width: 100%;
     max-width: 100% !important;

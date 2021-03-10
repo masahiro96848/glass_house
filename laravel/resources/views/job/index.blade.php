@@ -12,6 +12,7 @@
           @foreach($tags as $tag)
             <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
               {{ $tag->hashtag }}
+              <p class="p-detail--count">{{ $tag->jobs->count()}}</p>
             </a>
           @endforeach
         </div>
