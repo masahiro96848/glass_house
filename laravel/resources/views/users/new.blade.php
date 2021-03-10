@@ -16,6 +16,7 @@
                 @csrf
                 @include('users.form')
               </form>
+              <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel"><< 戻る</p></a>
             </div>
           </div>
         </div>
