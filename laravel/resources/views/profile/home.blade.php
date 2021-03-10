@@ -21,9 +21,7 @@
                 {{ $user->revieweds()->count()}}件
               </div>
               <div class="c-user--profile">
-                <a href="{{ route('profile.edit')}}">
-                  <p class="c-user--edit">プロフィール編集</p>
-                </a>
+                <p class="c-user--edit"><a href="{{ route('profile.edit')}}">プロフィール編集</a></p>
               </div>
               <p class="c-user--intro">{{ $user->intro}}</p>
             </div>

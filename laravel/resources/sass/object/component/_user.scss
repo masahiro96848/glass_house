@@ -70,7 +70,16 @@
   }
 
   &--edit {
-    padding: $space_m $space_l;
+
+    & a {
+      display: block;
+      padding: $space_m $space_l;
+      &:hover {
+        transition: 0.5s;
+        background-color: rgba(75, 75, 75, 0.507);
+        color: rgb(0, 0, 0);
+      }
+    }
   }
 
   &--intro {
