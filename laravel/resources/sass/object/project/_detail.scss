@@ -65,9 +65,16 @@
 
   &--title {
     color: $font-color_default;
-    margin-left: $space_s;
     margin-top: $space_l;
-    margin-bottom: $space_l;
+    margin-bottom: $space_xxxl;
+    text-align: center;
+  }
+
+  &--hash {
+    color: $font-color_default;
+    margin-top: $space_l;
+    margin-bottom: $space_xxxl;
+    text-align: left;
   }
 
   &--sub {
@@ -87,18 +94,30 @@
   }
 
   &--tag {
+    display: flex;
+    flex-wrap: wrap;
     margin: $space_m;
   }
 
   &--tagList {
+    display: flex;
+    align-items: center;
+    color: $font-color_black;
     padding-right: $space_m;
     background-color: $background-color_tag;
     padding: $space_s $space_m;
     border-radius: 20px;
-    border: 1px solid brown;
+    border: 2px solid rgb(0, 0, 0);
     margin-right: $space_m;
     margin-bottom: 15px;
-    display: inline-block;
+  }
+
+  &--count {
+    background-color: black;
+    color: $font-color_default;
+    padding: 0px 7px;
+    margin-left: $space_m;
+    margin-bottom: 0;
   }
 
   &--heart {

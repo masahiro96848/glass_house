@@ -16,8 +16,9 @@ class JobController extends Controller
 {
     public function index()
     {
-        $jobs = Job::all();
-        $tags = Tag::all();
+        $jobs = Job::orderBy('id', 'desc')->get();
+        $tags = Tag::withCount('jobs')->orderBy('jobs_count', 'desc')->take(10)->get();
+
         return view('job.index', [
             'jobs' => $jobs,
             'tags' => $tags,
