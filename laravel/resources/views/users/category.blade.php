@@ -1,13 +1,13 @@
 @extends('app')
 
-@section('title', 'ユーザー一覧')
+@section('title',  $category->name.'の検索結果')
 
 @section('content')
   @include('nav')
   <div class="l-container">
     <div class="l-container--wrapper">
       <div class="l-container--top">
-      <h2 class="l-container--title--tag l-container--title_pl">ユーザーを探す</h2>
+      <h2 class="l-container--title--tag l-container--title_pl">{{ $category->name }}の検索結果</h2>
     </div>
       <div class="l-container--searchArea">
         <div class="p-search--select">
@@ -30,7 +30,7 @@
           
             <div class="p-detail--tag">
               @foreach($category_users as $category_user)
-              <a href="{{route('users.category', ['name' => $category_user->name])}}" class="p-detail--tagList">
+              <a href="{{route('users.category', [ 'name' => $category_user->name])}}" class="p-detail--tagList">
                 {{ $category_user->name}}
                 <p class="p-detail--count">{{ $category_user->users->count()}}</p>
               </a>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="l-container--wrapper u-pt_0 l-container--flexstart">
-          @foreach($users as $user)
+          @foreach($category->users as $user)
             <div class="p-panel--box c-shadow">
               <div class="p-panel--area">
                 <div class="p-panel-image">
