@@ -38,7 +38,7 @@ $('.p-menu--button').on('click', function() {
 
 // フラッシュメッセージ
 $(function() {
-  $('.u-flash_message').hide().fadeIn('slow').delay('5000').slideUp('slow');
+  $('.u-flash_message').hide().fadeIn('slow').delay('6000').slideUp('slow');
 });
 
 //　モーダル
