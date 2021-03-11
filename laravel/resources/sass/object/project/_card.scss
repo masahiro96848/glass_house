@@ -134,4 +134,9 @@
     margin-top: $space_l;
     font-weight: bold;
   }
+
+  &--nodata {
+    color: $font-color_default;
+    text-align: center;
+  }
 }

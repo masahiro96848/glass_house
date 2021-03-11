@@ -61,4 +61,12 @@
   &--cancel {
     margin-top: $space_xxxl;
   }
+
+
+  &--Container {
+    align-items: center;
+  }
+  &--title {
+    font-size: $font-size_default;
+  }
 }
