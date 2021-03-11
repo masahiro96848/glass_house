@@ -29,9 +29,10 @@ class UserController extends Controller
 
     public function category($name)
     {
-        $users = $users = User::paginate(16);
         $category_users = Category::withCount('users')->orderBy('users_count', 'desc')->take(10)->get();
         $category = Category::where('name', $name)->first();
+        // $users = Category::withCount('users')->orderBy('users_count', 'desc')->paginate(5);
+        $users = $category->users()->paginate(16);
 
         return view('users.category', [
             'users' => $users,
