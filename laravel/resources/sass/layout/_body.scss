@@ -16,3 +16,8 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+#app {
+  min-height: 100vh;
+  position: relative;
+}

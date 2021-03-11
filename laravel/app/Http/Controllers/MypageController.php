@@ -23,7 +23,7 @@ class MypageController extends Controller
         $current_user = Auth::user();
         $offers = Offer::all();   
         
-        $matchings = Matching::all();
+        $matchings = Matching::orderBy('created_at', 'DESC')->get();
         foreach($matchings as $matching) {
             $offer = Offer::where('id', $matching->id)->get();
         }
@@ -44,7 +44,7 @@ class MypageController extends Controller
     public function liking() 
     {
         $current_user = Auth::user();
-        $users = $current_user->liking()->get()->sortByDesc('created_at');
+        $users = $current_user->liking()->orderBy('created_at', 'DESC')->get();
         return view('mypage.liking', [
             'current_user' => $current_user,
             'users' => $users,
@@ -54,7 +54,7 @@ class MypageController extends Controller
     public function liked()
     {
         $current_user = Auth::user();
-        $users = $current_user->liked()->get()->sortByDesc('created_at');
+        $users = $current_user->liked()->orderBy('created_at', 'DESC')->get();
         return view('mypage.liked', [
             'current_user' => $current_user,
             'users' => $users,

@@ -13,8 +13,8 @@
             @csrf
             <div class="p-comment--area">
               <div class="c-user--feature u-bb--none">
-                <div class="c-user--Container">
-                  <h5 class="c-user--featureTitle">申請するユーザー名</h5>
+                <div class="c-user--Container p-confirm--Container">
+                  <h5 class="c-user--featureTitle p-confirm--title">申請するユーザー名</h5>
                   <div class="c-user--featureArea">
                     <div class="c-user">
                       <img src="/img/wed.jpeg" alt=""class="c-user--image--sm" >
