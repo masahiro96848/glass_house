@@ -11,6 +11,18 @@
     font-family: $font-family_title;
   }
 
+  &--required {
+    margin-left: $space_m;
+    background-color: $background-color_required;
+    padding: 2px $space_s;
+  }
+
+  &--any {
+    margin-left: $space_m;
+    background-color: $background-color_any;
+    padding: 2px $space_s;
+  }
+
   &--control {
     border: none;
     width: 100%;
@@ -36,7 +48,6 @@
     }
     
   }
-
   &--radius {
     border-radius: 5px;
   }
