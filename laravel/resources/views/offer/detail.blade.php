@@ -16,33 +16,11 @@
             <img src="../img/wed.jpeg" alt=""class="c-user--image" >
             <h4 class="p-member--name">{{ $matching->apply->name}}</h4>
           </div>
-          <div class="p-confirm--intro">
-            <p>
+          <div class="">
+            <p class="p-confirm--intro">
               {{ $matching->apply->intro}}
             </p>
           </div>
-        </div>
-        <div class="p-member--content u-mt_xxxl">
-          <div class="c-user--feature">
-              <div class="c-user--Container p-confirm--mb">
-                <p class="c-user--featureTitle">申請を受けたユーザー</p>
-                <div class="c-user--featureArea">
-                  <div class="p-confirm--photo">
-                    <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
-                    <span class="p-confirm--name">{{ $matching->approve->name}}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="c-user--Container">
-                <p class="c-user--featureTitle p-confirm--mb">申請したユーザー</p>
-                <div class="c-user--featureArea">
-                  <div class="p-confirm--photo">
-                    <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
-                    <span class="p-confirm--name">{{ $matching->apply->name}}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           <div class="p-confirm--preserve">
             @if(Auth::id() === $matching->apply->id)
               <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">マイページに戻る</p></a>
@@ -59,7 +37,7 @@
                 <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">キャンセルする</p></a>
             @endif
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   </div>
