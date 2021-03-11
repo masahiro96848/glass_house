@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="c-user--Container">
-    <h5 class="c-user--featureTitle">評価</h5>
+    <p class="c-user--featureTitle">評価<span class="c-form--required c-form--required--review">必須</span></p>
     <div class="c-user--featureArea">
       <p class="c-user--body">
         <comment-star
@@ -21,16 +21,16 @@
 
         </comment-star>
       </p>
-    </div>
+    </div><br>
   </div>
   <div class="c-user--Container">
-    <h5 class="c-user--featureTitle">タイトル</h5>
+    <p class="c-user--featureTitle">タイトル<span class="c-form--required c-form--required--review">必須</span></p><br>
     <div class="c-user--featureArea">
       <input type="text" name="title" value="{{ $review->title ?? old('title')}}" placeholder="タイトル名を入力してください" class="c-user--input">
     </div>
   </div>
   <div class="c-user--Container">
-    <h5 class="c-user--featureTitle">内容</h5>
+    <p class="c-user--featureTitle">内容<span class="c-form--required c-form--required--review">必須</span></p>
     <div class="c-user--featureArea">
       <textarea name="body" value="" placeholder="内容を入力してください" class="c-user--text">{{ $review->body ?? old('body')}}</textarea>
     </div>

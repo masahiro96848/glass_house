@@ -15,6 +15,11 @@
     margin-left: $space_m;
     background-color: $background-color_required;
     padding: 2px $space_s;
+
+    &--review {
+      font-weight: normal;
+      color: $font-color_default;
+    }
   }
 
   &--any {
