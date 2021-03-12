@@ -33,6 +33,13 @@
       text-align: center;
     }
 
+    &--search {
+      padding-top: 80px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 80px;
+    }
+
   }
 
   &--wrapperList {
@@ -85,22 +92,15 @@
     margin-bottom: 20px;
     
     &--tag {
+      display: inline-block;
       font-family: $font-family_title;
-      border-left: 5px solid black;
-      padding-left: $space_m;
+      margin-bottom: $space_xl;
     }
 
     &--recruit {
       width: 60%;
     }
 
-  }
-
-  &--title_pl {
-    margin-left: 50px;
-    @include mq(sm) {
-      margin-left: 20px;
-    }
   }
 
   &--layout {
@@ -226,11 +226,5 @@
       width: 90%;
     }
   }
-
-  &--top{
-    padding-top: 80px;
-  }
-
-
 }
 
