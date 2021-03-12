@@ -20,7 +20,6 @@
       </div>
     </div>
   </div>
-  @include('footer')  
 @endsection
 
 {{-- {{dd($product->id)}} --}}
