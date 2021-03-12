@@ -36,7 +36,7 @@
   <div id="app">
     @yield('content')
   </div>
-
+  @include('footer')
   
 {{-- <script type="module"
 src="https://code.jquery.com/jquery-3.5.1.js"
