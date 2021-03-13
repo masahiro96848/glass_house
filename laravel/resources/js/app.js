@@ -16,6 +16,7 @@ import Vue from 'vue'
 import CommentStar from './components/CommentStar'
 import UserLike from './components/UserLike'
 import JobTagsInput from './components/JobTagsInput'
+import ProfileImg from './components/ProfileImg'
 
 const app  = new Vue({
   el: '#app',
@@ -23,6 +24,7 @@ const app  = new Vue({
     CommentStar,
     UserLike,
     JobTagsInput,
+    ProfileImg,
   }
 });
 
