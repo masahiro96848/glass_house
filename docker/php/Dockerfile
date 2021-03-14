@@ -4,6 +4,9 @@ FROM php:7.4-fpm
 #composerのインストール
 COPY --from=composer:1.10 /usr/bin/composer /usr/bin/composer
 
+#php.iniの作成
+COPY php.ini /usr/local/etc/php/ 
+
 #npmのインストール
 COPY --from=node:10.22 /usr/local/bin /usr/local/bin
 COPY --from=node:10.22 /usr/local/lib /usr/local/lib

@@ -11,9 +11,18 @@
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="post" action="{{ route('profile.update')}}" enctype="">
+        <form method="post" action="{{ route('profile.update')}}" enctype="multipart/form-data">
           @csrf
           @method('PUT')
+          <label for="profile_image">プロフィール画像</label><span class="c-form--any">任意</span>
+            <div class="c-form--imageBox c-form--img--radius">
+              <profile-img
+                set-image-data='{{ $user->profile_image ?? ''}}'
+                name="profile_image"
+                class-object="c-form--img--radius"
+              >
+              </profile-img->
+            </div>
           <label for="title">名前</label><span class="c-form--required">必須</span>
           <div class="c-post">
             <input type="text" class="c-form--control" placeholder="20文字以内"  name="name"   value="{{ $user->name ?? old('name')}}">
