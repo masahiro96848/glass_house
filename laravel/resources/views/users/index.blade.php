@@ -29,7 +29,11 @@
             <div class="p-panel--area">
               <div class="p-panel-image">
                 <a href="{{ route('users.show', [$user->name])}}">
-                  <img src="./img/wed.jpeg" alt="" class="c-user--image c-shadow--image">
+                  @if (!isset($user->profile_image))
+                    <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image">
+                  @else
+                    <img src="{{$user->profile_image}}" alt="" class="c-user--image">
+                  @endif
                 </a>
               </div>
               <p class="p-panel--name">

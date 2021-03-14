@@ -17,7 +17,11 @@
                   <h5 class="c-user--featureTitle p-confirm--title">申請するユーザー名</h5>
                   <div class="c-user--featureArea">
                     <div class="c-user">
-                      <img src="/img/wed.jpeg" alt=""class="c-user--image--sm" >
+                      @if (!isset($user->profile_image))
+                        <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                      @else
+                        <img src="{{$user->profile_image}}" alt="" class="c-user--image--sm">
+                      @endif
                       <span class="">{{ $user->name}}</span>
                     </div>
                   </div>

@@ -2,11 +2,20 @@
   <h5 class="c-user--featureTitle">ユーザー名</h5>
     <div class="c-user--featureArea">
       <div class="c-user">
-        <img src="/img/wed.jpeg" alt=""class="c-user--image--sm" >
         @if($current_user !== $matching->apply_id && $matching->approve_id)
-          <span class="">{{ $matching->apply->name}}</span>
-        @else 
-          <span class="">{{ $matching->approve->name}}</span>
+          @if(!isset($matching->apply->profile_image))
+            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+          @else
+            <img src="{{$matching->apply->profile_image}}" alt="" class="c-user--image--sm">  
+          @endif
+            <span class="">{{ $matching->apply->name}}</span>  
+        @else
+          @if(!isset($matching->approve->profile_image))
+            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+          @else
+            <img src="{{$matching->approve->profile_image}}" alt="" class="c-user--image--sm">  
+          @endif
+            <span class="">{{ $matching->approve->name}}</span>
         @endif
       </div>
     </div>

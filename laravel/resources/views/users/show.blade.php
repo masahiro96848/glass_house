@@ -10,7 +10,11 @@
         <div class="l-container--border">
           <div class="c-user--box">
             <div class="c-user--photo">
-              <img src="../img/wed.jpeg" alt=""class="c-user--image--md" >
+              @if (!isset($user->profile_image))
+                <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--md">
+              @else
+                <img src="{{$user->profile_image}}" alt="" class="c-user--image--md">
+              @endif
             </div>
             <div class="c-user--body">
               <div class="c-user--detail">
@@ -74,7 +78,11 @@
                 <div class="c-user--card">
                   <div class="c-user--member">
                     <div class="c-user--imageArea">
-                      <img src="../img/wed.jpeg" alt="" class="c-user--image--sm">
+                      @if (!isset($review->reviewer->profile_image))
+                        <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                      @else
+                        <img src="{{$review->reviewer->profile_image}}" alt="" class="c-user--image--sm">
+                      @endif
                       <span class="c-user--other">{{ $review->reviewer->name}}</span>
                     </div>
                     <div class="c-user--opponent">

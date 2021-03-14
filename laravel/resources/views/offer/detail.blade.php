@@ -13,7 +13,11 @@
             <p>申請したユーザー</p>
           </div>
           <div class="p-confirm--image">
-            <img src="../img/wed.jpeg" alt=""class="c-user--image" >
+            @if (!isset($matching->apply->profile_image))
+              <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image">
+            @else
+              <img src="{{$matching->apply->profile_image}}" alt="" class="c-user--image">
+            @endif
             <h4 class="p-member--name">{{ $matching->apply->name}}</h4>
           </div>
           <div class="">

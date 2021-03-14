@@ -22,7 +22,11 @@
               <div class="p-card--content">
                 <div class="p-card--photo">
                   <a href="{{ route('users.show', ['name' => $job->user->name])}}">
-                    <img src="../img/wed.jpeg" alt=""class="c-user--image" >
+                    @if (!isset($job->user->profile_image))
+                      <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image">
+                    @else
+                      <img src="{{$job->user->profile_image}}" alt="" class="c-user--image">
+                    @endif
                   </a> 
                 </div>
                 <div class="p-card--box">
