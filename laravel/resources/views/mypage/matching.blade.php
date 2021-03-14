@@ -28,7 +28,11 @@
                     <td class="p-matching--line">
                       <div>
                         <a href="{{ route('users.show',['name' => $matching->apply->name])}}">
-                          <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
+                          @if (!isset($matching->apply->profile_image))
+                            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                          @else
+                            <img src="{{$matching->apply->profile_image}}" alt="" class="c-user--image--sm">
+                          @endif
                         </a>
                       </div>
                       <div class="p-matching--name">
@@ -38,7 +42,11 @@
                     <td class="p-matching--line">
                       <div>
                         <a href="{{ route('users.show',['name' => $matching->approve->name])}}">
-                          <img src="../img/wed.jpeg" alt=""class="c-user--image--sm" >
+                          @if (!isset($matching->approve->profile_image))
+                            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                          @else
+                            <img src="{{$matching->approve->profile_image}}" alt="" class="c-user--image--sm">
+                          @endif
                         </a>
                       </div>
                       <div>
