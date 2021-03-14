@@ -1,8 +1,11 @@
 .p-member {
 
   &--layout {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
+    @include mq(xl) {
+      width: 50%;
+    }
   }
 
   &--pt {
@@ -28,7 +31,12 @@
     border: none;
     border-radius: 10px;
     padding: 60px 60px;
-    background-color: rgb(214, 132, 25);
+    background-color: rgba(11, 23, 185, 0.904);
+  }
+
+  &--top {
+    text-align: center;
+    font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   }
 
   &--image {

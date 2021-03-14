@@ -242,4 +242,9 @@
   &--myFavorite {
     padding: $space_m $space_l;
   }
+
+  &--date {
+    text-align: end;
+    font-weight: bold;
+  }
 }

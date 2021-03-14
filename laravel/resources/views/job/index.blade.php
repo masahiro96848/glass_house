@@ -43,6 +43,9 @@
                     <i class="far fa-comment-alt fa-lg"></i>
                     {{ $job->user->revieweds()->count()}}件
                   </div>
+                  <div class="c-user--date">
+                    <p>{{ $job->created_at->format('Y/m/d')}}</p>
+                  </div>
                   @foreach($job->tags as $tag)
                     @if($loop->first)
                       <div class="p-card--tag">

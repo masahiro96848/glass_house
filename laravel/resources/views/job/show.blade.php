@@ -9,7 +9,7 @@
       <div class="p-member--layout">
         <div class="p-member--border">
           <div class="p-member--main">
-            <h2>{{ $job->title}}</h2>
+            <h2 class="p-member--top">{{ $job->title}}</h2>
             <div class="p-member--image">
               @if (!isset($job->user->profile_image))
                 <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image">
