@@ -47,7 +47,7 @@
                     @if($loop->first)
                       <div class="p-card--tag">
                     @endif
-                      <a href="{{ route('tag.index', ['name' => $tag->name])}}">
+                      <a href="{{ route('tag.index', ['name' => $tag->name])}}" class="c-user--tag">
                         {{ $tag->hashtag }}
                       </a>
                     @if($loop->last)

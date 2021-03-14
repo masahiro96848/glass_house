@@ -219,55 +219,13 @@
     margin-right: $space_m;
   }
 
-
+  &--tag {
+    display: inline-block;
+  }
 
   &--avator {
     text-align: center;
-  }
-
-  &--follows {
-    margin: $space_xl auto;
-    width: 30%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @include mq(sm) {
-      width: 60%;
-    }
-  }
-
-  &--followsList {
-    display: inline-flex;
-    align-items: baseline;
-    justify-content: flex-end;
-    margin-left: $space_xl;
-    width: 500px;
-
-    @include mq(sm) {
-      width: 100%;
-      margin-left: 0;
-    }
-
-  }
-
-  &--followList {
-    width: 100px;
-    @include mq(sm) {
-      width: 100%;
-      font-size: $font-size_14;
-    }
-  }
-
-  &--followerList {
-    width: 100px;
-    margin-right: $space_xxl;
-    @include mq(sm) {
-      width: 100%;
-      margin-right: $space_m;
-      font-size: $font-size_14;
-    }
-  }
+  } 
 
   &--myProduct {
     display: flex;
