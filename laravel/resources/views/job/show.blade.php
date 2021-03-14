@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'タイトル名')
+@section('title', $job->title)
 
 @section('content')
   @include('nav')

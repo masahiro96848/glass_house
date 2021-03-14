@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'メンバー募集を作る')
+@section('title', 'トークテーマを作成する')
 
 @section('content')
   @include('nav')

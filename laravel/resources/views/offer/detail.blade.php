@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'offer画面')
+@section('title', 'オファー詳細画面')
 
 @section('content')
   @include('nav')
