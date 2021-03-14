@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald:700 rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700 rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 
   <link rel="stylesheet" href={{ asset('css/app.css')}} >
