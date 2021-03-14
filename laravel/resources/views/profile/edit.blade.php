@@ -11,7 +11,7 @@
     <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="post" action="{{ route('profile.update')}}" enctype="">
+        <form method="post" action="{{ route('profile.update')}}" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           <label for="profile_image">プロフィール画像</label><span class="c-form--any">任意</span>

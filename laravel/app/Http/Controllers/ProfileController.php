@@ -6,6 +6,7 @@ use App\User;
 use App\Review;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -45,6 +46,11 @@ class ProfileController extends Controller
 
         $user->categories()->detach();
         $user->categories()->attach($request->category);
+
+        $profile_image = $request->file('profile_image');
+        $path  = Storage::disk('s3')->putFile('myprefix', $profile_image, 'public');
+        $user->profile_image = Storage::disk('s3')->url($path);
+        $user->save();
 
         return redirect()->route('profile.home', [
             'name' => $request->name,

@@ -23,8 +23,8 @@
     }
 
     &--lg {
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
 
       @include mq(sm) {}
@@ -33,7 +33,7 @@
 
   &--photo {
     text-align: center;
-    margin-top: $space_m;
+    margin-bottom: $space_l;
   }
 
   &--name {
