@@ -5,7 +5,7 @@
 @section('content')
   @include('nav')
     <div class="l-container">
-      <div class="l-container--top">
+      <div class="p-home--top">
         <div class="p-home--main">
           <div class="p-home--mainTitle">
             <h2 class="p-home--title">オンラインでお仕事の話をしませんか？</h2>
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="p-home--contentsTitle">
-          <h3>Glass Houseとは？</h3>
+          <h3>glass houseとは？</h3>
           <p class="p-home--paragraph">
             お酒を飲みながら異業種との交流をするビジネスオンラインマッチングSNSです<br>
             気になる相手に「話してみたい」と送りましょう！ <br>

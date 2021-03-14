@@ -1,11 +1,18 @@
 .p-home {
 
+  &--top {
+    padding-top: 80px;
+  }
+
   &--main {
     width: 100%;
     height: 800px;
     background-image: url('./img/zoom.sample03.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    @include mq(xl) {
+      height: 1000px;
+    }
     @include mq(sm) {
       height: 600px;
       display: flex;
@@ -15,16 +22,13 @@
 
   &--mainTitle {
     padding-top: 200px;
-    padding-left: 150px;
+    padding-left: 100px;
     color: #ffffff;
     display: inline-block;
     font-family: $font-family_main_title;
 
-    @include mq(lg) {
-      padding-top: 200px;
-    }
-    @include mq(md) {
-      padding-left: 50px;
+    @include mq(xl) {
+      padding-left: 150px;
     }
     @include mq(sm) {
       padding-left: 0;
@@ -90,8 +94,8 @@
 
   &--contents {
     display: flex;
-    justify-content: space-evenly;
-    padding: 100px 150px;
+    justify-content: space-around;
+    padding: 80px 80px;
     @include mq(lg) {
       padding: $space_xxxl;
     }
@@ -107,7 +111,7 @@
   }
 
   &--panel {
-    width: 300px;
+    width: 350px;
     @include mq(lg) {
       width: 250px;
     }
@@ -134,7 +138,7 @@
     }
 
     & img {
-      width: 300px;
+      width: 350px;
       height: 200px;
       @include mq(lg) {
         width: 250px;
