@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'メンバー募集・仲間募集')
+@section('title', $tag->name. 'の検索結果')
 
 @section('content')
   @include('nav')
@@ -8,6 +8,14 @@
     <div class="l-container--wrapper">
       <div class="l-container--layout--lg">
         <h3 class="p-detail--hash">{{ $tag->hashtag }} {{$tag->jobs->count()}}件</h3>
+        <div class="p-detail--tag">
+          @foreach($tag_jobs as $tag_job)
+            <a href="{{ route('tag.index', ['name' => $tag_job->name ])}}" class="p-detail--tagList">
+              {{ $tag_job->hashtag }}
+              <p class="p-detail--count">{{ $tag_job->jobs->count()}}</p>
+            </a>
+          @endforeach
+        </div>
         <div class="p-card">
           @foreach($tag->jobs as $job)
             <div class="p-card--area">
