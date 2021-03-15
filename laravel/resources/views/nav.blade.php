@@ -1,10 +1,12 @@
 <header class="l-header--nav ">
   <h1 class="l-header--title u-mt_m u-ml_l ">
     @if(Auth::check())
-      <a href="{{ route('users.index')}}" class="l-header--title">glass house</a>
+      <a href="{{ route('users.index')}}" class="l-header--title">
     @else
-      <a href="{{ route('home.index')}}" class="l-header--title">glass house</a>
+      <a href="{{ route('home.index')}}" class="l-header--title">
     @endif
+        <img src="{{asset('img/logo_header.png')}}" alt="">
+      </a>
   </h1>
   <div class="p-menu--button u-mr_l">
     <span></span>
