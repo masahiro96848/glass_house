@@ -208,12 +208,13 @@
   &--professional {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     word-break: break-all;
   }
   &--category {
     display: inline-block;
     white-space: nowrap;
-    font-size: $font-size_s;
+    font-size: $font-size_14;
     border: 1px solid black;
     padding: $space_s $space_s;
     margin-right: $space_m;

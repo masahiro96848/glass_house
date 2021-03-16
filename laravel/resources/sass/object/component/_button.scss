@@ -39,9 +39,9 @@
       width: 80%;
     }
   }
-
   &--guest {
       display: block;
+      text-align: center;
       background-color: $background-color_guest;
       margin: 0 auto;
       font-size: $font-size_l;
