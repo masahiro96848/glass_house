@@ -8,6 +8,7 @@ use App\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 class ProfileController extends Controller
 {
@@ -33,7 +34,7 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function update(UserRequest $request)
     {
         $user = Auth::user();
         $user->update([
@@ -47,10 +48,10 @@ class ProfileController extends Controller
         $user->categories()->detach();
         $user->categories()->attach($request->category);
 
-        $profile_image = $request->file('profile_image');
-        $path  = Storage::disk('s3')->putFile('myprefix', $profile_image, 'public');
-        $user->profile_image = Storage::disk('s3')->url($path);
-        $user->save();
+        // $profile_image = $request->file('profile_image');
+        // $path  = Storage::disk('s3')->putFile('myprefix', $profile_image, 'public');
+        // $user->profile_image = Storage::disk('s3')->url($path);
+        // $user->save();
 
         return redirect()->route('profile.home', [
             'name' => $request->name,
