@@ -31,7 +31,7 @@
             </div>
             <div class="c-user--feature">
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">職種</h5>
+                <h5 class="c-user--featureTitle">職業・職種</h5>
                 <div class="c-user--featureArea">
                   @foreach($categories as $category)
                     <p class="c-user--categoryName">

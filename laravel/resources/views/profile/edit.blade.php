@@ -35,12 +35,11 @@
           <div class="c-post">
             <textarea name="intro" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="200文字以内" >{{ $user->intro ?? old('intro') }}</textarea>
           </div>
-          <label for="">職業カテゴリー</label><span class="c-form--required">必須(1個以上は選択してください)</span><br>
-          (最高で2個まで選択できます)
+          <label for="">職業カテゴリー</label><span class="c-form--required">必須(1つだけしか選択できません)</span><br>
           <div class="c-post p-profile--category">
             @foreach($categories as $category)
             <div class="p-profile--professional">
-              <input type="checkbox" name="category[]" id="{{ $category->id }}"  value="{{ $category->id }}" {{ $category->id == old('category', $user->categories->contains('id', $category->id) ?? '') ? 'checked' : ''}}  >
+              <input type="checkbox" class="p-profile--checkbox" name="category[]" id="{{ $category->id }}"  value="{{ $category->id }}" {{ $category->id == old('category', $user->categories->contains('id', $category->id) ?? '') ? 'checked' : ''}}  >
               <label for="{{ $category->id }}" class="p-profile--label">
                   {{ $category->name }}
               </label>  
