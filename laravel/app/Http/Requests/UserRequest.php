@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
             'name' => 'required|max:20',
             'intro' =>'max:200',
             'email' => 'required|email',
-            'category' => 'required|lte'
+            'category' => 'required'
         ];
     }
 

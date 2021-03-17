@@ -9,6 +9,10 @@
   &--professional {
     width: 25%;
     margin-bottom: $space_m;
+    &.locked {
+      opacity: 0.75;
+      color: #aaa;
+    }
   }
 
   &--label {
