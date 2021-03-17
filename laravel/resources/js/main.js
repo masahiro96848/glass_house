@@ -51,9 +51,20 @@ $(function() {
       }
     });
   }
-  })
- 
-  
+  });
+  // ページが読み込まれたときにもチェックボックス非活性を発火
+  $(function() {
+      $('.p-profile--professional').each(function(){
+      // チェックされていないチェックボックスはロックする
+      if(!$(this).children("input[type='checkbox']").prop('checked')) {
+        $(this).children("input[type='checkbox']").prop('disabled', true);
+        $(this).addClass('locked');
+      }
+    });
+    }
+  )
 });
+
+
   // return false;
 // }

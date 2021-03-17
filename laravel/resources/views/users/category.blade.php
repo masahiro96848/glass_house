@@ -41,7 +41,7 @@
             </div>
             <div class="c-user--professional">
                 @foreach ($user->categories as $category_tag)
-                @if($loop->index < 2)
+                @if($loop->index < 1)
                 <a href="{{route('users.category', ['name' => $category_tag->name])}}">
                   <p class="c-user--category">
                     {{ $category_tag->name}}
