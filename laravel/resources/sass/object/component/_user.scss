@@ -141,10 +141,11 @@
   }
 
   &--categoryName {
+    display: inline-block;
     border: 1px solid black;
     padding: $space_s $space_m;
-    margin-right: $space_l;
-    border-radius: 10px;
+    text-align: center;
+    margin: $space_m 0;
   }
 
 
@@ -210,6 +211,11 @@
     flex-wrap: wrap;
     justify-content: center;
     word-break: break-all;
+
+    &--category {
+      // display: inline-block;
+      text-align: center;
+    }
   }
   &--category {
     display: inline-block;
