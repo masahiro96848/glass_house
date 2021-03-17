@@ -20,6 +20,13 @@
               <div class="c-user--detail">
                 <h3 class="c-user--name">{{ $user->name}}</h3>
               </div>
+              <div class="c-user--professional--category">
+                @foreach($user->categories as $category)
+                  <p class="c-user--categoryName">
+                    {{ $category->name }}
+                  </p>
+                @endforeach
+              </div>
               <div class="c-user--review  c-user--review--center">
                 <i class="far fa-comment-alt fa-lg"></i>
                 {{ $user->revieweds()->count()}}件
@@ -43,16 +50,6 @@
               <p class="c-user--intro">{{ $user->intro}}</p>
             </div>
             <div class="c-user--feature">
-              <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">カテゴリー</h5>
-                <div class="c-user--featureArea">
-                  @foreach ($user->categories as $category)
-                    <p class="c-user--categoryName">
-                      {{ $category->name }}
-                    </p>    
-                  @endforeach
-                </div>
-              </div>
               <div class="c-user--Container">
                 <h5 class="c-user--featureTitle">話のテーマ</h5>
                 <div class="c-user--featureArea">

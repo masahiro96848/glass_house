@@ -17,9 +17,6 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(16);
-        foreach($users as $user) {
-            $user->revieweds();
-        }
         $category_users = Category::withCount('users')->orderBy('users_count', 'desc')->get();
         return view('users.index', [
             'users' => $users,
