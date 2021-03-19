@@ -100,4 +100,33 @@ class User extends Authenticatable
     {
         return $this->liked->count();
     }
+
+    public function updateProfile(Array $params)
+    {
+        if(isset($params['binary_image'])) {
+            $img = $params['binary_image'];
+            $fileData = base64_decode($img);
+            $fileName = $params['profile_image'];
+            file_put_contents($fileData, $fileName);
+
+            // $image = Storage::disk('s3')->putFile('myprefix', $fileName, 'public');
+            // $image_path = Storage::disk('s3')->url($image);
+
+            $this::where('id', $this->id)->update([
+                'name' => $params['name'],
+                'email' => $params['email'],
+                'profile_image' => $image_path,
+                'talk_theme' => $params['talk_theme'],
+                'speaking' => $params['speaking'],
+            ]);
+        } else {
+            $this::where('id', $this->id)->update([
+                'name' => $params['name'],
+                'email' => $params['email'],
+                'talk_theme' => $params['talk_theme'],
+                'speaking' => $params['speaking'],
+            ]);
+        }
+        return ;
+    }
 }

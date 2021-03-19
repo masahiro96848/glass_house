@@ -13,7 +13,7 @@
               @if (!isset($user->profile_image))
                 <img src="{{ asset('img/no_image.jpg')}}" alt="" class="c-user--image--lg">
               @else
-                <img src="{{ $user->profile_image }}" alt="" class="c-user--image--lg">
+                <img src="{{ asset($user->profile_image) }}" alt="" class="c-user--image--lg">
               @endif
             </div>
             <div class="c-user--body">

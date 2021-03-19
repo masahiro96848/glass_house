@@ -92,6 +92,9 @@
     &--radius{
       border-radius: 50%;
     }
+    &--none {
+      display: none;
+    }
   }
 
   &--input {
