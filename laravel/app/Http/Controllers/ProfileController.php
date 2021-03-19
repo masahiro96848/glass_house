@@ -37,22 +37,30 @@ class ProfileController extends Controller
     public function update(UserRequest $request)
     {
         $user = Auth::user();
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'intro' => $request->intro,
-            'talk_theme' => $request->talk_theme,
-            'speaking' => $request->speaking
-        ]);
+        // $user->update([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'intro' => $request->intro,
+        //     'profile_image' => $request->file('profile_image')->store('public'),
+        //     'talk_theme' => $request->talk_theme,
+        //     'speaking' => $request->speaking
+        // ]);
 
+        $data = $request->all();
+        $user->updateProfile($data);
         $user->categories()->detach();
         $user->categories()->attach($request->category);
 
+        if(isset($request->profile_image)) {
+
+        
         $profile_image = $request->file('profile_image');
         $path  = Storage::disk('s3')->putFile('myprefix', $profile_image, 'public');
         $user->profile_image = Storage::disk('s3')->url($path);
         $user->save();
-
+        }
+        // dd($data);
+    
         return redirect()->route('profile.home', [
             'name' => $request->name,
         ])->with('flash_message', 'プロフィール編集をしました');

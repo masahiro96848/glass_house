@@ -17,11 +17,12 @@
           <label for="profile_image">プロフィール画像</label><span class="c-form--any">任意</span>
             <div class="c-form--imageBox c-form--img--radius">
               <profile-img
-                set-image-data='{{ $user->profile_image ?? ''}}'
+                set-image-data='{{$user->profile_image}}'
                 name="profile_image"
-                class-object="c-form--img--radius"
+                class-object="c-form--img"
               >
               </profile-img->
+              <input type="hidden" id="binary_image" name="binary_image" value="">
             </div>
           <label for="title">名前</label><span class="c-form--required">必須</span>
           <div class="c-post">

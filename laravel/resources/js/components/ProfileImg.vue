@@ -11,10 +11,9 @@
       >
       <i class="fa fa-plus fa-3x c-form--plus" aria-hidden="true"></i>
       <img 
-        class="c-form--img"
+        class="c-form--radius"
         :class="classObject"
         id="file-preview"
-        v-show="uploadedImage"
         :src='uploadedImage'
       >
     </div>
@@ -32,23 +31,25 @@ export default {
       type: String,
       required: true
     },
-    classObject: {
-      type: String,
-      
-    }
   },
   data() {
     return {
-      uploadedImage: '',
-      
+      uploadedImage: "",
     };
   },
   mounted() {
     if(this.setImageData) {
       return this.uploadedImage = this.setImageData;
     }else{
-      return '';
+      return "";
     }
+  },
+  computed: {
+    classObject() {
+      return this.uploadedImage
+      ? 'c-form--img c-form--img--radius'
+      : 'c-form--img--none c-form--img--radius'
+    },
   },
   methods: {
     onFileChange(e) {
