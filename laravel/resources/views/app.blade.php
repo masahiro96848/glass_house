@@ -7,7 +7,7 @@
   <title>
     @yield('title')
   </title>
-    <link rel="icon" type="image/png" href="img/logo_header.png">
+    <link rel="icon" type="image/png" href="img/favicon_head.png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
