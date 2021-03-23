@@ -20,7 +20,16 @@
       @if (Auth::check())
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('job.new')}}">トークテーマを作る</a></li>
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('mypage.matching')}}">マイページ</a></li>
-      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('profile.home', ['name' => Auth::user()->name])}}">プロフィール</a></li>
+      <li class="p-menu--item ">
+        <a class="p-menu--link" href="{{ route('profile.home', ['name' => Auth::user()->name])}}">
+          @if (!isset(Auth::user()->profile_image))
+            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--mini u-mr_s">
+          @else
+            <img src="{{Auth::user()->profile_image}}" alt="" class="c-user--image--mini u-mr_s">
+          @endif
+          {{Auth::user()->name}}
+        </a>
+      </li>
       <li class="p-menu--item ">
         <form id="logout-form" method="POST" action="{{ route('logout') }}" class="p-menu--logout">
           @csrf
