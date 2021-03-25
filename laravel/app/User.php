@@ -112,17 +112,19 @@ class User extends Authenticatable
             // $image = Storage::disk('s3')->putFile('myprefix', $fileName, 'public');
             // $image_path = Storage::disk('s3')->url($image);
 
-            $this::where('id', $this->id)->update([
+            $this::where('name', $this->name)->update([
                 'name' => $params['name'],
                 'email' => $params['email'],
+                'intro' => $params['intro'],
                 'profile_image' => $image_path,
                 'talk_theme' => $params['talk_theme'],
                 'speaking' => $params['speaking'],
             ]);
         } else {
-            $this::where('id', $this->id)->update([
+            $this::where('name', $this->name)->update([
                 'name' => $params['name'],
                 'email' => $params['email'],
+                'intro' => $params['intro'],
                 'talk_theme' => $params['talk_theme'],
                 'speaking' => $params['speaking'],
             ]);
