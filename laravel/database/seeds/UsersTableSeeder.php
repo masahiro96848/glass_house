@@ -13,49 +13,46 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 5; $i++) {
-            User::create([
-                'id' => $i,
-                'name' => 'test'. $i,
-                'email' => 'test'. $i  .'@sample.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('password'),
-                'intro' => 'テスト',
-                'talk_theme' => 'test',
-                'speaking' => 'テスト',
-                // 'remember_token' => str_random(10),
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ]);
-        }
+        // for($i = 1; $i <= 5; $i++) {
+        //     User::create([
+        //         'id' => $i,
+        //         'name' => 'test'. $i,
+        //         'email' => 'test'. $i  .'@sample.com',
+        //         'email_verified_at' => now(),
+        //         'password' => Hash::make('password'),
+        //         'intro' => 'テスト',
+        //         'talk_theme' => 'test',
+        //         'speaking' => 'テスト',
+        //         'created_at' => new DateTime(),
+        //         'updated_at' => new DateTime(),
+        //     ]);
+        // }
 
-        $sample = [
+        $samples = [
             [
                 'name' => 'guest',
                 'email' => 'guest@sample.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password'),
-                'intro' => 'テスト',
-                'talk_theme' => 'test',
-                'speaking' => 'テスト',
-                // 'remember_token' => str_random(10),
+                'intro' => 'ゲストログインして頂きありがとうございます!',
+                'talk_theme' => '本サービスはビジネスマン、経営者、副業をしている人におすすめです',
+                'speaking' => 'glass houseご利用頂きありがとうございます。',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'name' => '高橋浩一',
-                'email' => 'takahashi@sample.com',
+                'name' => 'glass house',
+                'email' => 'glass@sample.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password'),
-                'intro' => 'テスト',
-                'talk_theme' => 'test',
-                'speaking' => 'テスト',
-                // 'remember_token' => str_random(10),
+                'intro' => 'glass house運営者です！　サービスをリリースしました。不明点、不備がありましたらご連絡くださいませ。',
+                'talk_theme' => '気になるユーザーがいましたらいいね、話してみたいボタンを押しましょう！',
+                'speaking' => 'プロフィール編集、トークテーマを作成して頂きますと相手からのアプローチが植えます！',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ]
         ];
-        DB::table('users')->insert($sample);
+        DB::table('users')->insert($samples);
         
     }
 }
