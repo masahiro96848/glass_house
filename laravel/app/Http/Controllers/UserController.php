@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(16);
+        $users = User::orderBy('created_at', 'desc')->paginate(16);
         $category_users = Category::withCount('users')->orderBy('users_count', 'desc')->get();
         return view('users.index', [
             'users' => $users,

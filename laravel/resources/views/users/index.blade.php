@@ -11,7 +11,6 @@
           <h2 class="l-container--title--tag">ユーザーを探す</h2>
         </div>
         <div class="l-container--wrapperList l-container--between">
-        
           <div class="p-detail--tag">
             @foreach($category_users as $category_user)
             <a href="{{route('users.category', ['name' => $category_user->name])}}" class="p-detail--tagList">

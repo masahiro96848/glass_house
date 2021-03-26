@@ -123,6 +123,9 @@
     border-bottom: 2px solid rgb(148, 146, 146);
     margin-left: $space_xxl;
     margin-right: $space_xxl;
+    &--profile {
+      padding: $space_xxl $space_l;
+    }
   }
 
   &--featureBody {

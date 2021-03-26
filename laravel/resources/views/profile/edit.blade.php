@@ -47,9 +47,9 @@
             </div>
             @endforeach
           </div>
-          <label for="review">話のテーマ</label><span class="c-form--any">任意</span>
+          <label for="review">興味・関心のある分野</label><span class="c-form--any">任意</span>
           <div class="c-post">
-            <textarea name="talk_theme" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="「何をしたいのか」　「趣味や特技、ビジネス」など、あなたが求めるメンバーが共感する内容を書きましょう。" >{{ $user->talk_theme ?? old('talk_theme') }}</textarea>
+            <textarea name="talk_theme" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="興味・関心のある分野を書きましょう。" >{{ $user->talk_theme ?? old('talk_theme') }}</textarea>
           </div>
 
           <label for="review">こんな方と話したい</label><span class="c-form--any">任意</span>
