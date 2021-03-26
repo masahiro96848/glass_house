@@ -36,7 +36,7 @@
               </div>
               <p class="c-user--intro">{{ $user->intro}}</p>
             </div>
-            <div class="c-user--feature">
+            <div class="c-user--feature c-user--feature--profile">
               <div class="c-user--Container">
                 <h5 class="c-user--featureTitle">話のテーマ</h5>
                 <div class="c-user--featureArea">
