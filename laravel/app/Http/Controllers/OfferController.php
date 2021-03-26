@@ -96,7 +96,6 @@ class OfferController extends Controller
             ],
         ]);
         $body = json_decode($response->getBody(), true);
-        $matching = Matching::find($id);
 
         if($response->getStatusCode() === 201) {
             Meeting::create([
@@ -108,7 +107,6 @@ class OfferController extends Controller
             ]);
         }
         $response = $this->zoomRequest($request->all());
-        
         return redirect()->route('mypage.matching', [
             'id' => $offer->id
         ])->with('flash_message', 'オファーを承諾しました！ メッセージやりとりをしましょう！');
