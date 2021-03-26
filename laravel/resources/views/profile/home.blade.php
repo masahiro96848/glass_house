@@ -38,7 +38,7 @@
             </div>
             <div class="c-user--feature c-user--feature--profile">
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">話のテーマ</h5>
+                <h5 class="c-user--featureTitle">興味・関心のある分野</h5>
                 <div class="c-user--featureArea">
                   <p class="c-user--body">
                     {{ $user->talk_theme }}
