@@ -30,6 +30,7 @@ class UsersTableSeeder extends Seeder
 
         $samples = [
             [
+                'id' => 1,
                 'name' => 'guest',
                 'email' => 'guest@sample.com',
                 'email_verified_at' => now(),
@@ -41,6 +42,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => new DateTime(),
             ],
             [
+                'id' => 2,
                 'name' => 'glass house',
                 'email' => 'glass@sample.com',
                 'email_verified_at' => now(),
@@ -52,6 +54,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => new DateTime(),
             ]
         ];
+
         DB::table('users')->insert($samples);
         
     }
