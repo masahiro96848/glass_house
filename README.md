@@ -47,7 +47,8 @@ Qiitaにも投稿しました！<br>
 
 
 # データベースER図
-![glass house database](https://user-images.githubusercontent.com/53962817/112923799-f12f9680-9149-11eb-8fa0-5d82088477a5.png)
+![glass_house_online-Page-1](https://user-images.githubusercontent.com/53962817/113100075-ddf9f500-9235-11eb-90a9-16d85409ef2c.png)
+
 
 # 機能一覧
 - 認証機能
@@ -92,18 +93,18 @@ Qiitaにも投稿しました！<br>
   - firebase/php-jwt  5.2
   - phpUnit 8.5
 
-- フロントエンド
-  -HTML/CSS/Sass/JavaScript 
+- **フロントエンド**
+  - HTML/CSS/Sass/JavaScript 
   - jQuery  3.5.1
   - vue.js  2.6.12
 
-- インフラ
+- **インフラ**
   - AWS(EC2 VPC IAM RDS Route53 CloudFormation S3 CodeDeploy ChatBot)
   - Docker 20.10.0 / docker-compose 1.27.4
   - Circle CI
   - mysql 5.7
 
-- 他に使ったツール
+- **他に使ったツール**
   - Trello(タスク管理ツールとして使っていました)
   - AdobeXD(デザインのレイアウトを作るのに使いました)
   - Postman(APIの検証・生成・取得に使っていました)
