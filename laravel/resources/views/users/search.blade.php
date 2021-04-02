@@ -1,10 +1,12 @@
 <div class="l-container--searchArea">
   <div class="p-search--select">
-    <span class="p-search--title">評価順</span>
+    <span class="p-search--title">ユーザー名</span>
+      <input name="" id="" class="c-form--control c-form--control--select">
+    <span class="p-search--title">コメント</span>
       <select name="" id="" class="c-form--control c-form--control--select">
         <option value="">選択してください</option>
       </select>
-    <span class="p-search--title">いいね順</span>
+    <span class="p-search--title">いいね</span>
       <select name="" id="" class="c-form--control c-form--control--select">
         <option value="">選択してください</option>
       </select>
