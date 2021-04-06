@@ -11,23 +11,43 @@
         <div class="l-container--border">
           <div class="p-comment--area">
             @foreach($messages as $message)
-              <div class="p-comment--left">
+            @if(Auth::id() === $message->toUser->id)
+              <div class="p-comment--right">
+                <div class="p-comment--details p-comment--details--right">
+                  <p>
+                    {{ $message->comment}}
+                  </p>
+                </div>
                 @if (!isset($messsage->toUser->profile_image))
-                  <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image">
+                  <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
                 @else
-                  <img src="{{$user->profile_image}}" alt="" class="c-user--image">
+                  <img src="{{$user->profile_image}}" alt="" class="c-user--image--sm">
                 @endif
                 @if($message->toUser)
                   <span class="p-comment--name">{{ $message->toUser->name}}</span>
                 @else
                   <span class="p-comment--name">{{ $message->fromUser->name}}</span>
                 @endif
-                  <div class="p-comment--details">
+              </div>
+            @else
+              <div class="p-comment--left">
+                  @if (!isset($messsage->toUser->profile_image))
+                    <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                  @else
+                    <img src="{{$user->profile_image}}" alt="" class="c-user--image--sm">
+                  @endif
+                  @if($message->toUser)
+                    <span class="p-comment--name">{{ $message->toUser->name}}</span>
+                  @else
+                    <span class="p-comment--name">{{ $message->fromUser->name}}</span>
+                  @endif
+                  <div class="p-comment--details p-comment--details--left">
                     <p>
                       {{ $message->comment}}
                     </p>
                   </div>
-              </div>
+                </div>
+              @endif
             @endforeach
           <div class="p-comment--form">
             <form method="POST" action="{{ route('message.store', ['id' => $matching->id])}}">
@@ -44,5 +64,3 @@
     </div>
   </div>
 @endsection
-
-{{-- {{dd($messages)}} --}}

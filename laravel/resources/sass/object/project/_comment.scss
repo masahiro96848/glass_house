@@ -1,7 +1,13 @@
 .p-comment {
 
+  &--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &--left {
     display: flex;
+    justify-content: flex-start;
   }
 
   &--name {
@@ -10,11 +16,18 @@
   }
 
   &--details {
-    background-color: #ededed;
     padding: 20px 20px 10px;
     border-radius: 0 10px 10px 10px;
     margin-left: $space_l;
     margin-bottom: $space_xxl;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    &--right {
+      background-color: #78f878;
+    }
+    &--left {
+      background-color: #ededed;
+    }
   }
 
   &--text {
