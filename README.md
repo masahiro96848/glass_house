@@ -2,6 +2,8 @@
 
 ### glass houseは***お酒を飲みながらフランクにzoom会話ができるビジネスマッチングSNS***です。
 
+<img width="250" src="https://user-images.githubusercontent.com/53962817/114039539-ca95fc00-98bd-11eb-991d-868a554de447.png">
+
 
 <img width="450" alt="スクリーンショット 2021-03-30 13 06 07" src="https://user-images.githubusercontent.com/53962817/112932377-c13bbf80-9158-11eb-8875-8899ce3ef7a2.png"> <img width="450" alt="スクリーンショット 2021-03-30 13 12 57" src="https://user-images.githubusercontent.com/53962817/112932885-afa6e780-9159-11eb-9a1d-80cae65d0f24.png">
 
