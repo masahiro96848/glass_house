@@ -16,6 +16,7 @@
   }
 
   &--details {
+    // width: 50%;
     padding: 20px 20px 10px;
     border-radius: 0 10px 10px 10px;
     margin-left: $space_l;
@@ -24,9 +25,11 @@
     overflow-wrap: break-word;
     &--right {
       background-color: #78f878;
+      margin-left: 45%;
     }
     &--left {
       background-color: #ededed;
+      margin-right: 45%;
     }
   }
 
@@ -37,6 +40,11 @@
     border: 1px solid #f9fafb;
     border-radius: 5px;
     padding: $space_m $space_m;
+  }
+
+  &--date {
+    font-size: $font-size_m;
+    text-align: end;
   }
 
   &--button {

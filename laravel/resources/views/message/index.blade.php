@@ -8,7 +8,7 @@
     <div class="l-container--wrapper">
       <div class="l-container--layout">
         <h3 class="p-member--other">メッセージ</h3>
-        <div class="l-container--border">
+        <div class="l-container--border l-container--message">
           <div class="p-comment--area">
             @foreach($messages as $message)
             @if(Auth::id() === $message->toUser->id)
@@ -18,16 +18,6 @@
                     {{ $message->comment}}
                   </p>
                 </div>
-                @if (!isset($messsage->toUser->profile_image))
-                  <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
-                @else
-                  <img src="{{$user->profile_image}}" alt="" class="c-user--image--sm">
-                @endif
-                @if($message->toUser)
-                  <span class="p-comment--name">{{ $message->toUser->name}}</span>
-                @else
-                  <span class="p-comment--name">{{ $message->fromUser->name}}</span>
-                @endif
               </div>
             @else
               <div class="p-comment--left">
