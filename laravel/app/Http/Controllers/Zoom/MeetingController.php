@@ -11,6 +11,7 @@ use App\Meeting;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\MeetingRequest;
 
 
 class MeetingController extends Controller
@@ -116,7 +117,7 @@ class MeetingController extends Controller
         ]);
     }
 
-    public function update(Request $request, Meeting $meeting, $id)
+    public function update(MeetingRequest $request, Meeting $meeting, $id)
     {
         $email = env('ZOOM_ACCOUNT_EMAIL');
         $meeting = Meeting::find($id);
