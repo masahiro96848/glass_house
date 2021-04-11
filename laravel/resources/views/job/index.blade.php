@@ -43,7 +43,7 @@
                     <i class="far fa-comment-alt fa-lg"></i>
                     {{ $job->user->revieweds()->count()}}件
                   </div>
-                  <div class="c-user--date">
+                  <div class="c-user--datetime">
                     <p>{{ $job->created_at->format('Y/m/d')}}</p>
                   </div>
                   @foreach($job->tags as $tag)
