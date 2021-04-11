@@ -15,7 +15,7 @@
   </div>
   <nav class="p-menu--wrap">
     <ul class="p-menu--list u-pl_0 u-mt_l u-mb_l">
-    <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.index')}}">ユーザーを探す</a></li>
+    <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.index')}}">トーク相手を探す</a></li>
     <li class="p-menu--item "><a class="p-menu--link" href="{{ route('job.index')}}">トークテーマを探す</a></li>
       @if (Auth::check())
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('job.new')}}">トークテーマを作る</a></li>
