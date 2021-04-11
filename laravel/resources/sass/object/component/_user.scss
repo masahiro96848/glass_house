@@ -75,6 +75,11 @@
     margin: 0 auto;
   }
 
+  &--detail {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+
   &--edit {
 
     & a {
@@ -166,13 +171,14 @@
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
+    padding: $space_l 0;
   }
 
   &--card {
     margin-bottom: $space_xxxl;
     margin-right: $space_xl;
     margin-left: $space_xl;
-    width: 44%;
+    width: 42%;
     background-color: beige;
     border-radius: 10px;
     padding: $space_l;
@@ -188,14 +194,11 @@
     font-weight: bold;
   }
 
-  &--reviewContainer {
-    padding: $space_l $space_xxl;
-
-  }
-
   &--title {
     font-weight: bold;
     margin-top: $space_l;
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
   
   &--input {
@@ -262,5 +265,8 @@
   &--date {
     text-align: end;
     font-weight: bold;
+    &--review {
+      text-align: end;
+    }
   }
 }

@@ -83,7 +83,6 @@
                       <span class="c-user--other">{{ $review->reviewer->name}}</span>
                     </div>
                     <div class="c-user--opponent">
-                      <span class="c-user--time">{{ $review->created_at->format('Y-m-d')}}</span>
                       @if(Auth::id() === $review->reviewer->id)
                         <a href="{{ route('users.edit', ['r_id' => $review->id, 'm_id' => $review->matching->id])}}">
                           <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
@@ -109,6 +108,9 @@
                         </div>
                       @endif
                     </div>
+                  </div>
+                  <div class="c-user--date--review">
+                    <span class="">{{ $review->created_at->format('Y-m-d')}}</span>
                   </div>
                   <div class="c-user--reviewTitle">
                     <p class="c-user--title">{{ $review->title}}</p>

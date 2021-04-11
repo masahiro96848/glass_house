@@ -71,9 +71,9 @@
                       </a>
                       <span class="c-user--other">{{ $review->reviewer->name}}</span>
                     </div>
-                    <div class="c-user--opponent">
-                      <span class="c-user--time">{{ $review->created_at->format('Y-m-d')}}</span>
-                    </div>
+                  </div>
+                  <div class="c-user--date--review">
+                    <span class="">{{ $review->created_at->format('Y-m-d')}}</span>
                   </div>
                   <div class="c-user--reviewTitle">
                     <p class="c-user--title">{{ $review->title}}</p>
