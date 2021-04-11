@@ -8,7 +8,7 @@
     <div class="l-container--wrapper">
       <div class="l-container--wrapper--search">
         <div class="l-container--top">
-          <h2 class="l-container--title--tag">ユーザーを探す</h2>
+          <h2 class="l-container--title--tag">トーク相手を探す</h2>
         </div>
         <div class="l-container--wrapperList l-container--between">
           <div class="p-detail--tag">
