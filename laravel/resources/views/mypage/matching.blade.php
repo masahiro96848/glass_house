@@ -58,10 +58,10 @@
                         @if($meeting->matching_id === $matching->id )
                           <div>
                             <p class="p-matching--date">{{ str_replace("T", " ", $meeting->start_time) }}</p>
-                            <p class="p-matching--zoom p-matching--width"><a href="{{ $meeting->join_url }}" class="p-matching--link">zoom通話</a></p>
+                            <p class="p-matching--zoom p-matching--width"><a href="{{ $meeting->join_url }}" class="p-matching--link" target="_blank">zoom通話</a></p>
                           </div>
                           <div>
-                            <p class="p-matching--edit"><a href="{{route('meetings.edit', ['id' => $matching->id])}}" class="">日程をを編集</a></p>
+                            <p class="p-matching--edit"><a href="{{route('meetings.edit', ['id' => $matching->id])}}" class="">日程を編集</a></p>
                           </div>
                         @endif
                       @endforeach

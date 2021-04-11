@@ -38,7 +38,7 @@
                   <button class="p-confirm--apply" onfocus="this.blur();">承認する</button>
                 @endif  
               </form>
-                <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">キャンセルする</p></a>
+                <a href="{{route('mypage.matching')}}"><p class="p-confirm--cancel">マイページに戻る</p></a>
             @endif
           </div>
         </div>
