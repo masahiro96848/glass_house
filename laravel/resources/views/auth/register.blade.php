@@ -16,19 +16,19 @@
               @csrf
               <label for="nickname">名前</label>
               <div class="c-form">
-                <input type="text" class="c-form--control" name="name"  value="{{ old('name')}}">
+                <input type="text" class="c-form--control" name="name" placeholder="3文字以上16字以内(名前は後でも変更できます)"  value="{{ old('name')}}">
               </div>
               <label for="email">メールアドレス</label>
               <div class="c-form">
-                <input type="text" class="c-form--control" name="email"  value="{{ old('email')}}">
+                <input type="text" class="c-form--control" name="email"  value="{{ old('email')}}" placeholder="glasshouse@example.com">
               </div>
-              <label for="email">パスワード</label>
+              <label for="email">パスワード(半角英数字8文字以上)</label>
               <div class="c-form">
-                <input type="password" class="c-form--control" name="password">
+                <input type="password" class="c-form--control" name="password" placeholder="半角英数字8文字以上">
               </div>
-              <label for="email">パスワード再確認</label>
+              <label for="email">パスワード再確認(半角英数字8文字以上)</label>
               <div class="c-form">
-                <input type="password" class="c-form--control" name="password_confirmation">
+                <input type="password" class="c-form--control" name="password_confirmation" placeholder="半角英数字8文字以上">
               </div>
                 <button class="c-button c-button--submit" type="submit">ユーザー登録</button>
                 <p class="c-form--link">ログインは<a href="{{ route('login')}}">こちら</a></p>

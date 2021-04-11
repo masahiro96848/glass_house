@@ -151,4 +151,5 @@ return [
       'password' => 'パスワード'
     ],
 
+    'alpha_num_check' => ':attribute は半角英数字で入力してください',
 ];
