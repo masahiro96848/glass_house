@@ -24,7 +24,7 @@
             <p class="p-home--paragraph">
               お酒を飲みながら異業種との交流をするビジネスオンラインマッチングSNSです<br>
               気になる相手に「話してみたい」と送りましょう！ <br>
-              金曜の仕事終わり、休日の夜にお酒を飲みながらフランクに話しましょう！
+              金曜日の仕事終わり、休日の夜にお酒を飲みながらフランクに話しましょう！
             </p>
           </div>
           <div class="p-home--contents">
@@ -60,14 +60,77 @@
             </div>
           </div>
         </div>
-        {{-- <div class="p-home--howto">
-          <div class="p-home--contentsTitle">
-            <h3>glass houseの使い方</h3>
-            <div class="p-home--card">
-              <img src="" alt="">
-            </div>
+        <div class="p-home--howto p-home--anker" id="howto">
+          <div class="p-home--contentsTitle p-home--contentsTitle--link " >
+            <div class="p-home--howto--area">
+              <div class="p-home--howto--content">
+                <h3 class="p-home--howto--title">glass houseの使い方</h3>
+                <div class="p-home--left">
+                  <div class="p-home--card">
+                    <div class="p-home--screen">
+                    <img src="./img/zoom.sub04.png" alt="" class="p-home--image">
+                    </div>
+                    <div class="p-home--howto--use">
+                      <h4 class="p-home--howto--head">トーク相手を探す</h4>
+                      <p class="p-home--howto--body">
+                      話してみたい相手を直接探せます。<br>
+                      気になる相手にはいいねしておきましょう。<br>
+                      後でマイページ管理で確認することができます。<br>
+                      カテゴリー別でも検索できます。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-home--howto--content">
+                <div class="p-home--right">
+                  <div class="p-home--card--reverse">
+                    <div class="p-home--screen">
+                      <img src="./img/zoom.sub05.png" alt="" class="p-home--image">
+                    </div>
+                    <div class="p-home--howto--use">
+                      <h4 class="p-home--howto--head">トークテーマを探す</h4>
+                      <p class="p-home--howto--body">
+                      トークテーマは「自分が話しやすいユーザー」を探すことができます。<br>
+                      自分の興味がある分野や職種などを募集しましょう。<br>
+                      タグをつけてユーザーを増やしましょう。<br>
+                      自分から発信して気になるユーザーを集めましょう。<br>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-home--howto--content">
+                <div class="p-home--left">
+                  <div class="p-home--card">
+                    <div class="p-home--screen">
+                    <img src="./img/zoom.sub06.png" alt="" class="p-home--image">
+                    </div>
+                    <div class="p-home--howto--use">
+                      <h4 class="p-home--howto--head">メッセージやりとり・日程調整</h4>
+                      <p class="p-home--howto--body">
+                      マッチングが成立したらメッセージやりとりをしましょう。<br>
+                      日程を調整して話したいことなどを確認しましょう。<br>
+                      zoomで相手とフランクにお酒を飲みながら話しましょう！<br>
+                      zoomが終わったらレビューもしましょう。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-home--enjoy">
+                <div class="p-home--message">
+                  <h2 class="p-home--pr">週末はお酒を飲みながらお仕事の幅を広げませんか？ <br>
+                      オンラインでつながりを増やそう！！
+                  </h2>
+                </div>
+                <div class="p-home--free">
+                  <p class="p-home--free--resister"><a href="{{ route('register')}}" class="p-home--link">無料で登録する</a> </p>
+                </div>
+              </div>
+            </div> 
           </div>
-        </div> --}}
+        </div>
       </div>
     </div>
 @endsection
