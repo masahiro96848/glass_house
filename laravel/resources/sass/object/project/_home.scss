@@ -44,6 +44,7 @@
   &--login {
     font-size: $font-size_24;
     margin-right: 10%;
+    border: none;
     background-color: $backgorund-color_login;
     border-radius: 5px;
   }
@@ -61,6 +62,7 @@
       color: $font-color_default;
       transition: 0.5s;
       background-color: rgba(255, 255, 255, 0.568);
+      border-radius: 5px;
     }
   }
 
@@ -74,8 +76,15 @@
   }
 
   &--contentsTitle {
-    padding-top: $space_xxxl;
+    padding-top: 60px;
     text-align: center;
+    &--link {
+      padding-top: 100px;
+    }
+  }
+
+  &--anker{
+      margin-top: -100px;
   }
 
   &--paragraph {
@@ -91,7 +100,8 @@
   &--contents {
     display: flex;
     justify-content: space-around;
-    padding: 80px 80px;
+    padding: 80px 100px;
+    margin-bottom: 100px;
     @include mq(lg) {
       padding: $space_xxxl;
     }
@@ -155,10 +165,90 @@
 
   &--top {
     padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   &--howto {
     background-color: #ffffff;
     color: $font-color_black;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    &--area {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+      @include mq (xl) {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+    }
+    &--content {
+      margin-bottom: 80px;
+    }
+    &--title {
+      font-weight: bold;
+      margin-bottom: 60px;
+    }
+    &--use {
+      margin: 0 auto;
+      margin-bottom: 80px;
+    }
+    &--head {
+      font-size: $font-size_xxl;
+      font-weight: bold;
+      margin-bottom: $space_xxl;
+      
+    }
+    &--body {
+      font-size: $font-size_18;
+      line-height: 2.0;
+    }
+  }
+
+  &--card {
+    display: flex;
+    align-items: center;
+    &--reverse {
+      display: flex;
+      align-items: center;
+      flex-flow: row-reverse;
+    }
+  }
+
+  &--screen {
+    text-align: left;
+    overflow: hidden;
+    transform: skewY(-10deg);
+  }
+
+  &--image {
+    width: 500px;
+    height: 400px;
+    transform: skewY(10deg);
+
+    @include mq(xl) {
+      width: 700px;
+      height: 400px;
+    }
+  }
+
+  &--message {
+    margin-bottom: $space_xxl;
+  }
+
+  &--pr {
+    line-height: 2.5;
+  }
+
+
+  &--free {
+    font-size: 18px;
+    background-color: black;
+    border-radius: 5px;
+    width: 250px;
+    margin:  0 auto;
   }
 }
