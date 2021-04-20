@@ -107,9 +107,10 @@ Qiitaにも投稿しました！<br>
   - mysql 5.7
 
 - **他に使ったツール**
-  - Trello(タスク管理ツールとして使っていました)
+  - Trello(タスク管理ツールとして使いました)
   - AdobeXD(デザインのレイアウトを作るのに使いました)
-  - Postman(APIの検証・生成・取得に使っていました)
+  - Postman(APIの検証・生成・取得に使いました)
+  - draw.io(データベースやAWSの構成図に使いました)
 
 # AWSインフラ構成図
 <img src="https://user-images.githubusercontent.com/53962817/112944225-809a7100-916d-11eb-90f6-031dbc653076.png" width="900">
