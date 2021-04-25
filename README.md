@@ -1,6 +1,7 @@
 # glass house(2020-12-08から開発中)
 
 ### glass houseは***お酒を飲みながらフランクにzoom会話ができるビジネスマッチングSNS***です。
+[http://glass-house-online.com/](http://glass-house-online.com/)
 
 <img width="250" src="https://user-images.githubusercontent.com/53962817/114039539-ca95fc00-98bd-11eb-991d-868a554de447.png">
 
