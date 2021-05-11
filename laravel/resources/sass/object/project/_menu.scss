@@ -58,6 +58,7 @@
     display: inline-block;
     font-family: $font-family_title;
     margin-right: $space_xl;
+    font-size: 14px;
     
     @include mq(sm) {
       display: block;
