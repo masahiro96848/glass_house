@@ -7,9 +7,13 @@
     <div class="l-container">
       <div class="p-home--top">
         <div class="p-home--main">
-          <div class="p-home--mainTitle">
-            <h2 class="p-home--title">オンラインでお仕事の話をしませんか？</h2>
-            <h2 class="p-home--title">お酒 ✖︎ オンライン ✖︎ マッチングで繋がろう！</h2>
+          <div class="p-home--main-pc-title">
+            <h2 class="p-home--pc-title">オンラインでお仕事の話をしませんか？</h2>
+            <h2 class="p-home--pc-title">お酒 ✖︎ オンライン ✖︎ マッチングで繋がろう！</h2>
+          </div>
+          <div class="p-home--main-sp-title">
+            <h2 class="p-home--sp-title">オンラインでお仕事の話を<br>しませんか？</h2>
+            <h2 class="p-home--sp-title">お酒 ✖︎ オンライン ✖︎ マッチングで<br>繋がろう！</h2>
           </div>
           <div class="p-home--buttonArea">
             <div class="p-home--buttonTop">

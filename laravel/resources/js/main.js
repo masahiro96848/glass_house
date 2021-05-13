@@ -9,6 +9,10 @@ $('.p-menu--button').on('click', function() {
   }
 });
 
+$('.p-menu--howto').on('click', function() {
+  $('.p-menu--button').removeClass('active');
+  $('.p-menu--wrap').addClass('close').removeClass('open');
+});
 
 
 // ページが読み込まれたときのチェックボックス活性・非活性化

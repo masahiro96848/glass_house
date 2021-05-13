@@ -1,5 +1,5 @@
 <header class="l-header--nav ">
-  <h1 class="l-header--title u-mt_m u-ml_l ">
+  <h1 class="l-header--title">
     @if(Auth::check())
       <a href="{{ route('users.index')}}" class="l-header--title">
     @else
@@ -15,7 +15,7 @@
   </div>
   <nav class="p-menu--wrap">
     <ul class="p-menu--list u-pl_0 u-mt_l u-mb_l">
-    <li class="p-menu--item "><a class="p-menu--link" href="{{ route('home.index')}}/#howto" target="">glass houseとは</a></li>  
+    <li class="p-menu--item "><a class="p-menu--link p-menu--howto" href="{{ route('home.index')}}/#howto" target="">glass houseとは</a></li>  
     <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.index')}}">トーク相手を探す</a></li>
     <li class="p-menu--item "><a class="p-menu--link" href="{{ route('job.index')}}">トークテーマを探す</a></li>
       @if (Auth::check())
