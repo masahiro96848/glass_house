@@ -50,6 +50,9 @@
       border-radius: 50px;
       outline: none;
       cursor: pointer;
+      @include mq(sm) {
+        width: 80%;
+      }
       &:hover {
         color: black;
         background-color: rgb(236, 201, 86);
