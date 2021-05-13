@@ -10,13 +10,14 @@
       height: 1000px;
     }
     @include mq(sm) {
-      height: 600px;
-      display: flex;
-      align-items: center;
+      height: 50vh;
+      width: 100%;
+      background-position: 60%;
+      background-size: cover
     }
   }
 
-  &--mainTitle {
+  &--main-pc-title {
     padding-top: 200px;
     padding-left: 100px;
     color: #ffffff;
@@ -28,9 +29,36 @@
     }
     @include mq(sm) {
       padding-left: 0;
-      padding-top: 0;
-      padding-bottom: 100px;
+      padding-top: 150px;
       width: 100%;
+    }
+  }
+
+  &--main-sp-title {
+      display: none;
+    @include mq(sm) {
+      color: #ffffff;
+      display: inline-block;
+      font-family: $font-family_main_title;
+      line-height: 2.0;
+      margin-left: $space_l;
+    }
+  }
+
+  &--pc-title {
+    text-align: center;
+    margin-bottom: $space_xl;
+    @include mq(sm) {
+      display: none;
+    }
+  }
+
+  &--sp-title {
+    display: none;
+    @include mq(sm) {
+      font-size: $font-size_18;
+      margin-bottom: $space_l;
+      display: block;
     }
   }
 
@@ -39,6 +67,14 @@
     width: 75%;
     margin: 0 auto;
     margin-top: 100px;
+    @include mq(sm) {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      text-align: center;
+      margin-top: 0;
+      display: none;
+    }
   }
 
   &--login {
@@ -47,11 +83,19 @@
     border: none;
     background-color: $backgorund-color_login;
     border-radius: 5px;
+    @include mq(sm) {
+      font-size: $font-size_default;
+      margin-right: 0;
+    }
   }
 
   &--register {
+    font-size: $font-size_24;
     border: 1px solid $backgorund-color_register;
     border-radius: 5px;
+    @include mq(sm) {
+      font-size: $font-size_default;
+    }
   }
 
   &--link {
@@ -64,15 +108,13 @@
       background-color: rgba(255, 255, 255, 0.568);
       border-radius: 5px;
     }
+    @include mq(sm) {
+      font-size: $font-size_default;
+    }
   }
 
   &--register {
     font-size: $font-size_24;
-  }
-
-  &--title {
-    text-align: center;
-    margin-bottom: $space_xl;
   }
 
   &--contentsTitle {
@@ -80,11 +122,19 @@
     text-align: center;
     &--link {
       padding-top: 100px;
+      @include mq(sm) {
+        padding-top: 20px;
+      }
     }
   }
 
   &--anker{
       margin-top: -100px;
+      @include mq(sm) {
+        margin-top: -50px;
+        padding-top: 60px;
+        
+      }
   }
 
   &--paragraph {
@@ -94,6 +144,7 @@
     @include mq (sm) {
       padding-right: 20px;
       padding-left: 20px;
+      text-align: left;
     }
   }
 
@@ -113,6 +164,7 @@
     @include mq(sm) {
       display: block;
       padding: $space_l ;
+      padding-top: 70px;
     }
   }
 
@@ -125,7 +177,7 @@
       width: 180px;
     }
     @include mq(sm) {
-      width: 250px;
+      width: 300px;
       margin: 0 auto;
     }
   }
@@ -140,7 +192,7 @@
       width: 180px;
     }
     @include mq(sm) {
-      width: 250px;
+      width: 300px;
     }
 
     & img {
@@ -153,7 +205,7 @@
         width: 180px;
       }
       @include mq(sm) {
-        width: 250px;
+        width: 300px;
       }
     }
   }
@@ -176,6 +228,10 @@
     margin-right: 80px;
     border-radius: 8px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    @include mq(sm) {
+      margin-left: $space_l;
+      margin-right: $space_l;
+    }
     &--area {
       padding-left: 50px;
       padding-right: 50px;
@@ -184,6 +240,10 @@
         padding-left: 10%;
         padding-right: 10%;
       }
+      @include mq(sm) {
+        padding-left: $space_l;
+        padding-right: $space_l ;
+      }
     }
     &--content {
       margin-bottom: 80px;
@@ -191,6 +251,10 @@
     &--title {
       font-weight: bold;
       margin-bottom: 60px;
+      @include mq(sm) {
+        font-size: $font-size_24;
+        margin-bottom: 40px;
+      }
     }
     &--use {
       margin: 0 auto;
@@ -200,21 +264,40 @@
       font-size: $font-size_xxl;
       font-weight: bold;
       margin-bottom: $space_xxl;
+      color: $font-color_black;
+      padding: 0.5em 0;/*上下の余白*/
+      border-top: solid 3px $font-color_black;
+      border-bottom: solid 3px $font-color_black;
+      @include mq(sm) {
+        font-size: $font-size_20;
+        margin-top: $space_xxl;
+      }
       
     }
     &--body {
       font-size: $font-size_18;
       line-height: 2.0;
+      @include mq(sm) {
+        font-size: $font-size_default;
+        text-align: left;
+        line-height: 1.6;
+      }
     }
   }
 
   &--card {
     display: flex;
     align-items: center;
+    @include mq(sm) {
+      display: block;
+    }
     &--reverse {
       display: flex;
       align-items: center;
       flex-flow: row-reverse;
+      @include mq(sm) {
+        display: block;
+      }
     }
   }
 
@@ -228,6 +311,10 @@
     width: 500px;
     height: 400px;
     transform: skewY(10deg);
+    @include mq(sm) {
+      width: 300px;
+      height: 250px;
+    }
 
     @include mq(xl) {
       width: 700px;
@@ -241,6 +328,9 @@
 
   &--pr {
     line-height: 2.5;
+    @include mq(sm) {
+      font-size: $font-size_20;
+    }
   }
 
 

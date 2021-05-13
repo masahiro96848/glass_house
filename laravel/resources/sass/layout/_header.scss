@@ -20,13 +20,24 @@
     text-decoration: none;
     color: $font-color_title;
     font-size: $font-size_xxl;
+    margin-left: $space_l;
+    margin-top: $space_m;
+    @include mq(sm) {
+      margin-left: 0;
+      margin-bottom: $space_m;
+    }
     &:hover {
         color: $font-color_sub03;
       }
       & img {
         width: 250px;
         height: 75px;
+        @include mq(sm) {
+          width: 200px;
+          height: 75px;
+        }
       }
+    
 
     &--link a {
       text-decoration: none;

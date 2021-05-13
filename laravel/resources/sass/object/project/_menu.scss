@@ -74,11 +74,18 @@
     color: #fff;
     border: none;
     font-family: $font-family_title;
+    @include mq(sm) {
+      padding: 10px 10px;
+    }
     &:hover {
       color: rgb(0, 0, 0);
       background-color: rgb(255, 255, 255);
       border: none;
       transition: 0.5s;
+      @include mq(sm) {
+        color: $font-color_sub03;
+        background-color: transparent;
+      }
     }
     &:active {
       border: none;
@@ -86,7 +93,8 @@
     @include mq(sm) {
       display: block;
       margin: 0 auto;
-      color: $font-color_sub03;
+      font-size: $font-size_20;
+      color: $font-color_default;
       background-color: transparent;
     }
   }
