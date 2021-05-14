@@ -67,6 +67,9 @@
     color: $font-color_default;
     margin-bottom: $space_xxxl;
     text-align: center;
+    @include mq(sm) {
+      font-size: $font-size_24;
+    }
   }
 
   &--hash {
@@ -74,6 +77,9 @@
     margin-top: $space_l;
     margin-bottom: $space_xxxl;
     text-align: left;
+    @include mq(sm) {
+      font-size: $font-size_24;
+    }
   }
 
   &--sub {

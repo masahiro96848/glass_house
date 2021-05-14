@@ -319,5 +319,8 @@
 
   &--datetime {
     text-align: end;
+    @include mq(sm) {
+      font-size: $font-size_m;
+    }
   }
 }

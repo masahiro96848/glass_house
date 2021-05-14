@@ -6,15 +6,27 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout--lg">
-        <h3 class="p-detail--title">トークテーマ一覧・話題</h3>
-        <div class="p-detail--tag">
-          @foreach($tags as $tag)
-            <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
-              {{ $tag->hashtag }}
-              <p class="p-detail--count">{{ $tag->jobs->count()}}</p>
-            </a>
-          @endforeach
+      <div class="l-container--layout--lg l-container--layout--lg--sp">
+        <div class="l-container--top">
+          <h3 class="p-detail--title">トークテーマ一覧・話題</h3>
+          <div class="c-search--box">
+            <span class="c-search--modal--open c-search--tag">
+              <i class="fas fa-search fa-2x c-search--category--icon"></i>
+            </span>
+          </div>
+        </div>
+        <div class="c-search--modal c-search--modal--js">
+          <div class="c-search--modal--bg c-search--modal--close"></div>
+            <div class="c-search--modal--display">
+              <div class="p-detail--tag">
+                @foreach($tags as $tag)
+                  <a href="{{ route('tag.index', ['name' => $tag->name ])}}" class="p-detail--tagList">
+                    {{ $tag->hashtag }}
+                    <p class="p-detail--count">{{ $tag->jobs->count()}}</p>
+                  </a>
+                @endforeach
+              </div>
+            </div>
         </div>
         <div class="p-card">
           @foreach($jobs as $job)
