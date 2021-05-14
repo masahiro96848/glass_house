@@ -6,6 +6,10 @@
   &--content {
     padding: 50px;
     padding-bottom: 80px;
+    @include mq(sm) {
+      padding: 30px;
+      padding-bottom: 40px;
+    }
   }
 
 
@@ -38,10 +42,23 @@
       padding-left: 50px;
       padding-right: 50px;
       // padding-bottom: 80px;
+      @include mq(sm) {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
 
   }
 
+  &--sp {
+    @include mq(sm) {
+      display: block;
+    }
+  }
   &--wrapperList {
     // padding-top: 50px;
     // padding-left: 100px;
@@ -95,6 +112,10 @@
       display: inline-block;
       font-family: $font-family_title;
       margin-bottom: $space_xl;
+      @include mq(sm) {
+        margin-bottom: $space_xxl;
+        font-size: $font-size_24;
+      }
     }
 
     &--recruit {
@@ -107,11 +128,21 @@
       width: 60%;
       margin: 0 auto;
       color: $font-color_black;
+      &--sp{
+        @include mq(sm) {
+          width: 100%;
+        }
+      }
 
       &--lg {
         width: 70%;
         margin: 0 auto;     
         color: $font-color_black;
+        &--sp {
+          @include mq(sm) {
+            width: 100%;
+          }
+        }
       }
 
       &--80 {
@@ -132,6 +163,9 @@
     background-color: white;
     border-radius: 10px;
     padding: $space_xxl $space_xxxl;
+    @include mq(sm) {
+      padding: $space_l $space_l;
+    }
   }
   &--flexstart {
     display: flex;

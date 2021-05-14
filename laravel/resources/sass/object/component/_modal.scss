@@ -28,6 +28,10 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 50%;
+    @include mq(sm) {
+      width: 75%;
+      padding: $space_l $space_m;
+    }
   }
 
   &--select {
@@ -40,6 +44,9 @@
   &--title {
     text-align: center;
     font-size: $font-size_l;
+    @include mq(sm) {
+      font-size: $font-size_18;
+    }
   }
 
   &--select {
@@ -51,6 +58,9 @@
     background-color: red;
     color: #fff;
     border-radius: 5px;
+    @include mq(sm) {
+      font-size: $font-size_default;
+    }
     &:focus {
       outline: 0;
     }

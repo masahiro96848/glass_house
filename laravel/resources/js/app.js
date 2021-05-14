@@ -45,3 +45,15 @@ $(function() {
     return false;
   });
 })
+
+// 検索モーダル
+$(function() {
+  $('.c-search--modal--open').on('click', function() {
+    $('.c-search--modal--js').fadeIn();
+    return false;
+  });
+  $('.c-search--modal--close').on('click', function() {
+    $('.c-search--modal--js').fadeOut();
+    return false;
+  });
+})

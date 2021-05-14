@@ -20,8 +20,8 @@
       width: 100%;
       margin-top: 0;
       margin-bottom: $space_l;
-      margin-right: 15px;
-      margin-left: 15px;
+      margin: 20px auto;
+      margin-top: 30px;
     }
 
     @include mq(lg) {
@@ -75,6 +75,9 @@
   &--name {
     font-size: $font-size_l;
     font-weight: bold;
+    @include mq(sm) {
+      font-size: $font-size_18;
+    }
   }
 
   &--body {

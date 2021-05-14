@@ -96,6 +96,10 @@
     display: flex;
     flex-wrap: wrap;
     margin: $space_m;
+    @include mq(sm) {
+      margin: 0;
+      padding: 10px;
+    }
   }
 
   &--tagList {

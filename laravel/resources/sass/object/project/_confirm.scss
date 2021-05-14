@@ -20,6 +20,10 @@
     text-align: center;
     margin-left: $space_xxxl;
     margin-right: $space_xxxl;
+    @include mq(sm) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &--mb {
@@ -43,6 +47,9 @@
     padding: $space_m $space_l;
     border-radius: 5px;
     cursor: pointer;
+    @include mq(sm) {
+      width: 90%;
+    }
     &:hover {
       color: #fff;
       background-color: rgb(251, 5, 5);
@@ -58,6 +65,9 @@
     color: #fff;
     padding: $space_m $space_l;
     border-radius: 20px;
+    @include mq(sm) {
+      width: 90%;
+    }
   }
 
   &--cancel {
