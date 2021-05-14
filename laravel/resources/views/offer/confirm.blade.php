@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout">
+      <div class="l-container--layout l-container--layout--sp">
         <h3 class="p-member--other">{{$user->name}}さんへの申請</h3>
         <div class="l-container--border ">
           <form method="post" action="{{ route('offer.confirm', ['name' => $user->name])}}" enctype="multipart/form-data">
@@ -18,11 +18,11 @@
                   <div class="c-user--featureArea">
                     <div class="c-user">
                       @if (!isset($user->profile_image))
-                        <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                        <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm  c-user--featureImage">
                       @else
-                        <img src="{{$user->profile_image}}" alt="" class="c-user--image--sm">
+                        <img src="{{$user->profile_image}}" alt="" class="c-user--image--sm  c-user--featureImage">
                       @endif
-                      <span class="">{{ $user->name}}</span>
+                      <span class="c-user--featureName">{{ $user->name}}</span>
                     </div>
                   </div>
                 </div>      

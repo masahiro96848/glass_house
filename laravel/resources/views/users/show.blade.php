@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout--lg">
+      <div class="l-container--layout--lg l-container--layout--lg--sp">
         <div class="l-container--border">
           <div class="c-user--box">
             <div class="c-user--photo">
@@ -51,7 +51,7 @@
             </div>
             <div class="c-user--feature">
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">話のテーマ</h5>
+                <h5 class="c-user--featureTitle">興味のあるテーマ</h5>
                 <div class="c-user--featureArea">
                   <p class="c-user--body">
                     {{ $user->talk_theme }}
