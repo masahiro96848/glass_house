@@ -1,13 +1,14 @@
+@if(count($matchings) >= 1)
 <div class="p-matching--area__sp">
   <div class="p-matching--list__sp">
     @foreach($matchings as $matching)
+    @if(Auth::id() === $matching->apply->id || Auth::id() === $matching->approve->id )
     <div class="p-matching--content">
         <div class="p-matching--top">
           <p>申請者</p>
           <p>承認者</p>
         </div>
         <div class="p-matching--match">
-          @if(Auth::id() === $matching->apply->id || Auth::id() === $matching->approve->id )
             <div class="p-matching--applicant">
               <a href="{{ route('users.show',['name' => $matching->apply->name])}}">
                 @if (!isset($matching->apply->profile_image))
@@ -17,10 +18,10 @@
                 @endif
               </a>
               <div class="p-matching--name">
-              <p>{{ $matching->apply->name}}</p>
+                <p>{{ $matching->apply->name}}</p>
+              </div>
             </div>
-            </div>
-          @endif
+          
           <div class="p-matching--authorizer">
             <a href="{{ route('users.show',['name' => $matching->approve->name])}}">
                 @if (!isset($matching->approve->profile_image))
@@ -59,24 +60,11 @@
           </div>
         @endif
       </div>
+      @endif
       @endforeach
   </div>
 </div>
+@else
+  <p class="p-card--nodata">マッチングはありません。</p>
+@endif
 
-
-
-
-
-
-
-
-
-
-
-              
-
-              
-
-
-
-              

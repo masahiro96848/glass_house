@@ -42,18 +42,28 @@ $(function() {
   });
   $('.c-modal--close').on('click', function() {
     $('.c-modal--js').fadeOut();
-    return false;
+    
   });
 })
 
 // 検索モーダル
-$(function() {
-  $('.c-search--modal--open').on('click', function() {
-    $('.c-search--modal--js').fadeIn();
-    return false;
-  });
-  $('.c-search--modal--close').on('click', function() {
-    $('.c-search--modal--js').fadeOut();
-    return false;
-  });
+// $(function() {
+//   $('.c-search--category--icon').on('click', function() {
+//     $('.c-search--modal--js').fadeIn();  
+//   });
+//   $('.c-search--category--icon').on('click', function() {
+//     $('.c-search--modal--js').fadeOut();
+//     $('.c-search--modal--js').addClass('none');
+//   });
+//   return false;
+// })
+
+$('.c-search--category--icon').on('click', function(){
+  if($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $('.c-search--modal').addClass('close').removeClass('open');
+  }else{
+    $(this).addClass('active');
+    $('.c-search--modal').addClass('open').removeClass('close');
+  }
 })

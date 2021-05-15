@@ -28,6 +28,7 @@
         border-radius: 10px;
         position: fixed;
         color: $font-color_default;
+        z-index: 5;
       }
     }
   }
@@ -43,6 +44,9 @@
       width: 100%;
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.493);
+    }
+    &.open {
+      display: block;
     }
     &--open {
       display: none;
