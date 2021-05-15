@@ -8,6 +8,7 @@
     <div class="l-container--wrapper">
       <div class="l-container--layout--80">
         @include('mypage.tab')
+        @include('mypage.sp_matching')
         {{-- pc専用 --}}
         <div class="p-matching--area">
           <div class="p-matching--list">
@@ -89,7 +90,7 @@
             </table>
           </div>
         </div>
-        @include('mypage.sp_matching')
+        
       </div>
     </div>
   </div>
