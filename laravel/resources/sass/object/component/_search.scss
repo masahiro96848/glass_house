@@ -5,6 +5,14 @@
     }
   }
 
+  &--tag {
+    @include mq(sm){
+      position: absolute;
+      left: 290px;
+      bottom: 30px;
+      
+    }
+  }
   &--category {
     @include mq(sm) {
       position: absolute;
@@ -19,7 +27,7 @@
         padding: 10px;
         border-radius: 10px;
         position: fixed;
-        // margin-left: 40px;
+        color: $font-color_default;
       }
     }
   }
@@ -34,6 +42,7 @@
       left: 0;
       width: 100%;
       overflow: auto;
+      background-color: rgba(0, 0, 0, 0.493);
     }
     &--open {
       display: none;
@@ -50,8 +59,8 @@
     }
     &--display {
       @include mq(sm) {
-        background-color: rgba(0, 0, 0, 0.493);
         padding-top: 100px;
+        height: 100vh;
       }
     }
     

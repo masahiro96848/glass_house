@@ -1,9 +1,9 @@
 <div class="p-card--tabArea">
   <ul class="p-card--tab">
-    <li class="p-card--button {{ Request::routeIs('mypage.matching') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.matching')}}">マッチングリスト</a></li>
+    <li class="p-card--button {{ Request::routeIs('mypage.matching') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.matching')}}">マッチング</a></li>
     <li class="p-card--button {{ Request::routeIs('mypage.job') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.job')}}">トークテーマ</a></li>
-    <li class="p-card--button {{ Request::routeIs('mypage.liking') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.liking')}}">気になるリスト</a></li>
-    <li class="p-card--button {{ Request::routeIs('mypage.liked') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.liked')}}">あなたと話してみたいリスト</a></li>
+    <li class="p-card--button {{ Request::routeIs('mypage.liking') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.liking')}}">気になる</a></li>
+    <li class="p-card--button {{ Request::routeIs('mypage.liked') ? 'p-card--tab__active' : ''}}"><a href="{{ route('mypage.liked')}}">相手からの気になる</a></li>
   </ul>
 </div>
 

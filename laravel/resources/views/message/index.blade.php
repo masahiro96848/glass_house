@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout">
+      <div class="l-container--layout l-container--layout--sp">
         <h3 class="p-member--other">メッセージ</h3>
         <div class="l-container--border l-container--message">
           <div class="p-comment--area">
@@ -14,7 +14,7 @@
             @if(Auth::id() === $message->toUser->id)
               <div class="p-comment--right">
                 <div class="p-comment--details p-comment--details--right">
-                  <p>
+                  <p class="p-comment--message">
                     {{ $message->comment}}
                   </p>
                 </div>
@@ -32,7 +32,7 @@
                     <span class="p-comment--name">{{ $message->fromUser->name}}</span>
                   @endif
                   <div class="p-comment--details p-comment--details--left">
-                    <p>
+                    <p class="p-comment--message">
                       {{ $message->comment}}
                     </p>
                   </div>

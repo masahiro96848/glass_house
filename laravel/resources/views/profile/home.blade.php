@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout--lg">
+      <div class="l-container--layout--lg l-container--layout--lg--sp">
         <div class="l-container--border">
           <div class="c-user--box">
             <div class="c-user--photo">
@@ -38,16 +38,16 @@
             </div>
             <div class="c-user--feature c-user--feature--profile">
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">興味・関心のある分野</h5>
-                <div class="c-user--featureArea">
+                <h5 class="c-user--featureTitle--profile">興味・関心のある分野</h5>
+                <div class="c-user--featureArea--profile">
                   <p class="c-user--body">
                     {{ $user->talk_theme }}
                   </p>
                 </div>
               </div>
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">こんな方と話したい</h5>
-                <div class="c-user--featureArea">
+                <h5 class="c-user--featureTitle--profile">こんな方と話したい</h5>
+                <div class="c-user--featureArea--profile">
                   <p class="c-user--featureBody">
                     {{ $user->speaking }}
                   </p>
@@ -64,9 +64,9 @@
                     <div class="c-user--imageArea">
                       <a href="{{ route('users.show', ['name' => $review->reviewer->name])}}">
                         @if (!isset($review->reviewer->profile_image))
-                          <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                          <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm--review">
                         @else
-                          <img src="{{$review->reviewer->profile_image}}" alt="" class="c-user--image--sm">
+                          <img src="{{$review->reviewer->profile_image}}" alt="" class="c-user--image--sm--review">
                         @endif
                       </a>
                       <span class="c-user--other">{{ $review->reviewer->name}}</span>

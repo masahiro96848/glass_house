@@ -35,6 +35,9 @@
 
     &--center {
       text-align: center;
+      @include mq(sm) {
+        font-size: $font-size_24;
+      }
     }
 
     &--search {
@@ -149,6 +152,10 @@
         width: 80%;
         margin: 0 auto;
         color: $font-color_black;
+        @include mq(sm) {
+          margin: 0;
+          width: 100%;
+        }
       }
 
       &--bg {

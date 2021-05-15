@@ -6,7 +6,7 @@
   @include('nav')
   <div class="l-container--content">
     <div class="l-container--wrapper">
-      <div class="l-container--layout">
+      <div class="l-container--layout l-container--layout--sp">
         <h3 class="p-member--other">レビューを編集</h3>
         <div class="l-container--border ">
           <div class="p-comment--area">

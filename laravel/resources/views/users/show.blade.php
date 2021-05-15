@@ -51,16 +51,16 @@
             </div>
             <div class="c-user--feature">
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">興味のあるテーマ</h5>
-                <div class="c-user--featureArea">
+                <h5 class="c-user--featureTitle--show">興味のあるテーマ</h5>
+                <div class="c-user--featureArea--show">
                   <p class="c-user--body">
                     {{ $user->talk_theme }}
                   </p>
                 </div>
               </div>
               <div class="c-user--Container">
-                <h5 class="c-user--featureTitle">こんな方と話したい</h5>
-                <div class="c-user--featureArea">
+                <h5 class="c-user--featureTitle--show">こんな方と話したい</h5>
+                <div class="c-user--featureArea--show">
                   <p class="c-user--featureBody">
                     {{ $user->speaking }}
                   </p>

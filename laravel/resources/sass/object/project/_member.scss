@@ -32,6 +32,9 @@
     padding: $space_xl;
     background-color: #fff;
     color: #fff;
+    @include mq(sm) {
+      padding: $space_l $space_m;
+    }
   }
 
   &--main {
@@ -39,11 +42,18 @@
     border-radius: 10px;
     padding: 60px 60px;
     background-color: rgba(11, 23, 185, 0.904);
+    @include mq(sm) {
+      padding: 20px;
+    }
   }
 
   &--top {
     text-align: center;
     font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    line-height: 1.8;
+    @include mq(sm) {
+      font-size: $font-size_20;
+    }
   }
 
   &--image {
@@ -70,14 +80,25 @@
   &--time {
     text-align: end;
     border-bottom: 2px solid rgb(148, 146, 146);
+    @include mq(sm) {
+      font-size: $font-size_m;
+    }
   }
 
   &--title {
     font-weight: bold;
+    @include mq(sm) {
+      font-size: $font-size_20;
+    }
   }
+
   &--body {
     padding: $space_l $space_l;
     line-height: 2.8;
+    @include mq(sm) {
+      padding: $space_s;
+      line-height: 1.8;
+    }
   }
 
   &--tag {

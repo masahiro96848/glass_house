@@ -24,6 +24,15 @@
         width: 90px;
         height: 90px;
       }
+      &--review {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        @include mq(sm) {
+          width: 50px;
+          height: 50px;
+        }
+      }
     }
 
     &--md {
@@ -36,6 +45,10 @@
       width: 250px;
       height: 250px;
       border-radius: 50%;
+      @include mq(sm){
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 
@@ -57,6 +70,12 @@
       font-size: $font-size_xl;
       margin-top: $space_l;
       margin-bottom: $space_l;
+    }
+
+    &--review {
+      @include mq(sm) {
+        display: block;
+      }
     }
   }
 
@@ -142,6 +161,9 @@
     }
     &--profile {
       padding: $space_xxl $space_l;
+      @include mq(sm) {
+        padding: $space_l 0;
+      }
     }
   }
 
@@ -154,6 +176,7 @@
     margin-bottom: $space_xxl;
     @include mq(sm) {
       display: block;
+      text-align: center;
     }
   }
 
@@ -164,6 +187,29 @@
       width: 100%;
       text-align: center;
     }
+    &--show {
+      font-weight: bold;
+      width: 200px;
+      @include mq(sm){
+        text-align: left;
+      }
+    }
+    &--review {
+      font-weight: bold;
+      width: 200px;
+      @include mq(sm){
+        width: 100%;
+        text-align: left;
+      }
+    }
+    &--profile {
+      font-weight: bold;
+      width: 200px;
+      @include mq(sm){
+        display: block;
+        text-align: left;
+      }
+    }
   }
 
   &--featureArea {
@@ -173,8 +219,40 @@
     margin: 0 auto;
     @include mq(sm) {
       display: block;
-      
       margin: $space_m auto;
+    }
+    &--show {
+      display: flex;
+      flex-flow: wrap;
+      width: 70%;
+      margin: 0 auto;
+      @include mq(sm) {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+    &--review {
+      display: flex;
+      flex-flow: wrap;
+      width: 70%;
+      margin: 0 auto;
+      @include mq(sm) {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+    }
+    &--profile {
+      display: flex;
+      flex-flow: wrap;
+      width: 70%;
+      margin: 0 auto;
+      @include mq(sm) {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
     }
   }
 
@@ -314,10 +392,16 @@
     font-weight: bold;
     &--review {
       text-align: end;
+      @include mq(sm) {
+        font-size: $font-size_m;
+      }
     }
   }
 
   &--datetime {
     text-align: end;
+    @include mq(sm) {
+      font-size: $font-size_m;
+    }
   }
 }

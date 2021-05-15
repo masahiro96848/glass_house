@@ -13,7 +13,7 @@
             </a> 
           </div>
           <div class="p-card--box">
-            <div class="p-card--detail">
+            <div class="p-card--detail--mypage">
               <h4 class="p-card--title">{{ $user->name }}</h4>
             </div>
             <p class="p-card--paragragh">{{ $user->intro}}</p>

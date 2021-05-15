@@ -26,10 +26,16 @@
     &--right {
       background-color: #78f878;
       margin-left: 45%;
+      @include mq(sm) {
+        margin-left: 0;
+      }
     }
     &--left {
       background-color: #ededed;
       margin-right: 45%;
+      @include mq(sm) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -49,5 +55,11 @@
 
   &--button {
     margin-top: $space_xxl;
+  }
+
+  &--message {
+    @include mq(sm) {
+      font-size: $font-size_14;
+    }
   }
 }

@@ -20,6 +20,11 @@
       font-weight: normal;
       color: $font-color_default;
     }
+
+    &--profile {
+      display: block;
+      margin-bottom: $space_m;
+    }
   }
 
   &--any {

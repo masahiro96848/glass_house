@@ -1,6 +1,9 @@
 .p-card {
   margin-top: $space_l;
   margin-bottom: $space_l;
+  @include mq(sm) {
+    margin-top: 80px;
+  }
 
 
   &--area {
@@ -11,11 +14,17 @@
     padding: 50px 20px;
     box-shadow: 2px 2px 2px  rgb(143, 143, 143);
     margin-bottom: $space_xxl;
+    @include mq(sm) {
+      padding: 30px 0px;
+    }
   }
 
   &--content {
     display: flex;
     width: 100%;
+    @include mq(sm) {
+      display: block;
+    }
   }
 
   &--body {
@@ -23,10 +32,23 @@
     margin-right: $space_xxl;
   }
 
+  &--photo {
+    @include mq(sm) {
+      text-align: center;
+    }
+  }
+
   &--box {
     margin-left: $space_xxl;
     margin-right: $space_xxl;
     width: 70%;
+    @include mq(sm){
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: $space_l;
+      padding-left: $space_l;
+      width: 100%;
+    }
     &--mypage {
       width: 100%;
     }
@@ -36,6 +58,11 @@
     margin-bottom: $space_xl;
     font-weight: bold;
     display: inline-block;
+    @include mq(sm) {
+      font-size: $font-size_18;
+      margin-top: $space_l;
+      margin-bottom: $space_l;
+    }
   }
 
   &--paragragh {
@@ -54,6 +81,10 @@
   &--right {
     width: 220px;
     text-align: center;
+    @include mq(sm) {
+      width: 100%;
+      margin-top: $space_l;
+    }
   }
 
   &--apply {
@@ -76,6 +107,9 @@
   &--tabArea {
     display: flex;
     margin-bottom: $space_xxxl;
+    @include mq(sm){
+      justify-content: center;
+    }
   }
 
   &--tab {
@@ -87,6 +121,10 @@
     border-radius: 10px;
     padding-left: 0;
     color: #fff;
+    @include mq(sm) {
+      width: 300px;
+      flex-wrap: wrap;
+    }
     & a {
       color: #fff;
     }
@@ -100,6 +138,11 @@
     width: 23%;
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
+    @include mq(sm) {
+      font-size: $font-size_m;
+      width: 125px;
+      margin-bottom: 10px;
+    }
     
     & a {
       display: block;
@@ -138,5 +181,13 @@
   &--nodata {
     color: $font-color_default;
     text-align: center;
+  }
+
+  &--detail {
+    &--mypage {
+      @include mq(sm) {
+        text-align: center;
+      }
+    }
   }
 }

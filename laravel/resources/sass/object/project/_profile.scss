@@ -9,6 +9,9 @@
   &--professional {
     width: 25%;
     margin-bottom: $space_m;
+    @include mq(sm) {
+      width: 150px;
+    }
     &.locked {
       opacity: 0.75;
       color: #aaa;
