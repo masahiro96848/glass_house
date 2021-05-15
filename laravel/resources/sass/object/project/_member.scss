@@ -33,7 +33,7 @@
     background-color: #fff;
     color: #fff;
     @include mq(sm) {
-      padding: 10px;
+      padding: $space_l $space_m;
     }
   }
 
