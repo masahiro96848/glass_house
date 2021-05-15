@@ -8,7 +8,7 @@
     <div class="l-container--wrapper">
       <div class="l-container--layout--80">
         @include('mypage.tab')
-
+        {{-- pc専用 --}}
         <div class="p-matching--area">
           <div class="p-matching--list">
           <table class="p-matching--table">
@@ -29,9 +29,9 @@
                       <div>
                         <a href="{{ route('users.show',['name' => $matching->apply->name])}}">
                           @if (!isset($matching->apply->profile_image))
-                            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                            <img src="{{asset('img/no_image.jpg')}}" alt="" class="p-matching--image">
                           @else
-                            <img src="{{$matching->apply->profile_image}}" alt="" class="c-user--image--sm">
+                            <img src="{{$matching->apply->profile_image}}" alt="" class="p-matching--image">
                           @endif
                         </a>
                       </div>
@@ -43,9 +43,9 @@
                       <div>
                         <a href="{{ route('users.show',['name' => $matching->approve->name])}}">
                           @if (!isset($matching->approve->profile_image))
-                            <img src="{{asset('img/no_image.jpg')}}" alt="" class="c-user--image--sm">
+                            <img src="{{asset('img/no_image.jpg')}}" alt="" class="p-matching--image">
                           @else
-                            <img src="{{$matching->approve->profile_image}}" alt="" class="c-user--image--sm">
+                            <img src="{{$matching->approve->profile_image}}" alt="" class="p-matching--image">
                           @endif
                         </a>
                       </div>
@@ -89,6 +89,7 @@
             </table>
           </div>
         </div>
+        @include('mypage.sp_matching')
       </div>
     </div>
   </div>

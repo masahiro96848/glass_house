@@ -1,8 +1,47 @@
 .p-matching {
+  &--content {
+    border-bottom: 1px solid black;
+    margin-top: $space_m;
+  }
+  &--top {
+    display: flex;
+    justify-content: space-around;
+  }
+  &--area {
+    @include mq(sm) {
+      display: none;
+    }
+    &__sp {
+      display: none;
+      @include mq(sm) {
+        display: block;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: $space_m;
+      }
+    }
+  }
+
+  &--match {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &--applicant {
+    text-align: center;
+  }
+  &--authorizer {
+    text-align: center;
+  }
+
   &--list {
     background-color: #fff;
     padding: $space_l;
     border-radius: 10px;
+  }
+
+  &--nameArea {
+    display: flex;
   }
 
   &--table {
@@ -11,6 +50,17 @@
 
   &--head {
     border-bottom: 2px solid rgb(148, 146, 146);
+  }
+
+  &--image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @include mq(sm) {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+    }
   }
 
   &--body {
@@ -93,10 +143,18 @@
 
   &--date {
     margin-bottom: $space_l;
+    @include mq(sm) {
+      font-size: $font-size_m;
+      text-align: center;
+    }
   }
 
   &--edit {
     margin-bottom: 0;
+    @include mq(sm) {
+      text-align: center;
+      margin-bottom: $space_l;
+    }
   }
 
   &--width {

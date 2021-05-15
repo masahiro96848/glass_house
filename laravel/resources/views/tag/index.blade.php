@@ -43,7 +43,7 @@
                   </a> 
                 </div>
                 <div class="p-card--box">
-                  <div class="p-card--detail">
+                  <div class="p-card--detail--mypage">
                     <h4 class="p-card--title">{{ $job->title}}</h4>
                   </div>
                   <p class="p-card--paragragh">{{ $job->summary}}</p>
