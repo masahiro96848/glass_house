@@ -28,6 +28,18 @@ const app  = new Vue({
   }
 });
 
+// 検索モーダル
+$(function() {
+  $('.c-search--category--icon').on('click', function(){
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $('.c-search--modal').addClass('close').removeClass('open');
+    }else{
+      $(this).addClass('active');
+      $('.c-search--modal').addClass('open').removeClass('close');
+    }
+  });
+})
 
 // フラッシュメッセージ
 $(function() {
@@ -57,15 +69,4 @@ $(function() {
 //   });
 //   return false;
 // })
-// 検索モーダル
-$(function() {
-  $('.c-search--category--icon').on('click', function(){
-    if($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $('.c-search--modal').addClass('close').removeClass('open');
-    }else{
-      $(this).addClass('active');
-      $('.c-search--modal').addClass('open').removeClass('close');
-    }
-  });
-})
+
