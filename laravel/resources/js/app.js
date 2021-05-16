@@ -34,7 +34,7 @@ $(function() {
   $('.u-flash_message').hide().fadeIn('slow').delay('6000').slideUp('slow');
 });
 
-//　モーダル
+// モーダル
 $(function() {
   $('.c-modal--open').on('click', function() {
     $('.c-modal--js').fadeIn();
@@ -57,13 +57,15 @@ $(function() {
 //   });
 //   return false;
 // })
-
-$('.c-search--category--icon').on('click', function(){
-  if($(this).hasClass('active')) {
-    $(this).removeClass('active');
-    $('.c-search--modal').addClass('close').removeClass('open');
-  }else{
-    $(this).addClass('active');
-    $('.c-search--modal').addClass('open').removeClass('close');
-  }
+// 検索モーダル
+$(function() {
+  $('.c-search--category--icon').on('click', function(){
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $('.c-search--modal').addClass('close').removeClass('open');
+    }else{
+      $(this).addClass('active');
+      $('.c-search--modal').addClass('open').removeClass('close');
+    }
+  });
 })
