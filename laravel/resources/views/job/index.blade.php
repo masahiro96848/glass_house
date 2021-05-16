@@ -10,10 +10,12 @@
         <div class="l-container--top">
           <h3 class="p-detail--title">トークテーマ一覧・話題</h3>
           <div class="c-search--box">
-            <span class="c-search--modal--open c-search--tag">
-              <i class="fas fa-search fa-2x c-search--category--icon"></i>
+            <span class="c-search--modal--open c-search--category--job">
+              <a href="" class="c-search--modal--open">
+                <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
+              </a>  
             </span>
-          </div>
+        </div>
         </div>
         <div class="c-search--modal c-search--modal--js">
           <div class="c-search--modal--bg c-search--modal--close"></div>

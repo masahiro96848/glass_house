@@ -19,6 +19,14 @@
       left: 320px;
       bottom: 30px;
     }
+    &--job {
+      @include mq(sm) {
+        position: absolute;
+        left: 290px;
+        bottom: 30px;
+      }
+    }
+
     &--icon {
       display: none;
       @include mq(sm) {

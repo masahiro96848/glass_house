@@ -29,7 +29,7 @@
       </div>
       <div class="c-search--box">
         <span class="c-search--modal--open c-search--category">
-          <a href="c-search--modal--open">
+          <a href="" class="c-search--modal--open">
             <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
           </a>  
         </span>
