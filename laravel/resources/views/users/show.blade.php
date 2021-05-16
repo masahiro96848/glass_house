@@ -102,7 +102,7 @@
                                   <p class="c-modal--delete">削除する</p>
                                 </button>
                               </form>
-                              <a href="" class="c-modal--close c-modal--cancel">キャンセル</a>
+                              <p class="c-modal--close c-modal--cancel">キャンセル</p>
                             </div>
                           </div>
                         </div>
