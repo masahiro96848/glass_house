@@ -9,27 +9,27 @@
       <div class="l-container--layout--lg l-container--layout--lg--sp">
         <div class="l-container--top">
           <h3 class="p-detail--hash">{{ $tag->hashtag }} {{$tag->jobs->count()}}件</h3>
-          <div class="c-search--box">
-            <span class="c-search--modal--open c-search--category--job">
-              <a href="" class="c-search--modal--open">
-                <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
-              </a>  
-            </span>
-          </div>
         </div>
         <div class="c-search--modal c-search--modal--js">
           <div class="c-search--modal--bg c-search--modal--close"></div>
             <div class="c-search--modal--display">
         
-        <div class="p-detail--tag">
-          @foreach($tag_jobs as $tag_job)
-            <a href="{{ route('tag.index', ['name' => $tag_job->name ])}}" class="p-detail--tagList">
-              {{ $tag_job->hashtag }}
-              <p class="p-detail--count">{{ $tag_job->jobs->count()}}</p>
-            </a>
-          @endforeach
-        </div>
+              <div class="p-detail--tag">
+                @foreach($tag_jobs as $tag_job)
+                  <a href="{{ route('tag.index', ['name' => $tag_job->name ])}}" class="p-detail--tagList">
+                    {{ $tag_job->hashtag }}
+                    <p class="p-detail--count">{{ $tag_job->jobs->count()}}</p>
+                  </a>
+                @endforeach
+              </div>
           </div>
+        </div>
+        <div class="c-search--box">
+            <span class="c-search--modal--open c-search--category--job">
+              <a href="" class="c-search--modal--open">
+                <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
+              </a>  
+            </span>
         </div>
         <div class="p-card">
           @foreach($tag->jobs as $job)

@@ -39,6 +39,9 @@
     justify-content: space-evenly;
     align-items: baseline;
     margin-top: $space_xl;
+    @include mq(sm) {
+      justify-content: space-around;
+    }
   }
 
   &--title {
