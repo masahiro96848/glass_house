@@ -54,6 +54,16 @@
         display: block;
       }
     }
+    // &--js{
+    //   &.none {
+    //     display: none;
+    //   }
+    // }
+    &.active {
+      @include mq(sm) {
+        display: block;
+      }
+    }
     &--bg {
       @include mq(sm) {
         background-color: transparent;

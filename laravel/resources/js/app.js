@@ -29,17 +29,17 @@ const app  = new Vue({
 });
 
 // 検索モーダル
-$(function() {
-  $('.c-search--category--icon').on('click', function(){
-    if($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $('.c-search--modal').addClass('close').removeClass('open');
-    }else{
-      $(this).addClass('active');
-      $('.c-search--modal').addClass('open').removeClass('close');
-    }
-  });
-})
+// $(function() {
+//   $('.c-search--category--icon').on('click', function(){
+//     if($(this).hasClass('active')) {
+//       $(this).removeClass('active');
+//       $('.c-search--modal').addClass('close').removeClass('open');
+//     }else{
+//       $(this).addClass('active');
+//       $('.c-search--modal').addClass('open').removeClass('close');
+//     }
+//   });
+// })
 
 // フラッシュメッセージ
 $(function() {
@@ -59,14 +59,17 @@ $(function() {
 })
 
 // 検索モーダル
-// $(function() {
-//   $('.c-search--category--icon').on('click', function() {
-//     $('.c-search--modal--js').fadeIn();  
-//   });
-//   $('.c-search--category--icon').on('click', function() {
-//     $('.c-search--modal--js').fadeOut();
-//     $('.c-search--modal--js').addClass('none');
-//   });
-//   return false;
-// })
+$(function() {
+  $('.c-search--modal--open').on('click', function() {
+    if($('.c-search--modal').hasClass('active')) {
+      $('.c-search--modal--display').fadeOut('fast'); 
+      $('.c-search--modal').removeClass('active');
+      // return false;
+    }else {
+      $('.c-search--modal--display').fadeIn('fast');
+      $('.c-search--modal').addClass('active');
+    }
+    return false;
+  });
+})
 
