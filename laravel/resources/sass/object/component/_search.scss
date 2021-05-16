@@ -47,11 +47,13 @@
     }
     &.open {
       display: block;
+      cursor: pointer;
     }
     &--open {
       display: none;
       @include mq (sm) {
         display: block;
+        cursor: pointer;
       }
     }
     // &--js{
