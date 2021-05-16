@@ -47,6 +47,7 @@
     }
     &.open {
       display: block;
+      cursor: pointer;
     }
     &--open {
       display: none;
