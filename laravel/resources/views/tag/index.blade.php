@@ -10,8 +10,10 @@
         <div class="l-container--top">
           <h3 class="p-detail--hash">{{ $tag->hashtag }} {{$tag->jobs->count()}}件</h3>
           <div class="c-search--box">
-            <span class="c-search--modal--open c-search--tag">
-              <i class="fas fa-search fa-2x c-search--category--icon"></i>
+            <span class="c-search--modal--open c-search--category--job">
+              <a href="" class="c-search--modal--open">
+                <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
+              </a>  
             </span>
           </div>
         </div>
