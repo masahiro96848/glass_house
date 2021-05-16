@@ -61,15 +61,25 @@ $(function() {
 // 検索モーダル
 $(function() {
   $('.c-search--modal--open').on('click', function() {
-    if($('.c-search--modal').hasClass('active')) {
-      $('.c-search--modal--display').fadeOut('fast'); 
-      $('.c-search--modal').removeClass('active');
-      // return false;
-    }else {
-      $('.c-search--modal--display').fadeIn('fast');
-      $('.c-search--modal').addClass('active');
-    }
+    $('.c-search--modal').fadeIn();
     return false;
   });
-});
+  $('.c-search--modal--display').on('click', function() {
+    $('.c-search--modal').fadeOut();
+  })
+})
+
+
+// $(function() {
+//   $('.c-search--modal--open').on('click', function() {
+//     if($('.c-search--modal').hasClass('active')) {
+//       $('.c-search--modal--display').fadeOut('fast'); 
+//       $('.c-search--modal').removeClass('active');
+//     }else {
+//       $('.c-search--modal--display').fadeIn('fast');
+//       $('.c-search--modal').addClass('active');
+//     }
+//     return false;
+//   });
+// });
 
