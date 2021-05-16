@@ -11,7 +11,7 @@
           <h2 class="l-container--title--tag">トーク相手を探す</h2>
         </div>
         
-        <div class="c-search--modal c-search--modal--js">
+        <div class="c-search--modal c-search--modal--js " >
           <div class="c-search--modal--bg c-search--modal--close"></div>
             <div class="c-search--modal--display">
               <div class="l-container--wrapperList l-container--between ">
@@ -25,11 +25,11 @@
               </div>
               </div>
             </div>
-          </div>
+        </div>
       </div>
       <div class="c-search--box">
         <span class="c-search--modal--open c-search--category">
-          <i class="fas fa-search fa-2x c-search--category--icon"></i>
+          <i class="fas fa-search fa-2x c-search--category--icon c-search--modal--open" aria-hidden="true"></i>
         </span>
       </div>
       <div class="l-container--wrapper u-pt_0 l-container--flexstart l-container--sp">
