@@ -29,7 +29,9 @@
       </div>
       <div class="c-search--box">
         <span class="c-search--modal--open c-search--category">
-          <i class="fas fa-search fa-2x c-search--category--icon c-search--modal--open" aria-hidden="true"></i>
+          <a href="c-search--modal--open">
+            <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
+          </a>  
         </span>
       </div>
       <div class="l-container--wrapper u-pt_0 l-container--flexstart l-container--sp">
