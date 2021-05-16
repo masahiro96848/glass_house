@@ -52,6 +52,7 @@
       width: 100%;
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.493);
+      z-index: 7;
     }
     &.open {
       display: block;
