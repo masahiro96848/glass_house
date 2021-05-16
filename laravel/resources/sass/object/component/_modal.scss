@@ -61,6 +61,7 @@
     margin-bottom: 0;
     @include mq(sm) {
       font-size: $font-size_m;
+      padding: 15px;
     }
     &:focus {
       outline: 0;
@@ -79,6 +80,7 @@
     margin-bottom: 0;
     @include mq(sm) {
       font-size: $font-size_m;
+      padding: 15px;
     }
     &:hover {
       transition: 0.5s;
