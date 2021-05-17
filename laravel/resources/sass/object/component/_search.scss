@@ -25,7 +25,9 @@
     }
     &--job {
       @include mq(sm) {
-        
+        position: absolute;
+        left: 300px;
+        bottom: 30px;
       }
     }
 
