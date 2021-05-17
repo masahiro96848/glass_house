@@ -5,6 +5,15 @@
     margin-top: 80px;
   }
 
+  &--job {
+    margin-top: $space_l;
+    margin-bottom: $space_l;
+    @include mq(sm) {
+      margin-top: 80px;
+      margin-right: 20px;
+      margin-left: 20px;
+    } 
+  }
 
   &--area {
     border: none;

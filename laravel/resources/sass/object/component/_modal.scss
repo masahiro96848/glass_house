@@ -29,8 +29,8 @@
     transform: translate(-50%,-50%);
     width: 50%;
     @include mq(sm) {
-      width: 80%;
-      padding: $space_l $space_m;
+      width: 90%;
+      padding: $space_l 0;
     }
   }
 
