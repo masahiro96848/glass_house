@@ -24,7 +24,7 @@
               </div>
           </div>
         </div>
-        <div class="c-search--box">
+        <div class="c-search--box--job">
             <span class="c-search--modal--open c-search--category--job">
               <a href="" class="c-search--modal--open">
                 <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
@@ -33,7 +33,7 @@
         </div>
         <div class="p-card--job">
           @foreach($tag->jobs as $job)
-            <div class="p-card--area">
+            <div class="p-card--area--job">
               <div class="p-card--content">
                 <div class="p-card--photo">
                   <a href="{{ route('users.show', ['name' => $job->user->name])}}">
