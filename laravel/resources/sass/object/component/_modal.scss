@@ -29,7 +29,7 @@
     transform: translate(-50%,-50%);
     width: 50%;
     @include mq(sm) {
-      width: 90%;
+      width: 320px;
       padding: $space_l 0;
     }
   }

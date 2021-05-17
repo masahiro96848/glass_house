@@ -3,6 +3,10 @@
     @include mq(sm) {
       position: relative;
     }
+    &--job {
+      text-align: end;
+      margin-right: 30px;
+    }
   }
 
   &--tag {
@@ -21,9 +25,7 @@
     }
     &--job {
       @include mq(sm) {
-        position: absolute;
-        left: 300px;
-        bottom: 30px;
+        
       }
     }
 
