@@ -4,7 +4,7 @@
 
 @section('content')
   @include('nav')
-  <div class="l-container--content">
+  <div class="l-container--content--job">
     <div class="l-container--wrapper">
       <div class="l-container--layout--lg l-container--layout--lg--sp">
         <div class="l-container--top">
@@ -31,7 +31,7 @@
               </a>  
             </span>
         </div>
-        <div class="p-card">
+        <div class="p-card--job">
           @foreach($tag->jobs as $job)
             <div class="p-card--area">
               <div class="p-card--content">
