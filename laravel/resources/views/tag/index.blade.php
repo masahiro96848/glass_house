@@ -4,7 +4,7 @@
 
 @section('content')
   @include('nav')
-  <div class="l-container--content--job">
+  <div class="l-container--content">
     <div class="l-container--wrapper">
       <div class="l-container--layout--lg l-container--layout--lg--sp">
         <div class="l-container--top">
@@ -24,14 +24,14 @@
               </div>
           </div>
         </div>
-        <div class="c-search--box--job">
+        <div class="c-search--box">
             <span class="c-search--modal--open c-search--category--job">
               <a href="" class="c-search--modal--open">
                 <i class="fas fa-search fa-2x c-search--category--icon " aria-hidden="true"></i>
               </a>  
             </span>
         </div>
-        <div class="p-card--job">
+        <div class="p-card">
           @foreach($tag->jobs as $job)
             <div class="p-card--area--job">
               <div class="p-card--content">
