@@ -36,3 +36,8 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - docker-volume:/var/lib/mysql
+
+  mailhog:
+    image: mailhog/mailhog
+    ports: 
+      - "7025:8025"
