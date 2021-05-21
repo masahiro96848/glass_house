@@ -9,6 +9,11 @@
         <div class="l-container--form">
           <div class="c-form--container">
             @include('error')
+            @if (session('status'))
+              <div class="card-text alert alert-success">
+                {{ session('status') }}
+              </div>
+            @endif
             <h3 class="c-form--title">パスワード再設定</h3>
           </div>
           <div class="c-form--body">
