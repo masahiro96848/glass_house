@@ -9,8 +9,8 @@
       <div class="l-container--wrapper--search">
         <div class="l-container--top">
           <h2 class="l-container--title--tag">トーク相手を探す</h2>
+          @include('users.search')
         </div>
-        
         <div class="c-search--modal c-search--modal--js " >
           <div class="c-search--modal--bg c-search--modal--close"></div>
             <div class="c-search--modal--display">

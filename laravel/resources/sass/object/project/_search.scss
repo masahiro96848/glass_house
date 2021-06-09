@@ -2,10 +2,17 @@
 
   &--title {
     margin-right: $space_m;
-    margin-left: $space_l;
+    width: 200px;
   }
 
   &--select {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--area {
+    margin-right: 5%;
+    width: 16%;
   }
 }

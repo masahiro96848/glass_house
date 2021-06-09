@@ -42,9 +42,14 @@
     outline: none;
     background-color: white;
     border: none;
-    &--select {
-      width: 15%;
+    &--name {
+      width: 250px;
     }
+    &--select {
+      width: 250px;
+      padding: 13px 10px;
+    }
+
   }
 
   &--link {

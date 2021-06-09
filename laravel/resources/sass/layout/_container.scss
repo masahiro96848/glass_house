@@ -17,9 +17,18 @@
 
   &--wrapper {
     padding-top: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 80px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+
+    @include mq(xl) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @include mq(lg) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
 
     @include mq(md) {
       padding-left: $space_xl;
