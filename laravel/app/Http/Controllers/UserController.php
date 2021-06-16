@@ -14,13 +14,27 @@ use App\Http\Requests\ReviewRequest;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::orderBy('created_at', 'desc')->paginate(16);
+        // $users = User::orderBy('created_at', 'desc')->paginate(16);
         $category_users = Category::withCount('users')->orderBy('users_count', 'desc')->get();
+
+       
+
+        $params = $request->query();
+
+        $users = User::Search($params)->orderBy('created_at', 'desc')->paginate(10);
+
+        // $date = $request->input('date');
+        // $dateId = $request->input('dateId');
+        
+    
         return view('users.index', [
             'users' => $users,
             'category_users' => $category_users,
+            'params' => $params,
+            // 'date' => $date,
+            // 'dateId' => $dateId,
         ]);
     }
 

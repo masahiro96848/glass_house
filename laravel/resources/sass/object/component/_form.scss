@@ -43,11 +43,17 @@
     background-color: white;
     border: none;
     &--name {
-      width: 250px;
+      width: 220px;
+      @include mq(xl) {
+        width: 280px;
+      }
     }
     &--select {
-      width: 250px;
+      width: 220px;
       padding: 13px 10px;
+      @include mq(xl) {
+        width: 280px;
+      }
     }
 
   }
