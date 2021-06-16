@@ -4,6 +4,7 @@ namespace App;
 
 use App\Notifications\PasswordResetNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -132,4 +133,56 @@ class User extends Authenticatable
         }
         return ;
     }
+
+    /**
+     * 絞り込み・キーワード検索
+     * @param \Illuminate\Database\Eloquent\Builder
+     * @param array
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSearch(Builder $query, array $params): Builder
+    {
+      // $reviews = $this->withCount('reviews')->get();
+      // キーワード検索
+        if(!empty($params['keyword'])) {
+            $query->where(function ($query) use ($params) {
+            $query->where('name', 'like', '%'. $params['keyword'].  '%');    
+            });
+        }
+
+      // レビュー件数
+        if(!empty($params['review'])) {
+          if($params == 'asc') {
+            $this->revieweds()->orderBy('reviewed_id');
+          }else if($params == 'desc') {
+            $query->where('reviewed_id', '=', $params['desc'])->orderBy('reviewed_id', 'desc')->get();
+          }
+        }
+        
+        // dd($params);
+      // いいね
+      // if(!empty($params['like'])) {
+      //   $query->where()
+      // }
+      // 日付順
+      // if(!empty($params)) {
+      //   if($value == 'asc') {
+      //     $query->where('created_at', '=', $params['date'])->orderBy('created_at', 'asc');
+      //   }else {
+      //     $query->where('created_at', '=', $params['date'])->orderBy('created_at','desc');
+      //   }
+      
+      // }
+      
+        return $query;
+    }
+
+    // public function scopeSelect($query, $sort)
+    // {
+    //   foreach($sort as $column => $direction) {
+    //     $query->orderBy($column, $direction);
+    //   }
+
+    //   return $query;
+    // }
 }
